@@ -1,0 +1,31 @@
+@import (once) './fragments/_mixins-roman';
+@import (once) './fragments/_bases';
+@import (once) '../modules/picture-navigation';
+@import (once) '../modules/story-page';
+@import (once) '../modules/product-detail';
+@import (once) '../modules/all-carousals';
+@import (once) '../modules/search-results';
+@import (once) '../modules/search-results-mobile';
+@import (once) '../modules/search-results-filters-modal';
+@import (once) '../modules/custom-data-grid';
+@import (once) '../modules/general-listing';
+
+.te-promo-content{
+    .media-query(mobile, {
+        padding-top: 0 !important;
+    });
+}
+
+.case-study-promo-container .te-promo-grid .te-promo-content .promo-row-content{
+    .media-query(mobile,{
+        margin: 0 !important;
+    });
+}
+
+.search-panels.plpSearch-panels{
+    margin-top: 7px !important;
+}
+
+.merchandising-carousel-container{
+    min-width: 10px;
+}

@@ -1,0 +1,223 @@
+
+.livechat-titlebar {
+  position: absolute;
+  top: 0;
+  background: @te-dark-grey-80;
+  padding: 4%;
+  width: 100%;
+  height: 14%;
+  .livechat-titlebar-text {
+    position: absolute;
+    top: 33%;
+    left: 0;
+    width: 100%;
+    .text-26();
+    color: @te-cool-grey-5;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .livechat-close-icon {
+    position: absolute;
+    top: 33%;
+    right: 2%;
+    color: @te-cool-grey-65;
+  }
+}
+
+.livechat-sub-titlebar-error {
+  position: absolute;
+  .text-94();
+  width: 100%;
+  color: @te-red;
+  display: none;
+  top: -60px;
+  left:0px;
+}
+
+
+.livechat-startchatbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: @te-cool-grey-10;
+}
+
+.livechat-form-wrapper {
+  position: absolute;
+  margin: auto;
+  top: 10%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 70%;
+  height: 60%;
+  text-align: center;
+  border: 0;
+
+  .livechat-chat-text {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+  }
+
+  label {
+    .text-90();
+  }
+  select {
+  padding: 8px 10px;
+  .text-80();
+  color:@te-cool-grey;
+  display:block;
+  width: 80%;
+  margin: 2% auto;
+  text-transform: uppercase;
+  }
+  input {
+    display: block;
+    margin: 15px auto;
+    width: 80%;
+    height: 30px;
+    padding: 6px;
+  }  
+  .textfield-wrapper {
+    /*position: absolute;*/
+    padding-top: 30px;
+    bottom: -60px;
+    width: 100%;
+  }
+  .disclaimer{
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding-top: 10px;
+
+    input{
+      display: inline-block;
+      margin: 0;
+      width: 6%;
+      float: left;
+    margin-top: 5px;
+    }
+    label{
+      display: inline-block;   
+      width: 94%;
+      padding-top: 8px;
+      padding-left: 12px;
+        p{
+          .text-62();
+          color: @te-dark-grey;
+      }
+    }
+      
+  }
+  .error-text {
+    .text-110();
+    color: @te-red;
+    width: 200px;
+    display: none;
+    margin: -10px 20px;
+  }
+  .error-field {
+    border: 1px solid @te-red;
+  }
+  .btn-block-1 {
+    float: none;
+    width: 200px;
+    margin: 40px auto 0 auto;
+  }
+  .livechat-disabled {
+    cursor: default;
+    background: @te-cool-grey-35;
+  }
+}
+
+.livechat-na-emailbar-button {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background: @te-cool-grey-10;
+  .btn-block-1 {
+    float: none;
+    width: 140px;
+    margin: 4% auto;
+  }
+  .livechat-disabled {
+    cursor: default;
+    background: @te-cool-grey-35;
+  }
+}
+
+.livechat-na-sub-titlebar-text {
+  position: absolute;
+  text-align: center;
+  .text-80();
+  top: 22%;
+  padding: 2%;
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.access-MyResources-Header{
+    position:absolute;
+    top:60px;
+    width:100%;
+    height:40px;
+    background-color:@te-cool-grey-10;
+    left:0px;
+    text-align:center;
+    .text-80();
+    color: @te-blue;
+    padding-top:12px;
+    cursor: pointer;
+}
+
+
+//START - No Agent Available Template CSS Classes - TEST 2
+.livechat-no-agent-form-wrapper
+{
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: 0;
+    padding-top: 100px;
+    background-color: @te-cool-grey-10;
+}
+
+.livechat-no-agent-main-header-text{
+    display: block;
+    .text-10();
+     color: @te-dark-grey-80;
+    padding-top: 30px;
+}
+
+.livechat-no-agent-header-text{
+    display: block;
+    .text-26();
+     color: @te-dark-grey-80;
+    padding-top: 30px;
+        a{
+        .text-26();
+        color: @te-blue;
+        cursor: pointer;
+        }
+}
+
+.livechat-no-agent-button-wrapper {
+        margin: 20px auto;
+        width: 300px;
+        padding-bottom: 50px;
+        padding-top: 30px;
+            .livechat-no-agent-button {
+              clear: both;
+              margin: 15px 0;
+              height: 40px;                      
+            }
+}
+//END - No Agent Available Template CSS Classes

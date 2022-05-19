@@ -1,0 +1,243 @@
+.pull-quote {
+    display: inline-block;
+    width: 100%;
+    margin: (@v_space*2.5) 0;
+    .media-query(mobile, {
+        width: 100%;
+        margin: (@v_space*1.5) 0;
+    });
+    .container {
+        overflow: hidden;
+        width: 577px;
+        margin: 0 auto;
+
+        &.te-light-theme{
+            background-color: @te-cool-grey-3;
+            .content-quote{
+                color: @te-dark-blue-87;
+                q, dl, dt,dd{
+                    color: @te-dark-blue-87;
+                }
+            }
+        }
+
+        &.te-dark-theme {
+            &.show-quote-media {
+                .content-quote {
+                    color: @te-white;
+                    background-color: transparent;
+                    background-blend-mode: multiply;
+                    background-image: linear-gradient(to left, rgba(37, 60, 66, 0), #101c1f);
+                    width: 100%;
+                    height: 100%;
+                    top: 0px;
+                    left: 0px;
+                    padding: 20px 0px 0px 40px;
+                    margin: 0px;
+                    .media-query(mobile,{
+                        background-image: none;
+                        background-color: @te-dark-blue-87;
+                        padding: 10px;
+                        q {
+                            margin: 0 auto;
+                            width: 100%;
+                        }
+                        dl {
+                            width: 100%;
+                        }
+                    });
+                    q, dl {
+                        color: @te-white;
+                        width: 40%;
+                    }
+                    dt, dd {
+                        color: @te-white;
+                    }
+                }
+                .media-quote {
+                    img{
+                        mix-blend-mode: soft-light;
+                    }
+                }
+            }
+            .content-quote {
+                background-color: @te-dark-blue-87;
+                color: @te-white;
+                q, dl, dt,dd{
+                    color: @te-white;
+                }
+            }
+        }
+        .media-query(desktop-wide,{
+            width:598px;
+         });
+        .media-query(mobile,{
+            width:100%;
+         });
+    }
+    .media-quote{
+        .media-query(mobile,{
+        display:none;
+         });
+    }
+    .content-quote {
+        margin: (@v_space*2.0) auto 0;
+        width: 100%;
+        text-align: center;
+        padding-top: (@v_space*1.2);
+        .media-query(mobile,{
+                margin:(@v_space*1.5) auto;
+                padding-top: (@v_space*0);
+            });
+        color: @te-dark-grey;
+        position: relative;
+
+       /* q, dt, dd {
+            margin-left: 30px;
+            margin-right: 30px;
+        }*/
+
+        q {
+            .text-26();
+            margin-top: 7px;
+            .media-query(mobile, {
+                color: @te-dark-grey;
+                line-height: 26px;
+            }
+            );
+            line-height: 1.2em;
+            display: block;
+        }
+        q.has-marks{
+            &:before {
+                content: '\201C'; // double quotes
+                position: relative;
+                top: -5px;
+                left: 0px;
+            }
+
+            &:after {
+                content: '\201D'; // double quotes
+            }
+        }
+
+        dt {
+            .text-92();
+            margin-top: 8px;
+            text-align: center;
+            .media-query(mobile,{
+             margin-top: 20px;
+             //.text-28();
+             line-height: 26px;
+            });
+            &:before{
+                content: "\2013 \00a0 \00a0";
+                font-weight: bold;
+            }
+        }
+
+        dd {
+            .text-92();
+            text-align: center;
+            .media-query(mobile,{
+             .text-62();
+            line-height: 22px;
+            });
+        }
+    }
+
+    .show-quote-media {
+        position: relative;
+        border-width: 0;
+        width: 1024px;
+        max-width: 1024px;
+        margin-left: -(@v_space*4.2);
+        //margin-bottom: @v_space*2.5;
+        .media-query(desktop-wide,{
+         width: 100%;
+        margin-left: auto;
+        });
+        .media-query(mobile,{
+            margin-bottom: 0;
+            width: 100%;
+            margin-left: auto;
+        });
+        .content-quote {
+            width: 40%;
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            text-align: left;
+            .media-query(mobile,{
+                 width: 100%;
+                 position: relative;
+                 top: 0;
+                 left: 0;
+                 text-align: center;
+            });
+
+            q {
+                width: auto;
+                color: @te-orange;
+                .text-10();
+				.media-query(mobile,{
+                    .text-26();
+					width:85%;
+					margin:0 auto;
+                });
+            }
+            dl{
+                padding-top: @v_space*0.4;
+                dt{
+                    margin-bottom: @v_space*0.5;
+                    .text-42();
+                    &:before{
+                        content: '';
+                    }
+                }
+                dd{
+                    .text-44();
+                    .media-query(mobile, {
+                        .text-62();
+                    });
+                }
+                
+                dt, dd {
+                    color: @te-dark-grey;
+                    text-align: left;
+                    .media-query(mobile,{
+                     text-align: center;
+                     color: @te-dark-grey;
+                    });
+                }
+            }
+            
+        }
+
+        .media-quote {
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                mix-blend-mode: darken;
+            }
+        }
+    }
+	.lead-in-title{
+		.media-query(mobile,{
+			margin-bottom:20px;
+		});
+	}
+}
+
+/*All Edit Mode CSS Should be included here*/
+.edit-mode-on{
+    .pull-quote {
+        .container{
+            height: 200px;
+            &.show-quote-media{
+                height: 700px;
+            }
+        }
+    }
+}

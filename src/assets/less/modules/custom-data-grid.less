@@ -1,0 +1,403 @@
+//For Grid in PLP SRP MDP
+.custom-data-grid-top-wrapper{
+    position:relative;
+    font-size: 0;
+    clear: both;
+    
+    table{
+        border-collapse: collapse;
+        border: 1px solid @te-cool-grey-10;
+        text-align: left;
+        font-size: 14px;
+        table-layout:fixed;
+        vertical-align: middle;
+        
+        th, td {
+            text-align: left;
+            font-size: 14px;
+            table-layout:fixed;            
+            border: 1px solid @te-cool-grey-10;
+        }
+        th{
+            vertical-align: top;
+            .th-wrapper{
+                position: relative;
+                padding: 8px;
+                .clearfix();
+            }
+        }
+        td{
+            vertical-align: middle;
+            position:relative;
+        }
+    }
+    .sortable{
+        cursor: pointer;
+    }
+    .sort-by-column{
+        position: absolute;
+        height: 4px;
+        background-color: @te-orange;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0px 1px;
+    }
+    .table1-wrapper{
+        display:inline-block;
+        margin-top: 20px;
+        table{
+            th{
+                &.grid-header{
+                    height: 45px !important;
+                    .th-wrapper{
+                     height: 45px !important;
+                    }
+                }
+                background-color: @te-dark-grey-80;
+                &:first-child {
+                    background-color: @te-cool-grey-65;
+                } 
+                color: @te-white;
+                .th-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+            td, th{
+                word-wrap:break-word;
+                max-width: 220px;                
+            }
+            td{
+                padding: 0px 8px;
+            }
+        }
+    }
+    .table2-wrapper, .table-outer-wrapper{
+        display:inline-block;
+        max-width: 460px;
+        th {
+            background-color: @te-dark-grey-80;
+            color: @te-white;
+        }
+        table{
+            th {
+                background-color: @te-dark-grey-80;
+                color: @te-white;
+                &.grid-header{
+                    height: 45px !important;
+                    .th-wrapper{
+                        height: 45px !important;
+                        .sortCol {
+                            float: right;
+                            a {
+                                .fa-sort-up {
+                                    color: @te-white;
+                                    height:15px;
+                                    &:before{
+                                        margin-top: 5px;
+                                        float: left;
+                                    }
+                                }
+                                .fa-sort-down{
+                                    color: @te-white;
+                                    display:block;
+                                    &:before{
+                                       float: left;
+                                       margin-top: -11px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.scrollable{
+                top: 20px;
+                left: 0;
+                z-index:5;
+                background:@te-white;
+                margin-bottom: 0px !important;
+                border-right: 0px;
+                border-left: 0px;
+                td,th{
+                    min-width: 175px;
+                    word-wrap:normal;
+                    .media-query(mobile, {
+                        min-width: 160px;
+                    });
+                    &:first-child{
+                        border-left: 0px;
+                    }
+                    &:last-child{
+                        border-right: 0px;
+                    }
+                }
+                td{
+                    padding: 10px 8px 10px 10px;
+                }  
+            }
+            
+        }
+        .buy-url{
+            text-transform: uppercase;
+            .text-80();
+        }
+        .table2-inner-wrapper1{
+            position: absolute;
+            max-width: 460px;
+            border: none;
+            overflow-x: auto; 
+            overflow-y:hidden; 
+            z-index: 5;
+            top:-2px;
+            height: 20px;
+             -webkit-overflow-scrolling: auto;
+            
+            &::-webkit-scrollbar {
+                height: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: @te-cool-grey-5;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: @te-cool-grey-35;
+            }
+
+            &::-webkit-scrollbar-thumb:window-inactive {
+                background-color: @te-cool-grey-35;
+            }
+        }
+        .table2-inner-wrapper2, .table-inner-wrapper{
+            position: absolute;
+            max-width: 460px;
+            border: none;
+            overflow: hidden;
+            z-index: 5;
+            top:20px;
+            height: auto;
+        }
+
+        .table2-inner-div1 {
+            width:auto;
+            height: 20px; 
+        }
+        .table2-inner-div2, .table-inner-div {
+            width:auto;
+            height: auto !important; 
+            background-color: @te-white;
+            overflow: auto;
+            border-right: 1px solid @te-cool-grey-10;
+             -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                height: 10px !important;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: @te-cool-grey-5;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: @te-cool-grey-35;
+            }
+
+            &::-webkit-scrollbar-thumb:window-inactive {
+                background-color: @te-cool-grey-35;
+            }
+        }
+    }
+    .table3-wrapper{
+        display:inline-block;
+        margin-top: 20px;
+        position:relative;
+        table{
+            border-left: none;
+            th{
+                background-color: @te-cool-grey-65;
+                color: @te-white;
+                border-left: none;
+            }
+            td{
+                padding: 0px 14px;
+                .text-34();
+                border-left: none;
+            }
+        }
+    }
+    .table4-wrapper{
+        float:right;
+        position: relative;
+        left: -1px;
+        margin-top: 20px;
+        padding-top: 45px;
+        border-right: 1px solid @te-cool-grey-10;
+        border-top: 1px solid @te-cool-grey-10;
+        border-bottom: 1px solid @te-cool-grey-10;
+        .table4-message{
+            .text-30();
+            width: 70%;
+            margin: 0 auto;
+            word-wrap: normal;
+        }
+    }
+    .dragIndicator{
+        float:left;
+        width: 7px;
+        height: 100%;
+        border-left: 2px dotted @te-charcoal;
+        border-right: 2px dotted @te-charcoal;
+        margin: 0 8px 0px 0px;
+    }
+    .dist-heading{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        float:left;
+        height: 100%;
+        width: 70%;
+        a{
+           color: @te-white; 
+        }
+    }
+    .drag-cols-tooltip{
+        position: absolute;
+        top: 20px;
+    }
+    .dragTable {
+        position: absolute;
+        top: 20px;
+        cursor:move;
+        background: @te-white;
+        z-index:4;
+        thead {
+            cursor: move
+        }
+        td,th{
+            padding: 10px 8px 10px 10px;
+        }
+    }
+    .wrap-message{
+        position:relative;
+    }
+    .drag {
+        background:orange;
+        color: @te-white;
+        cursor:move;
+    }
+    .over {
+        background: @te-bright-red;
+        color:@te-white;
+    }
+    
+}
+//For PLP SRP grid in desktop
+.plp-srp-grid-top-wrapper{
+    position:static;
+    margin-left:590px;
+    overflow-x:auto;
+    overflow-y: hidden;
+    .media-query(mobile, {
+        margin-left:0px;
+        overflow-x:visible;
+        position:relative;        
+    });
+    .table-outer-wrapper{
+        max-width:none;
+        .table-inner-wrapper{
+            position: static;
+            max-width: none;            
+        }
+        .table-inner-div{
+            overflow: hidden;            
+        }
+    }    
+}
+.custom-data-grid-top-outer-wrapper{
+    position:relative;   
+    .media-query(mobile, {
+        position:static;        
+    });
+}
+//Sticky Header for grids.
+.mdp-pad{
+   .sticky{
+        thead{
+            position: fixed;
+            top: 10px;
+            z-index: 40;
+            display: inline-block;
+        }
+        &.table2-inner-wrapper1{
+            top: 65px;
+            position: fixed !important;
+            z-index: 40 !important;
+            .media-query(desktop-wide, {
+                margin-left: 1px;
+            });
+            .media-query(IE,{
+                top: 72px;
+            });
+            .table2-inner-div1{
+            	&.safariScrollFix{
+            		background: @te-dark-grey-80;
+            	}
+                .media-query(IE,{
+                    background: @te-dark-grey-80;
+                });
+            }
+        }
+        &.table1{
+            thead{
+                width: 591px;
+                .media-query(mobile, {
+                    width: 76%;
+                    top: 0px;
+                });
+                tr{
+                    display: block;
+                    th{
+                        max-width: none !important;
+                        display: block;
+                    }
+                }
+            }
+        }
+        &.table2, &.table-container{
+            thead{
+                width: 720px;
+                overflow: hidden;
+                height: 45px;
+                .media-query(desktop-small, {
+                    width: 348px;
+                });
+                .media-query(mobile, {
+                    width: 76%;
+                    top: 0px;
+                });
+            }
+        }
+    } 
+    .stickyBackground{
+        display: none;
+        width: 591px;
+        height: 10px;
+        background: @te-dark-grey-80;
+        position: fixed;
+        top: 0px;
+        z-index: 40;
+        border-right: 1px solid @te-dark-grey-94;
+    }
+    .condensed{
+        &.sticky{
+            thead{
+                .media-query(mobile, {
+                    width: 50%;
+                });
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.try-new-container{
+        background-color:     @te-light-pale-blue;
+        padding: 30px;
+        .media-query(mobile,{
+                 margin-top: 30px;
+                });
+        
+        .welcome-feedback-container{
+            position: relative;
+            &:after {
+                content:'';
+                display:block;
+                clear: both;
+            }
+            
+            .welcome-copy{
+                float: left;
+                width: 70%;
+                line-height: 1.2em;
+                list-style: none;
+                .media-query(mobile,{
+                 width: 100%;
+                 padding-bottom: 30px;
+                });
+                .copy-header{
+                    .text-20();
+                    color:@te-dark-grey;
+                    line-height: 28px;
+                }
+                .copy-sub-header{
+                    .text-44();
+                    color:@te-dark-grey;
+                    line-height: 24px;
+                 padding-top:15px;
+                }
+                .old-page-link{
+                    cursor: pointer;
+                    margin-top: 20px;
+                    .text-62();
+                    color: #0066a1;
+                    &:hover{
+                        color: #3db7e4 !important;
+                    }
+                    i{
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .feedback-cta{
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -25px;
+                .desktop-chat{
+                    display: block;
+                }
+                .mobile-chat{
+                    display: none;
+                }
+                .media-query(mobile,{
+                position: relative;
+                right: 0;
+                top: 0;
+                 margin-top: 0;
+                    .desktop-chat{
+                        display: none;
+                    }
+                    .mobile-chat{
+                        display: block;
+                    }
+                });
+                &.nonworkday{
+                    .media-query(mobile,{
+                        .desktop-chat{
+                            display: block;
+                        }
+                        .mobile-chat{
+                            display: none;
+                        }
+                    });
+                }
+            }
+            .btn-override{
+                width:230px;
+                cursor: pointer;
+            }
+        }
+}
+.triangle-down {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 20px solid @te-light-pale-blue;
+        margin-bottom: 20px;
+        &.move-left{
+            position: relative;
+            left:30px;
+        }
+        .media-query(mobile,{
+                 margin-bottom: 30px;
+                });
+}

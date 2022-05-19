@@ -1,0 +1,129 @@
+.pull-quote-text {
+    //margin: 0 auto;
+    width:100%;    
+    .media-query(mobile, {
+        width:100%;
+        margin: 0;
+    });
+
+    .container {
+        overflow: hidden;
+        &.te-light-theme{
+            background-color: @te-cool-grey-3;
+            .content-quote{
+                color: @te-dark-blue-87;
+                q{
+                    .media-query(mobile,{
+                        color: @te-dark-blue-87;
+                    });
+                }
+            }
+        }
+        &.te-dark-theme{
+            background-color: @te-dark-blue-87;
+            .content-quote{
+                color: @te-white;
+                q{
+                    .media-query(mobile,{
+                        color: @te-white;
+                    });
+                }
+            }
+        }
+    }
+
+    .content-quote {
+        margin: (@v_space*4.0) auto;
+        width: 100%;
+        text-align: center;
+        .media-query(mobile,{
+                margin:(@v_space*1.5) auto;
+            });
+        
+        color: @te-dark-grey;
+        position: relative;
+        
+        /*q, dt, dd {
+            //margin-left: 30px;
+            //margin-right: 30px;
+            .media-query(mobile, {
+                margin-right: 0px;
+            });
+        }*/
+
+        q {
+            .text-26();
+            margin-top: 7px;
+            .media-query(mobile,{
+                 color: @te-dark-grey;
+                 line-height: 26px;
+            });
+            line-height: 1.2em;
+            display: block;
+        }
+        q.has-marks{
+            &:before {
+                content: '\201C'; // double quotes
+                position: relative;
+                top: -5px;
+                left: 5px;
+            }
+
+            &:after {
+                content: '\201D'; // double quotes
+            }
+        }
+
+        dt {
+            .text-92();
+            margin-top: 8px;
+            text-align: center;
+            .media-query(mobile,{
+             margin-top: 20px;
+             .text-42();
+             line-height: 26px;
+            });
+            &:before{
+                content: "\2013 \00a0 \00a0";
+                font-weight: bold;
+            }
+        }
+
+        dd {
+            .text-92();
+            text-align: center;
+            .media-query(mobile, {
+                .text-62();
+            });
+        }
+    }
+
+    .show-quote-media {
+        position: relative;
+        border-width: 0;
+
+        .content-quote {
+            width: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            q {
+                width: auto;
+                color: @te-orange;
+            }
+
+            dt, dd {
+                text-align: left;
+            }
+        }
+
+        .media-quote {
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+}

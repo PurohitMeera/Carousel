@@ -1,0 +1,175 @@
+.mobile-hider{
+            .media-query(mobile, {
+                display: none;
+            });
+}      
+.mobile-visible{
+            .media-query(mobile, {
+                display: block;
+            });
+}
+.media-query(@breakpoint, @rules) when (@breakpoint = mobile){
+    body.responsive &{
+        @media (max-width: @mobile-breakpoint) {
+            @rules();
+        }
+    }
+}
+
+.media-query(@breakpoint, @rules) when (@breakpoint = desktop){
+    body.responsive &{
+        @media (min-width: @desktop-breakpoint) {
+            @rules();
+        }
+    }
+}
+
+.media-query(@breakpoint, @rules) when (@breakpoint = desktop-small){
+    body.responsive &{
+        @media (min-width: @desktop-breakpoint) and (max-width: (@desktop-wide-breakpoint - 1)) {
+            @rules();
+        }
+    }
+}
+
+.media-query(@breakpoint, @rules) when (@breakpoint = tab){
+    body.responsive &{
+        @media (min-width: @desktop-breakpoint) and (max-width: @tab-breakpoint) {
+            @rules();
+        }
+    }
+}
+
+.media-query(@breakpoint, @rules) when (@breakpoint = desktop-wide){
+    body.responsive.wide-screen-support &{
+        @media (min-width: @desktop-wide-breakpoint) {
+            @rules();
+        }
+    }
+}
+//only for IE9 and 10
+.media-query(@breakpoint, @rules) when (@breakpoint = IE){
+    body.responsive &{
+        @media @ie9-10 {
+            @rules();
+        }
+    }
+}
+
+//only for Small Mobile for width below 375px
+.media-query(@breakpoint, @rules) when (@breakpoint = mobile-small){
+    body.responsive &{
+        @media (max-width: @mobile-breakpoint-small) {
+            @rules();
+        }
+    }
+}
+
+/*
+* Use below chained media queries for any less namespaces starting with the selectors on the <body> tag 
+*/
+.media-query-chained(@breakpoint, @rules) when (@breakpoint = desktop-wide){
+    body.responsive.wide-screen-support&{
+        @media (min-width: @desktop-wide-breakpoint) {
+            @rules();
+        }
+    }
+}
+
+.media-query-chained(@breakpoint, @rules) when (@breakpoint = desktop-small){
+    body.responsive&{
+        @media (min-width: @desktop-breakpoint) and (max-width: (@desktop-wide-breakpoint - 1)) {
+            @rules();
+        }
+    }
+}
+
+.media-query-chained(@breakpoint, @rules) when (@breakpoint = mobile){
+    body.responsive&{
+        @media (max-width: @mobile-breakpoint) {
+            @rules();
+        }
+    }
+}
+
+/**
+ * for last parameter @withMediaQuery, passing true does output media-query
+ */
+.mobile-column(@numCols, @end: false, @withMediaQuery: true) when (@withMediaQuery = true){
+    .media-query(mobile,{
+        .mobile-column(@numCols, @end, false);
+    });
+}
+
+/**
+ * for last parameter @withMediaQuery, passing false does NOT output media-query
+ */
+.mobile-column(@numCols, @end: false, @withMediaQuery: true) when (@withMediaQuery = false){
+    .column(@numCols * @mobile-columns, @end);
+}
+
+/**
+ * for last parameter @withMediaQuery, passing true does output media-query
+ */
+.mobile-full-columns(@withMediaQuery: true) when (@withMediaQuery = true){
+    .media-query(mobile,{
+        .mobile-full-columns(false);
+    });
+}
+
+/**
+ * for last parameter @withMediaQuery, passing false does NOT output media-query
+ */
+.mobile-full-columns(@withMediaQuery: true) when (@withMediaQuery = false){
+    .mobile-column(4, true, false);
+    clear: both;
+    float: none;
+}
+
+.mobile-content-well(@withMediaQuery: true) when (@withMediaQuery = true){
+    .media-query(mobile,{
+        .mobile-content-well(false);
+    });
+}
+
+.mobile-content-well(@withMediaQuery: true) when (@withMediaQuery = false){
+    width: 100%;
+    max-width: 100%;
+    padding: 0 @mobile-gutter;
+}
+
+.content-well-wide(@withMediaQuery: true) when (@withMediaQuery = true){
+    .media-query(desktop-wide,{
+        .content-well-wide(false);
+    });
+}
+
+.content-well-wide(@withMediaQuery: true) when (@withMediaQuery = false){
+    position: relative;
+    width: @max-wide-screen-width;
+    margin: 0 auto;
+    padding: 0 64px;
+}
+
+.non-responsive(@rules){
+    body:not(.responsive) &{
+        @rules();
+    }
+}
+
+.mobile-hider{
+            .media-query(mobile, {
+                display: none !important;
+            });
+}      
+.mobile-visible{
+            .media-query(mobile, {
+                display: block !important;
+            });
+             display: none !important;
+}
+.general-listing-wrapper.loading.loading.mobile-hider{
+            .media-query(mobile, {
+                display: none !important;
+            });
+}

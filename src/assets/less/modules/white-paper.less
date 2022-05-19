@@ -1,0 +1,44 @@
+.te-abstract {
+    background-color: @te-cool-grey-5;
+    border-top: 1px solid @te-cool-grey-10;
+    border-bottom: 1px solid @te-cool-grey-10;
+    margin-bottom: 50px;
+     .media-query(mobile,{
+         margin-bottom: 0px;
+    });
+}
+
+.overview-accordion-link{
+     .media-query(mobile,{
+         margin-bottom: 25px;
+    });
+}
+
+.white-paper-container {
+	.hero-white-paper {
+		.te-white-paper-hero {
+			.container {
+				border: 0;
+			}
+		}
+	}
+	.te-abstract {
+		border: 0;
+	}
+	.te-promo-content {
+		.te-promo {
+			&.te-promo-crafted {
+				&.small {
+					.promo-content {
+						border: 1px solid @te-cool-grey-10;
+					}
+				}
+				&.medium {
+					.container {
+						border: 1px solid @te-cool-grey-10;
+					}
+				}
+			}
+		}
+	}
+}

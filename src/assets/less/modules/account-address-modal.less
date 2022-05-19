@@ -1,0 +1,765 @@
+//Account Page Modal Window - Style
+.add-new-address {
+    width: 645px;
+    min-height: 323px;
+    left: 390px;
+    top: 70px;
+    position: absolute;
+}
+
+.checkout-modal {
+    margin: auto (@h_space*1.4) auto (@h_space*3);
+    height: 515px;
+    overflow-y: scroll;
+    &.payment{
+        margin: auto (@h_space*0.8) auto (@h_space*3);
+        max-height: 515px;
+        height: 80vh;
+        overflow: inherit;
+        #payment-form{
+            float: left;
+            width: 100%;
+            .media-query(mobile, {
+                padding-bottom: 9px;
+            });
+        }
+    }
+    &.add-ship-addr {
+        overflow-y: inherit;
+        .chk-holder-container{
+           .media-query(mobile, {
+                padding-bottom: 0;
+            });
+           .chk-holder{
+                padding-bottom: 6px;
+                padding-top: 5px;  
+                .media-query(mobile, {
+                    padding-top: 0;
+                });             
+            }
+            &:first-child{
+                .chk-holder{
+                    .media-query(mobile, {
+                        padding-top: 3px;
+                    });
+                }
+            }
+        }
+        .content-container {
+            margin: 12px 0 0 0;
+            width: 100%;
+            .media-query(mobile, {
+                margin: 11px 0 9px 0;
+            });
+            .margin-bottom {
+                width: 308px;
+                margin-right: (@h_space*0);                
+                &:nth-child(odd){
+                    margin-right: (@h_space*2.3);
+                }
+                label {
+                    margin-bottom:6px !important;
+                    &.error {
+                        margin-bottom:1px !important;
+                        .media-query(mobile, {
+                            margin-bottom:1px !important;
+                            padding-top: 1px;
+                        });
+                    }
+                    &.address1-label{//STB-1194 Fix
+                        margin-bottom:2px!important;
+                    }
+                    
+                }
+                .media-query(mobile, {
+                    width:100%;
+                });
+                
+                &.state-col{
+                    width: 188px;
+                    margin-right: 23px;
+                }
+                &.zip-col{
+                    width: 175px; 
+                    margin-right: 0;
+                }               
+                
+            }
+            .row-item{
+                width:100%;
+                float:left;
+            }
+            input.error {
+                margin-top: 0px;
+            }
+            .zip-width{
+                width:100%;
+            } 
+            .state-width{
+                width:100%;
+            }
+        }
+    }
+    .media-query(mobile, {
+        margin: 0 7vw;
+        height: auto;
+        overflow: inherit;
+        padding-bottom: 5px;
+    });
+
+    .modal-header {
+        .text-25();        
+        color: @te-dark-grey;
+        .font-lineheight(24,28);
+        .media-query(mobile, {
+            padding: 25px 0 0;
+        });
+    }
+    h2 {
+        padding: 30px 20px 12px 0;
+    }
+    .addressShippingError {
+        color: @te-red;
+        float: right;
+        padding-right: 12px;
+        padding-top: 6px;
+        .media-query(mobile, {
+            padding-right: 0;
+            padding-top: 7px;
+        });
+    }
+    .addAdressToolTip{
+        .media-query(mobile, {
+            float: left;
+            margin-top: 8px;
+        });        
+    }
+    .default-address-note {
+        .text-96();
+        color: @te-dark-grey-65;
+        .font-lineheight(12,18);
+        float: left;
+        padding-right: @v_space;
+        .media-query(mobile, {
+            margin: 6px 0 14px 0;
+            width: 92%;
+            color: @te-dark-grey;
+        });
+    }
+    .rel-wrapper {
+        position: relative;
+    }
+    .content-container {
+        margin: (@v_space*0.3) 0 0 0;
+        float: left;
+        width: 100%;
+        .media-query(mobile, {
+            margin: 10px 0;
+            float: none;
+            width: 100%;
+        });
+        label {
+            display: block;
+            .text-70();
+            color: @te-dark-grey;
+            .font-lineheight(14,22);
+            margin: 0 0 7px 0;
+            .media-query(mobile, {
+                margin: 0px 0 7px 0;
+            });
+        }
+        .hidden{
+            opacity: 0;
+            position: absolute;
+            top: -9999px;
+        }
+        .margin-bottom{
+            div:first-child{
+                .text-70();
+                .font-lineheight(14,22);
+                color: @te-dark-grey;
+                margin: 0px 0 6px 0;
+                .media-query(mobile, {
+                    margin: 0 0 6px 0;
+                });
+            }
+            .altPayLabel {
+                margin: 0px !important;
+                span {
+                    display: block;
+                    width: 360px;
+                    .text-96();
+                    .font-lineheight(12, 28);
+                    color: @te-cool-grey-9;
+                    &.autMsg{
+                    margin: 3px 0 0;
+                        .media-query(mobile, {
+                            width: 100%;
+                            margin: 2px 0 5px;
+                        });
+                    }
+                    .media-query(mobile, {
+                        width: 100%;
+                        margin: 2px 0 5px;
+                    });
+                }
+                .media-query(mobile, {
+                    margin-top:0px !important;
+                });
+                &.adjst{
+                	.media-query(mobile, {
+                        margin-top:-1px !important;
+                    });
+                }
+            }
+            &.clearFirstName {
+                clear:both !important;
+            }
+            &.city-width, &.phone-col{
+                width: 227px;
+            }
+            &.country-col{
+                width: 188px;
+                .country-width{
+                    width:100%;
+                }
+            }
+        }
+        .paySecureMsgAdj {
+            margin-bottom: (@v_space*2);
+            .media-query(mobile, {
+                margin-bottom: @v_space;
+            });
+            .fa-lock {
+                padding:(@v_space*0.5) (@h_space*1) (@v_space*1) 0;
+                float: left;
+                font-size: 20px;
+                color: @te-dark-grey;                
+                .media-query(mobile, {
+                    padding:(@v_space*0.5) (@h_space*1) (@v_space*5.2) 0;
+                });
+            }
+            span {
+                .text-96();
+                .font-lineheight(12, 18);
+                color: @te-cool-grey-9;
+                width: 84%;
+                display: inline-block;
+                .media-query(mobile, {
+                    width: 299px;
+                    display: inline;
+                });
+            }
+        }
+        #cardCvv {
+            margin-top: 6px;
+            margin-bottom: 14px;
+            &.error {
+                margin-bottom: 0px !important;
+            }
+            .media-query(mobile, {
+                margin-top: 1px;
+                margin-bottom: 0px;
+            });
+        }
+        input {
+            display: inline;
+            margin: 0;
+            height: 30px;
+            padding: 7px;
+            font: 400 14px 'Avenir','Avenir W02',Arial,Helvetica,sans-serif;
+            font-size: 0.875rem;
+            color: @te-dark-grey;
+            box-shadow:unset;            
+            .media-query(mobile, {
+                .text-40();
+                box-shadow:unset;
+            });
+            &.cc_type_master ~ .image-show {
+                    background: url(../../images/mastercard_New.svg) 97% 4px no-repeat;
+                    background-size: auto 60%;
+            }
+            &.cc_type_visa ~ .image-show {
+                background: url('../../images/visa.svg') 97% 4px no-repeat;
+                background-size: auto 60%;
+            }
+            &.cc_type_amex ~ .image-show {
+                background: url(../../images/amex.svg) 97% 4px no-repeat;
+                background-size: 20px 60%;
+            }
+            &.cc-error {
+                border: 1px solid @te-red;
+                color: @te-red;
+            }
+        }
+        .image-wrapper{
+            position: relative;
+            .image-show{
+                width:30px;
+                height:27px;
+                position: absolute;
+                right:7px;
+                top:2px;
+            }
+        }
+        select {
+            margin: 0;
+            .text-62();
+            .font-lineheight(14, 22);
+            color: @te-dark-grey;
+            display: inline;
+            width: 380px;
+            height: 30px;
+            padding: 5px;
+            &.error{
+                border: 1px solid @te-red;
+            }
+            -webkit-appearance: menulist-button;
+             .media-query(mobile, {
+                width: 100%;
+            });
+        }
+        .input-width {
+            width: 100%;
+            .media-query(mobile, {
+                width: 100%;
+            });
+        }
+        .form-messages{
+            .text-90();
+            .font-lineheight(12,18);
+            display: inline-block;
+            margin-top: 0px;            
+            &.po-apo-message{
+                margin-bottom: 6px;
+            }            
+        }
+        .input-width-override {
+            width: 100%;
+            .media-query(mobile, {
+                width: 100%;
+            });
+        }
+        .state-width {
+            width: 140px;
+            margin-bottom:0 !important;
+            .media-query(mobile, {
+                width: 100%;
+            });
+        }
+        .exp-width{
+            width: 145px;
+            margin-right: (@h_space*1.7);
+            margin-bottom: 0 !important;
+        }
+        #expMonth,
+        #expYear {
+            .media-query(mobile, {
+                width: 48%;
+                float: left;
+                margin-right: 0;
+            });
+        }
+        #expMonth{
+            .media-query(mobile, {
+                margin-right: @h_space;
+            });
+        }
+        .zip-width {
+            width: 215px;
+            margin-right: 0;
+            .media-query(mobile, {
+                width: 100%;
+            });
+        }
+        .calender-date {
+            width: 84px !important;
+            margin-right: 10px;
+            text-transform: capitalize;
+        }
+        .calender-year {
+            width: 74px;
+            text-transform: capitalize;
+        }
+        .margin-bottom {
+            margin: 0 0 12px 0;
+            float: left;
+            width: 100%;
+            .media-query(mobile, {
+                margin: 0 0 11px 0;
+            });
+            &.payment-section{
+                width: 308px;
+                float: none;
+                .media-query(mobile, {
+                    width:100%;
+                });
+                .card-input{
+                    width: 145px;
+                    .media-query(mobile, {
+                        width:100%;
+                    });
+                }
+                &.cardholdername-width{
+                    width: 390px;
+                }
+                &.cardcvv-width{
+                    .input-width{
+                        width:145px;
+                        .media-query(mobile, {
+                            width:155px;
+                        });
+                    }
+                }
+            }
+            &.card-exp-section{
+                label.error{
+                    clear: left;
+                    padding-top: 2px;
+                }
+            }
+            &.payment-addr-section{
+                width: 308px;
+                margin-right: (@h_space*0);
+                &:nth-child(odd){
+                    margin-right: (@h_space*2.3);
+                }
+                &.country-col{
+                    width: 188px;
+                    float: none;
+                }
+                &.city-width{
+                    width: 227px;
+                    margin-right: (@h_space*2.3); 
+                    clear: left;
+                }
+                &.state-col{
+                    width: 188px;
+                    margin-right: (@h_space*2.3);
+                    .media-query(mobile, {
+                        width:100%;
+                        margin-right: 0;
+                    });
+                }
+                &.zip-col{
+                    width: 174px;
+                    margin-right: 0;
+                    .zip-width{
+                        width: 100%;
+                    }
+                }
+                
+                .media-query(mobile, {
+                    width:100%;
+                });
+               .state-width{
+                    width: 188px;
+                   .media-query(mobile, {
+                        width:100%;
+                    });
+                } 
+            }
+        }
+        input.error {
+            color: @te-red;
+            border: 1px solid @te-red;
+            .media-query(mobile, {
+                .text-62();
+                margin-top: 0;
+            });
+        }
+        label.error, span.error, div.stateError {
+            .text-70();
+            .font-lineheight(14,22);
+            color: @te-red;
+            margin-top: 2px;
+            margin-bottom: 0 !important;
+            .media-query(mobile, {
+                padding-top: 1px;
+            });
+        }
+        .valid-card-info-section{
+            p{
+                .text-96();
+                .font-lineheight(12,18);
+                color: @te-cool-grey-9;
+            }
+            .card-info-img {
+                .column(6);
+                margin-right: 0;
+                .media-query(mobile, {
+                    float: none;
+                    width: 100%;
+                    padding-top: 25px;
+                    padding-bottom: 14px;
+                });
+                padding:(@v_space*1.2) 0 0 0;
+                ul {
+                    float:left;
+                    .media-query(mobile, {
+                        float: none;
+                    });
+                    li {
+                        display: inline-block;
+                        margin-right: 5px;
+                        &.master-card-icon {
+                            background: url('../../images/mastercard_New.svg') 0 0 no-repeat;
+                            width: 48px;
+                            height: 40px;
+                            background-size: 100%;
+
+                        }
+                        &.visa-icon {
+                            background: url('../../images/visa.svg') 0 0 no-repeat;
+                            width: 48px;
+                            height: 40px; 
+                            background-size: 100%;
+                        }
+                        &.amex-icon {
+                            background: url('../../images/amex.svg') 0 0 no-repeat;
+                            width: 48px;
+                            height: 40px;
+                            background-size: 100%;
+                        }
+                    }
+                }
+            }
+            .altPayLabel {
+                margin: 0px !important;
+                span {
+                    display: block;
+                    margin: 5px 0 0;
+                    width: 100%;
+                    .text-96();
+                    .font-lineheight(12, 18);
+                    color: @te-cool-grey-9;
+                    
+                    .media-query(mobile, {
+                        width: 100%;
+                        margin: 2px 0 5px;
+                    }
+                    );
+                }
+                .media-query(mobile, {
+                    margin-top:0px !important;
+                });
+                &.adjst{
+                	.media-query(mobile, {
+                        margin-top:-1px !important;
+                    });
+                }
+            }
+        }
+    }
+    .chk-holder-container {
+        &.first{
+            margin-top:8px;
+            margin-bottom: 6px;
+        }
+        margin:6px 40px 4px 0;
+        float: left;
+        width: 90%;
+        &:first-child {
+            margin-top:10px !important;
+        }
+        .media-query(mobile, {
+            width: 100%;
+            margin: 0;
+            float: none;
+            padding-bottom: 5px;
+        });
+        &.margin {
+            margin: 1px 40px 12px 0px;
+            .media-query(mobile, {
+                margin: 0;
+                float: left;
+                width: 100%;
+            });
+        }
+        &.savedefault {
+            margin-top:10px !important;
+            margin-bottom: 5px !important;
+            .media-query(mobile, {
+                margin-top:10px !important;
+            });
+        }
+        .chk-holder {
+            float: left;
+            width: 90%;
+            height: 18px;
+            margin-right: 10px;
+            .custom-tick-checkbox();
+            .media-query(mobile, {
+                float: none;
+                width: 100%;
+                height: auto;
+                padding-top: 2px;
+            });
+            label{
+                .text-62();
+                color: @te-dark-grey;
+            }
+            .billingTypeLabel{
+            	.media-query(mobile, {
+	                margin: 0 0 10px 0;
+                    width: 98%;
+            	});
+            }
+        }
+    }
+    .payment-billing-address-details{
+        clear: both;
+        margin: 0 0 0 (@h_space*2.8);
+        p{
+            .text-62();
+            color: @te-dark-grey;
+            .font-lineheight(14,22);
+            margin-bottom: (@v_space*0.4);
+        }
+    }
+    .cta-container {
+        float: right;
+        width: 100%;
+        margin: 10px 0 20px 0;
+        display: inline-block;
+        .media-query(IE, {
+            padding-bottom: 20px;
+        });
+        .media-query(mobile, {
+            width: 100%;
+            float: none;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0;
+
+            .sheathfloatleft {
+                float: none;
+                width: 100%;
+                &:first-child{
+                    padding-top: 20px;
+                    order: 1;
+                }
+            }
+        });
+        .sheathfloatleft {
+            float: none;
+        }
+        .secondary-cta-pos {
+            float: left;
+            margin-right: 27px;
+        }
+        .secondary-cta {
+            background: @te-white;
+            width: 230px;
+            display: inline-block;
+            padding: 16px 0;
+            box-shadow: 1px 1px 1px @te-cool-grey-35;
+            border: 1px solid @te-cool-grey-10;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            .text-80();
+            .media-query(mobile, {
+                width: 100%;
+                margin-right: 0;
+                margin-top: 0;
+                margin-bottom: 20px;
+            });
+        }
+        .primary-cta {
+            float: left;
+            cursor: pointer;
+        }
+        .btn-override {
+            width: 310px;
+            margin: 0 auto;
+            float: none;
+            margin-bottom: 20px;
+            span{
+                width: 220px;
+                .media-query(mobile, {
+                    width: 100%;
+                });
+            }
+            .media-query(mobile, {
+                width: 100%;
+                margin-bottom: 0px;
+            });
+        }
+        .top-margin {
+            margin-top: 20px;
+        }
+        .teloading{
+            &.loading{
+                &:before{
+                    margin-top: 0 !important;
+                }
+            }
+        }
+    }
+    &.payment{
+        .media-query(mobile, {
+            margin: 0 16px 0 15px;
+            max-height: inherit;
+        });        
+        .exp-width{
+            float: left;
+            #expMonth, #expYear{
+                width: 100%;
+            }
+            span{
+                display: inline-block;
+                .text-70();
+                .font-lineheight(14,22);
+                color: @te-dark-grey;
+                margin: 0px 0 6px 0;
+            }
+            .media-query(mobile, {
+                width: 45%;
+                margin-right: 30px;
+                #expMonth, #expYear{
+                    width: 100%;
+                }
+                span{
+                    display: block;                    
+                }
+            });
+        }
+    }
+    .warnings {
+        border: 1px solid @te-red;
+    }
+    .warning-msg {
+        color: @te-red;
+        margin-top: 5px;
+    }
+}
+
+
+// global class to hide in modal
+.always-hidden{
+    display: none !important;
+}
+
+.no-mar-rt{
+    margin-right: 0 !important;
+}
+#modal-body.small-15{
+    height: auto;
+    #modal-content{
+        height: 80vh;
+        max-height: 515px;            
+    }
+    .media-query(mobile, {
+        #modal-content{
+            height: 100%;
+            max-height: 100%;
+            background: @te-cool-grey-10 !important;
+            padding-bottom: 0;// STB-299 fix
+        }
+    });
+}
+.clearfix{
+    clear:both;
+}

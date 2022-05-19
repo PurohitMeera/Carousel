@@ -1,0 +1,121 @@
+// Grids
+.wrapper {
+    .column-wrapper();
+    .clearfix();
+    .media-query(mobile,{
+        max-width: 100%;
+    });
+}
+
+.wrapper > *:last-child {
+    margin-right: 0;
+}
+
+.wrapper-grey {
+    .wrapper-grey();
+}
+
+.content-well {
+    .content-well();
+    .mobile-content-well();
+}
+@media (min-width: @max-wide-screen-width) {
+  body.responsive.wide-screen-support .content-well {
+    position: relative;
+    width: @max-wide-screen-width;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+}
+
+/*----Full width breakpoints starts here---*/
+body.responsive.full-screen-support .content-well{
+    width:100%;
+    padding: (@v_space*0) (@h_space*4);    
+}
+@media (min-width: @desktop-wide-breakpoint) {
+  body.responsive.wide-screen-support.full-screen-support .content-well {
+    width: 100%;
+    padding: (@v_space*0) (@h_space*4);
+  }
+}
+@media (min-width: @desktop-breakpoint) and (max-width: @desktop-max-breakpoint) {
+  body.responsive.full-screen-support .content-well {
+    width: 100%;
+    padding: (@v_space*0) (@h_space*4);
+  }
+}
+@media (max-width: @mobile-breakpoint) {
+  body.responsive.full-screen-support .content-well {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 7vw;
+  }
+}
+/*----Full width breakpoints ends here---*/
+
+// Parsys (CQ5 Paragraph System)
+.editorial-parsys {
+    .floating-wrapper {
+        width: auto;
+        float: left;
+    }
+}
+
+//parsys two column
+.two-col-parsys{
+    .two-col-container{
+        float: left;
+        .media-query(mobile,{
+            width: 100%;
+        });
+    }
+}
+.two-col-parsys.editmode{
+    width: 100%;
+    display: table;
+    .two-col-container{
+        display: table-cell;
+        width: 50%;
+    }
+} 
+
+//moves an item to offscreen, but keeps accessiblity to item.
+.off-screen {
+    position: absolute;
+    left: -100px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+// Custom hint usage that's not using parsys
+.template-editorial-hint{
+    .custom-editorial-hint();
+}
+
+#target-container {
+    padding-top: 0;
+    vertical-align: top;
+}
+.te-page{
+    .media-query(mobile,{
+        overflow: hidden;
+    });
+}
+
+//scrollbar
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+    background-color: @te-cool-grey-5;
+}
+  
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgb(192,192,192);
+}

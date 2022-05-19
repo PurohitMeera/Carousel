@@ -1,0 +1,100 @@
+.cmp-interrupter-bar {
+    background: @te-updated-cool-grey;
+    color: @te-updated-dark-blue;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    .media-query(mobile, {
+        flex-direction: column;
+        height: 100%;
+    });
+    &.style2 {
+        background: @te-updated-dark-blue;
+        color: @te-updated-cool-grey;
+    }
+    &__image {
+        overflow-y: hidden;
+        width: 375px;
+        height: auto;
+        flex: none;
+        .media-query(mobile, {
+            height: 240px;
+            overflow: hidden;
+            width: 100%;
+        });
+        img {
+            width: 375px;
+            .media-query(mobile, {
+                width: 100%;
+            });
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        justify-content: space-evenly;
+        width: 100%;
+        .media-query(mobile, {
+            justify-content: inherit;
+            flex-direction: column;
+            margin: auto;
+            padding: 30px 25px;
+        });
+    }
+    &__heading {
+       margin: auto 0;
+       align-self: center;
+       max-width: 500px;
+        .media-query(desktop-small, {
+            align-self: center;
+        });
+        .media-query(mobile, {
+            margin: 0;
+            width: 100%;
+            align-self: auto;
+        });
+        h3 {
+            .ff-1(@px-size: 28; @weight:400;@variant:'Avenir Roman');
+            line-height: 30px;
+            text-align: left;
+            .media-query(mobile, {
+                text-align: center;
+            });
+        }
+    }
+    &__cta {
+        margin: auto 0;
+        align-self: center;
+        .media-query(desktop-small, {
+            align-self: center;
+        });
+        .media-query(mobile, {
+            display: flex;
+            margin: 45px 0 35px 0;
+            align-self: auto;
+        });
+    }
+    .te-cta-button {
+        display: inline-block;
+        background: @te-updated-orange;
+        min-width: 176px;
+        height:  auto;
+        .ff-1(@px-size: 16; @weight:800;@variant:'Avenir Heavy');
+        line-height: 18px;
+        width: auto;
+        padding: 15px 20px;
+        text-align: center;
+        color: @te-white;
+        .media-query(mobile, {
+            margin: auto;
+        });
+        &:hover {
+            background: @te-updated-orange-hover;
+        }
+        .media-query(desktop-small, {
+            white-space: inherit;
+            height: auto;
+        });
+    }
+}

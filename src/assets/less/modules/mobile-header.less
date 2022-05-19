@@ -1,0 +1,700 @@
+.media-query(mobile, {
+    #modal-bg{
+        &.modal-hamburger{
+            top: @mobile-header-height;
+        }
+    }
+    .modalHeight{
+        height: auto !important;
+    }
+    .modal__mobile-header {
+        background-color: @te-dark-grey-98;
+
+        #modal-title {
+            background-color: @te-dark-grey-94;
+            color: @te-light-blue;
+            height: @mobile-hamburger-modal-header-height;
+        }
+        #modal-content {
+            background-color: @te-dark-grey-98;
+            height: @mobile-hamburger-modal-content-height;
+            margin-top: @mobile-hamburger-modal-header-height;
+        }
+        
+        .icon[role="presentation"] {
+            &.icon-close {
+                &.icon-close {
+                    font-size: 31px;
+                }
+            }
+        }
+        &--search {
+            #modal-title {
+                color: @te-white;
+                .text-27();
+            }
+            .modal-close{
+                top: 21px !important;
+            }
+            #modal-content{
+                background-color: @te-cool-grey-5;
+                padding-bottom: 0;
+            }
+            /*#modal-content {
+                padding: 0 @mobile-gutter;
+            }*/
+            .search-resizing-container{
+                background-color: @te-dark-grey-94;
+            }
+            #search-input {
+                .text-30();
+                .font-lineheight(18,24);
+                color:@te-dark-grey;
+                width: 86%;                
+                padding: (@v_space*2.5) (@h_space*4.2) (@v_space*2.5)  (@h_space*2);
+                margin: 0 @mobile-gutter 20px;
+            }
+            #search-suggestions {
+                display: none;
+                background-color: @te-cool-grey-5;/*
+                padding-bottom: 15px;*/
+                position: relative;
+                z-index: 2;
+                .text-34();                
+                &.recent-searches-container{
+                    padding-bottom: 0px;
+                    border-top: 1px solid @te-dark-grey-98;
+                }
+                ul{                    
+                    li{
+                        &.suggestions-item{
+                            background-color: @te-dark-grey-98;
+                            color: #ffffff;
+                            border-bottom: 1px solid @te-dark-grey-94;
+                            cursor: pointer;
+                            width: 100% !important;
+                            &:hover,
+                            &:focus {
+                                background-color: @te-light-pale-blue;
+                            }
+                            a{
+                                display: block;
+                                color: @te-white;
+                                padding: 20px @mobile-gutter;
+                                line-height: 1.25em;
+                                &:focus{
+                                    background-color: @te-light-pale-blue;
+                                    border: none;
+                                }                           
+                            }
+
+                            em {
+                                .text-42();
+                            }
+                        }
+                        &.recent-search-item{                            
+                            color: @te-dark-grey;                            
+                            border-bottom: 0px solid #4a4f55;
+                            background-color: transparent;
+                            a{
+                                .text-62();
+                                .font-lineheight(14,22);
+                                padding:(@v_space*0.5) (@h_space*0) (@v_space*0.5) (@h_space*4);
+                                color: @te-dark-grey; 
+                            }
+                            &.recent-search-title{                                
+                                .text-44();
+                                .font-lineheight(16,24);
+                                color:@te-cool-grey-9;                                
+                                background-color: transparent;
+                                display: block;                                                               
+                                cursor:default;                                
+                                padding:(@v_space*3) (@h_space*0) (@v_space*0.5) (@h_space*3);
+                            }
+                            &.clear-recent-search{                                
+                                color:@te-blue;
+                                background-color: transparent;
+                                border-bottom: 0px solid #4a4f55;                                
+                                #clear-recent-search{
+                                    color:@te-blue;
+                                    .text-44();
+                                    .font-lineheight(16,24);
+                                    padding:(@v_space*0.5) (@h_space*0) (@v_space*2)  (@h_space*3);
+                                }
+                                &:hover,
+                                &:focus {
+                                    background-color: transparent;
+                                    color:@te-blue;
+                                }
+                            }
+                        }
+                    }
+                }
+                .search-suggestion-inner-wrapper{
+                    .no-of-search-results{
+                        .text-44();
+                        .font-lineheight(16,24);
+                        color:@te-dark-grey;                        
+                        padding:(@v_space*3) (@h_space*3) (@v_space*0.5);
+                    }
+                    .suggestion-category{
+                        .text-44();
+                        .font-lineheight(16,24);
+                        color:@te-cool-grey-9;  
+                        padding:(@v_space*1.5) (@h_space*3) (@v_space*0.5);
+                    }
+                    .suggestions-item {
+                        border-bottom: 0px solid #4a4f55;
+                        background-color: @te-cool-grey-5;
+                        a{                            
+                            .text-62();
+                            .font-lineheight(14,22);
+                             color:@te-dark-grey;
+                            padding:(@v_space*0.5) (@h_space*4) (@v_space*0.5);
+                            em{
+                                .text-80(); 
+                            }  
+                        }
+                        
+                    }
+                }
+            }
+            #type-ahead-wrapper{
+                display: none !important;
+            }
+            form {
+                position: relative;
+            }
+            .fa-search {
+                position: absolute;
+                right: 10vw;
+                .center-content(vertical);
+                font-size: 25px;
+                top: 40px !important;
+            }
+            input[type='submit'] {
+                position: absolute;
+                width: 55px;
+                height: 75px;
+                opacity: 0;
+                top: 0;
+                right: 6vw;
+            }
+            [data-aria-wrapper] {
+                width: 100% !important;
+            }
+        }
+        &--hamburger {
+            &.modal__mobile-header{
+                background-color: @te-dark-grey-94;
+            }
+            &#modal-body{
+                .modal-close{
+                    top: -@mobile-header-height;
+                    background-color: @te-dark-grey-94;
+                    padding-top: 5px;
+                    height: (@mobile-header-height + 1);
+                    right: 11px;
+                    width: 55px;
+                    i.close{
+                        font-size: 1.467em;
+                        display: block;
+                        line-height: 1.8em;
+                    }
+                }
+            }
+            #modal-title{
+                display: none;
+            }
+            .icon[role="presentation"] {
+                &.icon-close {
+                    &.icon-close {
+                        font-size: 20px;
+                    }
+                }
+            }
+            #modal-content{
+                margin-top: 5px;
+                padding-bottom: 0px;
+                height: @mobile-hamburger-modal-body-height;
+            }
+            .panel-slider-container{
+                width:300vw;
+                background-color:@te-white;
+                overflow:hidden;
+                position: relative;
+                min-height: ~"calc(100vh - " 50px ~")";
+                
+                &.slide-2{
+                    .panel-sliders{
+                        left: -100vw;
+                    }
+                }
+                &.slide-3{
+                    .panel-sliders{
+                        left: -200vw;
+                    }
+                }
+                
+                .panel-sliders{
+                    position: relative;
+                    left: 0;
+                    .transition(left @te-speed-2 ease-out);
+                    
+                    .panel-slide-1-content,
+                    .panel-slide-2-content,
+                    .panel-slide-3-content{
+                        height: ~"calc(100vh - " 50px ~")";
+                        overflow-y: auto;
+                        float: left;
+                        width: 100vw;
+                    }
+                    
+                    .panel-slide-1-content{
+                        ul.items-top{
+                            padding: 31px 0 24px;
+                            background-color: @te-cool-grey-5;
+                            li{
+                                &:last-child{
+                                    margin-bottom: 0
+                                }
+                            }
+                        }
+                        ul.items-bottom{
+                            padding: 29px 0;
+                            background-color: @te-cool-grey-10;
+                            li{
+                                &:last-child{
+                                    margin-bottom: 0
+                                }
+                            }
+                        }
+                        li {
+                            line-height: 26px;
+                            margin-bottom: 38px;
+                            &.track-order{
+                                margin-bottom: 30px;
+                            }
+                            &.chat-phone-email-section{
+                                background-color: @te-cool-grey;
+                                padding: 30px 7vw 0;
+                                margin-bottom: 0;
+                                line-height: 0;
+                                &.marginBtm{
+                                    margin-bottom: 60px;
+                                }
+                                ul{
+                                    li{
+                                        &.we-are{
+                                            .text-22();
+                                            .font-lineheight(22,24);
+                                            color: @te-white;
+                                            padding-bottom:4px;
+                                            margin-bottom: 0;
+                                        }
+                                        &.experts{
+                                            .text-70();
+                                            .font-lineheight(14,22);
+                                            color: @te-white;
+                                            padding-bottom: 13px;
+                                            margin-bottom: 0;
+                                        }
+                                        &.phone,&.liveChat,&.envelope{
+                                            .text-120();
+                                            .font-lineheight(22,24);
+                                            color: @te-white;
+                                            padding-bottom: 20px;
+                                            margin-bottom: 0;
+                                            i{
+                                                padding-right: 12px;
+                                                font-size: 18px;
+                                                float: none;
+                                                color: @te-white;
+                                                &.fa-phone{
+                                                    font-size: 20px;
+                                                    padding: 0;
+                                                    margin-right: 12px;
+                                                    transform: rotate(90deg);
+                                                }
+                                            }
+                                            a{
+                                                padding: 0;
+                                                display: inline;
+                                            }
+                                            
+                                        }
+                                        &.liveChat{
+                                            display: inline-block;
+                                        }
+                                        &.envelope{
+                                            padding-bottom: 30px;
+                                        }
+                                        &.phone,&.envelope{
+                                            a,span{
+                                                color: @te-white;
+                                                .text-120();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            a {
+                                display: block;
+                                padding: 0 @mobile-gutter;
+                                color: @te-dark-grey;
+                                
+                                span{
+                                    .text-26();
+                                }
+                                i{
+                                    float: right;
+                                    font-size: 28px;
+                                    color: @te-cool-grey
+                                }
+                            }
+                            &[data-highlight-item=true]{
+                                background-color: @te-dark-grey-94;
+                            }
+                            
+                            &#hamburger-testore{
+                                a{
+                                    color: @te-orange; 
+                                    span{
+                                        .text-22();
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    .panel-slide-2-content, .panel-slide-3-content{
+                        .panel-slide-2-item, .panel-slide-3-item{
+                            .slide-item-head{
+                                padding: 0 @mobile-gutter;
+                                position: relative;
+                                width: 100vw;
+                                top: 0px;
+                                background-color: @te-cool-grey-5;
+                                height: 67px;
+                                border-bottom: 1px solid @te-cool-grey-10;
+                                .clearfix();
+                                .slide-back, .slide-back-3{
+                                    width: 16.4%;
+                                    float:left;
+                                    margin-top: 29px;
+                                    i{
+                                        color: @te-cool-grey;
+                                        font-size: 28px;
+                                    }
+                                }
+                                .slide-item-tabs{
+                                    width: 83.5%;
+                                    float: left;
+                                    
+                                    .tab {
+                                        text-transform: uppercase;
+                                        .text-44();
+                                        color: @te-blue;
+                                        float: left;
+                                        margin-top: 16px;
+                                        padding-left: 10px; 
+                                        padding-right: 10px;
+                                        height: 52px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        word-break: break-word;
+                                        &.active{
+                                            background-color: @te-white; 
+                                            color: @te-light-blue;
+                                            border-top: 1px solid @te-cool-grey-10;
+                                            border-right: 1px solid @te-cool-grey-10;
+                                            border-left: 1px solid @te-cool-grey-10;
+                                            border-bottom: none;
+                                        }
+                                        
+                                    }
+                                    [data-tab-name="hamburger-products-tab"]{
+                                        width: 100%;
+                                        max-width: 46.8%;
+                                    }
+                                    [data-tab-name="hamburger-brands-tab"]{
+                                        width: 100%;
+                                        max-width: 39.3%;
+                                    }
+                                    [data-tab-name="hamburger-industries-tab"]{
+                                        max-width: 54.59%;
+                                        width: 100%;
+                                        line-height: 20px;
+                                        text-align: center;
+                                        padding: 0;
+                                    }
+                                    [data-tab-name="hamburger-trends-tab"]{
+                                        max-width: 39.4%;
+                                        width: 100%;
+                                        padding: 0;
+                                        justify-content: center;
+                                    }
+                                    [data-tab-name="hamburger-resources-tab"]{
+                                        max-width: 50%;
+                                        width: 100%;
+                                        text-align: center;
+                                    }
+                                    [data-tab-name="hamburger-mytools-tab"]{
+                                        max-width: 46.3%;
+                                        width: 100%;
+                                        &.hide{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                            .slide-item-body{
+                                padding: 20px @mobile-gutter 40px;
+                                background-color: @te-white;
+                                &.marginBtm{
+                                    margin-bottom: 75px;
+                                }
+                                .tab-panel{
+                                    position: relative;
+                                    display: none;
+                                    padding-bottom: 52px;
+                                    /*&.extra-padding{
+                                        padding-bottom: 200px;
+                                    }*/
+                                    &.active{
+                                        display: block;
+                                    }
+                                    ul{
+                                        &.menu-list-featured{
+                                            padding: 20px 0 0;
+                                        }
+                                        &.menu-list-simple{
+                                            .view-resource a{
+                                                color: @te-blue;    
+                                            }
+                                        }
+                                        li{
+                                            a, .menu1-title{
+                                                .text-44();
+                                                .font-lineheight(16,24);
+                                                color: @te-dark-grey;
+                                                padding: 10px 0px;
+                                                display: block;
+                                            }
+                                        }
+                                        .shop-store{
+                                            a{
+                                                color: @te-white;
+                                                background-color: @te-orange;
+                                                padding: 12px;
+                                                margin-top: 20px;
+                                                display: block;
+                                                text-align: center;
+                                                &:hover,
+                                                &:active,
+                                                &:focus{
+                                                    background-color: @te-dark-orange;
+                                                }
+                                            }
+                                        }
+                                        .menu2{
+                                            display: none;
+                                        }
+                                    }
+                                    &.hamburger-products-tab-panel-2{
+                                        .menu2-header{
+                                            display: block;
+                                            padding: 10px 0px;
+                                            .header{
+                                                color: @te-cool-grey;
+                                                .text-28();
+                                                .font-lineheight(20,26);
+                                            }
+                                            .count{
+                                                color: @te-dark-grey;
+                                                .text-40();
+                                                .font-lineheight(16,24);
+                                            }
+                                        }
+                                        .layer-2{
+                                            a{
+                                                color: @te-dark-grey;
+                                                display: block;
+                                                padding: 10px 0px;
+                                                .text-40();
+                                                .font-lineheight(16,24);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            /*.hamburger-products-tab-panel{
+                                ul.menu-list{
+                                    padding-top: 24px;
+                                    li{
+                                        margin-bottom: 24px;
+                                        &:last-child{
+                                            margin-bottom: 0px;
+                                        }
+                                        a{
+                                            display: table;
+                                            
+                                            .img-wrap{
+                                                width: 70px;
+                                                height: 38px;
+                                                float: left;
+                                                display: table-cell;
+                                            }
+                                            .menu-item-label-wrapper{
+                                                padding-left: 10px;
+                                                height: 38px;
+                                                display: table-cell;
+                                                vertical-align: middle;
+                                                max-width: ~"calc(100% - " 50px ~")";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .hamburger-brands-tab-panel{
+                                ul.brand-list{
+                                    padding-top: 28px;
+                                    padding-bottom: 26px;
+                                    li{
+                                        margin-bottom: 14px;
+                                        line-height: 24px;
+                                        &:last-child{
+                                            margin-bottom: 0px;
+                                        }
+                                    }
+                                }
+                                .view-all-brands{
+                                    line-height: 24px;
+                                    span{
+                                       .text-40();
+                                        color: @te-blue;
+                                    }
+                                    i{
+                                        vertical-align: middle;
+                                        margin-left: 11px;
+                                    }
+                                }
+                            }
+                            .hamburger-industries-tab-panel{
+                                ul.menu-list{
+                                    padding-top: 33px;
+                                    li{
+                                        margin-bottom: 16px;
+                                        line-height: 24px;
+                                        &:last-child{
+                                            margin-bottom: 0px;
+                                        }
+                                        a{
+                                            display: table;
+                                            
+                                            .img-wrap{
+                                                width: 70px;
+                                                height: 38px;
+                                                float: left;
+                                                display: table-cell;
+                                            }
+                                            .menu-item-label-wrapper{
+                                                padding-left: 10px;
+                                                height: 38px;
+                                                display: table-cell;
+                                                vertical-align: middle;
+                                                max-width: ~"calc(100% - " 50px ~")";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .hamburger-trends-tab-panel{
+                                ul.trends-list{
+                                    padding-top: 28px;
+                                    padding-bottom: 27px;
+                                    
+                                    li{
+                                        margin-bottom: 14px;
+                                        line-height: 24px;
+                                        &:last-child{
+                                            margin-bottom: 0px;
+                                        }
+                                    }
+                                }
+                                .view-more-trends{
+                                    line-height: 24px;
+                                    span{
+                                       .text-40();
+                                        color: @te-blue;
+                                    }
+                                    i{
+                                        vertical-align: middle;
+                                        margin-left: 11px;
+                                    }
+                                }
+                            }
+                            .hamburger-resources-tab-panel{
+                                div.menu-list{
+                                    padding-top: 28px;
+                                    li{
+                                        margin-bottom: 15px;
+                                        line-height: 24px;
+                                        &.view-all-resources{
+                                            margin-top: 26px;
+                                            margin-bottom: 0px;
+                                            a{
+                                                span{
+                                                    .text-40();
+                                                    color: @te-blue;
+                                                }
+                                                i{
+                                                    margin-left: 11px;
+                                                    vertical-align: middle;
+                                                    color: @te-blue;
+                                                    &:hover{
+                                                        color: @te-light-blue;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        a{
+                                            .feature-label{
+                                                .text-44();
+                                                color: @te-dark-grey;
+                                                line-height: 24px;
+
+                                            }    
+                                            .feature-description{
+                                                margin-top: 1px;
+                                                .text-62();
+                                                color: @te-cool-grey-9;
+                                                line-height: 22px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .hamburger-mytools-tab-panel{
+                                &.hide{
+                                    display: none;
+                                }
+                                ul.my-tools-list{
+                                    padding-top: 30px;
+                                    li{
+                                        margin-bottom: 20px;
+                                        line-height: 24px;
+                                        &:last-child{
+                                            margin-bottom: 0px;
+                                        } 
+                                    }
+                                }
+                            }*/
+                        }
+                    }
+                }
+            }
+        }
+    }
+});

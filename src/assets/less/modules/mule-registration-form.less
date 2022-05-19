@@ -1,0 +1,296 @@
+#registrationFrom{
+    width: auto;
+    padding: 0;
+
+    .media-query(mobile, {
+        padding: 0;
+    });
+}
+ 
+.registration-form, .registration-form-right {
+    padding: 30px 0 0 0;
+    //margin: 0 -42px;
+    background-color: @te-cool-grey-10;
+    .media-query(mobile,{
+        margin: 0 -@mobile-gutter;
+        background-color: @te-white;
+        padding: 0 @mobile-gutter;
+    });
+    &#registrationFrom{
+        .clearfix();
+        background-color: @te-cool-grey-10;
+        width: auto;
+        .media-query(mobile,{
+            background-color:@te-white;
+            width: 100%;
+            margin: 0 auto;
+        });
+    }
+    .container {
+        .clearfix();
+        padding: 0 20px;
+        margin: 0;
+
+        .media-query(mobile,{
+            padding: 0;
+        });
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+    
+    .error-msg{
+        color: @te-red;
+        display: block;
+        font-size: 16px;
+        line-height: 1.5rem;
+        margin: 0 0 14px 0;
+        font-weight: bold;
+    }
+    .check-box{float: left;}
+    .content-area {
+        float: left;
+        .column(10, true);
+
+        .media-query(mobile,{
+            float: none;
+            width: auto;
+        });
+
+        .two-column {
+            .column-layout(2, 50px, auto);
+            widows: 3;
+
+            html.no-csscolumns & {
+                .column-layout(auto, 0, auto);
+                .clearfix();
+            }
+        }
+
+        &.form-left{
+            float: left !important;
+
+            .parent-div{
+                position: relative;
+            }
+        }
+        
+    }
+
+    h5 {
+        .text-24();
+    }
+
+    h6 {
+        //.text-20();
+        .text-30();
+        color: @te-cool-grey;
+    }
+
+    p {
+        .text-44();
+        .font-lineheight(16,24);
+        color: @te-dark-grey;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        margin-top: -5px;
+    }
+
+    form {
+        input[type="text"], input[type="email"]{
+            margin: (@v_space) 0 (@v_space*1.5);
+            .media-query(desktop-small, {
+            margin: (@v_space*0.3) 0 (@v_space*1.2);
+            });
+            border: none;
+            .text-44();
+            .font-lineheight(16,24);
+            height: 30px;
+            border: 1px solid @te-cool-grey-35;
+            padding: 0;
+
+            .media-query(mobile, {
+                width: 100%;
+                height: 30px;
+                border: 1px solid @te-cool-grey-35;
+            });
+        }
+        
+        input[type="button"] {
+            display:block;
+            margin-bottom: (@v_space*1.9);
+            float:right;
+            text-align:center;
+            //padding:(@v_space*1.5) (@h_space*3.6);
+            font: 400 16px 'Avenir', 'Avenir W02', Arial, Helvetica, sans-serif;
+            .font-lineheight(14,22) !important;
+            .text-80();
+            height: 50px !important;
+            background:@te-blue;
+            color:@te-white;
+            text-transform: uppercase;
+            border: none;
+
+            .media-query(mobile, {
+                float: none;
+                width: 100% !important;
+                height: 50px !important;
+				margin: 0 0 (@v_space);
+                padding:(@v_space*1.5) (@h_space*4.7);
+            });
+
+            &:hover,
+            &:focus,
+            &.active,
+            &:active,
+            &:disabled{
+                background:@te-light-blue;
+            }
+
+            &:before {
+                display: block;
+                text-align:center;
+                font-family: 'te-icon';
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                background:@te-blue;
+                color:@te-white;
+                font-size: 26px;
+                content: "\e619";
+            }
+
+        }
+
+    }
+    .LV_invalid, label.error {
+        color: @te-red;
+        display:block; //display:inline-block;
+        font-size:16px;
+        line-height:1.5rem;
+        margin: 0 0 14px 0;
+    }
+
+}
+.eloqua-form-loading{
+
+     &.ng-cloak{
+        .white-ng-decloak(@min-height:300px);
+         &:before {
+            margin-left: 0;
+         }
+    }
+
+    &.loading {
+        .white-ng-decloak(300px);
+        overflow: hidden;
+        &:before {
+            opacity: 0.12;
+            visibility: visible;            
+        }
+    }
+
+    &.eloqua-delay-loading{
+        .white-ng-decloak(700px);
+        overflow: hidden;
+        &:before {
+            opacity: 0.75;
+            visibility: visible;
+            margin-left: auto;
+            margin-right:auto;
+            position: fixed !important;
+            width: 72.5% !important;
+            top: 0;
+        }
+    }
+  
+    .eloqua-submit-loading{
+        background: @te-cool-grey-7 url('../../images/loading-anim.gif') no-repeat center;
+        background-size: 30px 30px;
+        width:30px;
+        height:30px;
+        float:right;
+        /*margin:29px 7px 0 0;*/
+        display: none;
+        position: relative;
+        top: -7px;
+        left: 10px;
+        .media-query(mobile, {
+            top: 10px;
+        });
+    }
+
+}
+
+.elq-form {
+    .checkbox-span {
+        padding: 10px 0;
+    }
+    .required{
+      color: red !important;
+      display: inline;
+      float: none;
+      font-weight: bold;
+      margin: 0pt 0pt 0pt;
+      padding: 0pt 0pt 0pt;
+    }
+    h2{
+        &.checkbox-span {
+            padding-top: 15px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
+}
+
+.registration-form form .btn-left input[type="submit"],
+.registration-form form .btn-left .eloqua-submit-loading {
+    float: left;
+}
+
+.registration-form input:-webkit-autofill,
+.registration-form input:-webkit-autofill:hover, 
+.registration-form input:-webkit-autofill:focus, 
+.registration-form input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+.registration-form form input[type="password"]{
+    font-size: 1rem;
+    line-height: 1.5;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+
+.eloqua-linkedin-auto-fill {
+    clear:both;
+    width: 54%;
+    text-align: right;
+    //margin-bottom: 15px;
+    .media-query(mobile,{
+        width: auto;
+        text-align: left;
+        margin-left: @mobile-gutter;
+    });
+}
+.eloqua-linkedin-auto-fill-left {
+    clear:both;
+    text-align: left;
+    margin-bottom: 15px;    
+    .media-query(mobile,{
+        width: auto;
+        text-align: left;
+        /*margin-left: @mobile-gutter;*/
+    });
+
+    p{
+        padding-bottom: 10px;
+        a{
+            padding: 0 0 0 5px;
+            font-size: 14px;
+        }
+    }
+}

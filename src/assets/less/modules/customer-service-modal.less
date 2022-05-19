@@ -1,0 +1,330 @@
+.customer-service-responsive-modal .request-sample-modal-container{
+    .media-query(mobile,{
+        padding: @mobile-gutter;
+    });
+}
+
+.customer-service-modal-loader.loading{
+	.white-fading-loader(@min-height:175px);
+	margin-left: 8px;
+	margin-top: 8px;
+	&:before{
+		height: 100%;
+	}
+}
+
+.customer-service-modal-alternatives-loader.loading{
+	.white-fading-loader(@min-height:275px, @margin-top:10px);
+	width:700px;
+	overflow: hidden;
+    .media-query(mobile,{
+        width: 100%;
+    });
+}
+.customer-service-modal-header{
+	.text-23();
+	border-bottom: 1px solid @te-cool-grey-10;
+	margin-top: 40px;
+	margin-left: 40px;
+	padding-bottom: 20px;
+	width: 620px;
+	position: relative;
+    .media-query(mobile,{
+        margin: 0 0 @mobile-gutter/2;
+        width: auto;
+        font-size: 18px;
+        border-bottom: none;
+        padding-bottom: 0;
+        color: @te-dark-grey-94;
+        font-weight: 500;
+    });
+
+	&.alternative-samples:before{
+		content: "";
+		border-top: 10px solid @te-dark-grey;
+		width: 700px;
+		position: absolute;
+		display: block;
+		left: -40px;
+		top: -40px;
+        .media-query(mobile,{
+            display: none;
+        });
+	}
+}
+
+.customer-service-modal-alternative-samples{
+	float:left;
+	margin-top: 40px;
+}
+
+.customer-service-modal-error-message{
+	margin: 40px;
+    .media-query(mobile,{
+        margin: @mobile-gutter;
+    });
+}
+.chemical-warning{
+	border: 1px solid @te-cool-grey-10;
+	margin: 30px;
+	clear: both;
+	.clearfix();
+	display:flex;
+	padding: 7px;
+	.media-query(mobile, {
+		margin: 10px 0;
+		width: 100%;
+	});
+	.warning-icon{
+		width: 16px;
+		background: url('../../images/warning.svg') 0 2px no-repeat;
+		background-size: 16px
+	}
+	.warning-msg{
+		width: 95%;
+		color: @te-dark-grey;
+		padding-left: 5px;
+		line-height: 20px;
+	}
+	.warning-indicator{
+		text-transform: uppercase;
+		.text-94();
+	}
+	.warning-txt{
+		p{
+			display: inline;
+		}
+		.text-90();
+	}
+}
+.alternative-sample-tile{
+	display: block;
+	height: 230px;
+	position: relative;
+	& + &:before {
+		content: "";
+		width: 620px;
+		position: absolute;
+		display: block;
+		left: 40px;
+		top:-4px;
+		border-top: 1px solid @te-cool-grey-10;
+        .media-query(mobile,{
+            display: none;
+        });
+	}
+}
+
+.customer-service-modal-left-column{
+	vertical-align: top;
+	margin-left:40px;
+	width:319px;
+	height:185px;
+	border-right:1px solid @te-cool-grey-10;
+	float: left;
+	margin-top: 30px;
+
+    .mobile-full-columns();
+    .media-query(mobile,{
+        height: auto;
+        border: none;
+        margin: @mobile-gutter 0;
+    });
+
+	/*.get-sample-text{
+		margin-top:20px;
+		.text-62();
+		line-height: 23px;
+	}*/
+}
+
+
+.customer-service-modal-right-column{
+	vertical-align:top;
+	float: left;
+	width:295px;
+	margin-left: 29px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+    .mobile-full-columns();
+    .media-query(mobile,{
+        margin: @mobile-gutter 0;
+    });
+
+	.stock-status{
+		.text-30();
+		color: @te-dark-grey;
+		display:inline-block;
+		i{
+			font-size: 25px!important;
+			margin-right: 10px;
+			vertical-align:middle;
+			&.icon-alert{
+				color: @te-bright-red;
+			}
+			&.icon-in-stock{
+				color: @te-green;
+			}
+		}
+	}
+
+	p.sample-availability-text{
+		.text-62();
+		color: @te-cool-grey-9;
+		width: 260px;
+		margin-top:20px;
+
+        .mobile-full-columns();
+        .media-query(mobile,{
+            margin-top: 20px;
+        });
+	}
+
+	p.sample-error{
+		width: 271px;
+		font-family: Avenir;
+		font-size: 14px;
+		font-weight: 500;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.57;
+		letter-spacing: normal;
+		color:@te-red;
+	  }
+
+	a.sample-add-to-cart,
+	a.continue{
+		.text-80();
+        width: 274px;
+        height: 50px;
+        line-height:50px;
+        text-align: left;
+        margin-top:25px;
+        cursor: pointer;
+        i{
+        	width: 49px;
+        	line-height: 50px!important;
+
+            .media-query(mobile,{
+                height: 70px;
+                width: 70px;
+                background-color: @te-blue;
+                position: relative;
+
+                &:before {
+                    .center-content(both);
+                }
+            });
+        }
+    }
+
+    a.sample-add-to-cart{
+		margin:25px 0 !important;
+		width:293px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		line-height: normal;
+		padding: 0;
+        &.btn-disabled{
+            background-color: @te-light-pale-blue;
+            pointer-events: none;
+            cursor: default;
+        }
+        .media-query(mobile,{
+            margin-top: 20px;
+            height: 70px;
+            position: relative;
+            line-height: 1.3;
+            width: 100%;
+
+            > span {
+                width: 65%;
+            }
+        });
+    	.outOfStock, .add-sample-label, .sample-faq{
+    		float: left;
+			line-height: 18px;
+            width: 70%;
+			span{
+				display: block;
+			}
+		}
+    }
+
+    a.continue{
+    	background:@te-cool-grey-5;
+    }
+
+    a.check-for-sample-button{
+    	.text-62();
+    	width: 182px;
+    	height: 42px;
+    	line-height: 42px;
+        text-align: center;
+    	border-bottom:1px solid @te-cool-grey-35;
+    	border-right:1px solid @te-cool-grey-35;
+        display:block;
+		margin-top: 60px;
+		margin-left: 40px;
+        &:extend(.btn-fast-on-slow-off all);
+        background: @te-cool-grey-10;
+        &:hover,
+        &:focus,
+        &.active,
+        &:active {
+            color: @te-light-blue;
+        }
+
+    }
+
+}
+
+.lists-header {
+	.text-42();
+	color: @te-dark-grey-80;
+	margin-bottom: 6px;
+	padding-left: 2px;
+	text-transform: uppercase;
+	.icon, .title-content{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.icon {
+		margin-right: 6px;
+	}
+}
+
+.lists-container {
+	margin-bottom: 20px;
+}
+
+.list-item {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.get-lists-load{
+	.white-fading-loader(@min-height:150px);
+}
+
+.add-list-load{
+	.white-fading-loader(@min-height:180px);
+}
+
+
+.add-to-list-status {
+	&:extend(.stock-status all);
+	.text-40() !important;
+	&.success {
+		i.icon {
+			color: @te-green;
+		}
+	}
+	&.item-in-list {
+		i.icon {
+			color: @te-orange;
+		}
+	}
+}

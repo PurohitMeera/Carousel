@@ -1,0 +1,705 @@
+//updated on 31st Oct - 3.30
+/* PROFILE CSS_START */
+.te-am-subscription-page {
+  background-color: #ededee;
+  .white-fading-loader(@min-height: 100%, @show-class-name: loader, @background-pos:center, @background-color:transparent, @margin-top:12px);
+  min-height: 600px;
+  }
+
+.te-my-account-error-message {
+  .text-62();
+  color: @te-red;
+    .media-query(mobile,{
+        float: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    });
+}
+
+.te-am-page-my-account {
+    background-color: #ededee;
+    top: 80px;
+        input[type=text], input[type=password] {
+        display: block;
+        margin: 5px 0 10px 0;
+        height: 32px;
+        width: 100%;
+        .text-44();
+        color: @te-dark-grey;
+        border: none;
+        border-top: 1px solid #d9d9d9;
+        border-left: 1px solid #d9d9d9;
+        padding-left: 10px;
+        }
+    .white-fading-loader(@min-height: 100%, @show-class-name: loader, @background-pos:center, @position:inherit, @background-color:transparent, @margin-top:12px);
+    min-height: 530px;
+
+    .mobile-accordion-menu {
+      padding: 30px 0;
+
+      a{
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        padding: 30px 7vw;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #0066a1;
+        display: block;
+        border-top: 1px solid #ccc;
+        text-transform: uppercase;
+        .icon{
+          float: right;
+        }
+      }
+    }
+}
+
+.am-my-account-update-message {
+    padding: 20px 32px 32px 32px;
+    margin-bottom: 20px;
+        i {
+        background: @te-orange;
+        border-radius: 50%;
+        color:white;
+        }
+    .media-query(mobile,{
+        margin: 25px 0;
+        padding: 20px;
+          svg {
+            float:left;
+          }
+    });    
+}
+
+.am-my-account-title-wrapper {
+    width: 100%;
+    height: 95px;
+    background: white;
+    padding: 25px;
+    margin: -4px 0 0 0;
+    .media-query(mobile,{
+      padding:30px 0;
+      height: auto;
+      margin:0;
+    });
+    h1 {
+      float: left;
+        margin-top:5px;
+      .media-query(mobile,{
+        float: none;
+      });
+    }
+    .am-my-account-enable-sso {
+      float:right;
+      .text-94();
+      .media-query(mobile,{
+          float: none;
+          padding-top: 20px;
+          padding-bottom: 50px;
+        });
+    }
+    
+}
+.content-well{
+  &.am-my-account-nav-buttons {
+      padding: 23px 42px 0;
+      background:@te-white;
+      width:100%;
+      .btn-group-9 {
+          border: 0;
+          width: 940px;
+          margin: 0 auto;
+          .media-query(mobile,{
+              width: 100%;
+                margin: 0 auto;
+                height: 0;
+              i{
+                  margin-top: 13px;
+              }
+            });
+          li{
+              .media-query(mobile,{
+                  width: 100%;
+              });
+              
+              &.profile-tab {
+                  i {
+                      .media-query(mobile,{
+                            margin-top: 5px;
+                            margin-right: -4px;
+                      });
+                  }
+              }
+          }
+      }
+      p{
+        &.non-anchor{
+          text-transform: uppercase;
+          border-bottom: 4px solid;
+          font: 400 26px 'Avenir', 'Avenir W02', Arial, Helvetica, sans-serif;
+          font-size: 1.625rem;
+          line-height: 1.23076923;
+          color: #3db7e4;
+          padding: 14px;
+          margin: 0px 16px;
+          border-bottom: 0;
+          .icon{
+            float: right;
+          }
+        }
+      }
+      .media-query(mobile, {
+        padding: 0;
+        margin-bottom: 30px;
+
+      .btn-group-clr-5{
+        border: none;
+        height: auto;
+        li{
+          float: none !important;     
+          p{
+            &.non-anchor{
+              text-align: left;
+              width: 100%;
+              border-bottom: 1px solid #ccc;
+              padding: 30px 7vw;
+              font-size: 1.2rem;
+              font-weight: 500;
+              color: #3db7e4;
+              &.icon{
+                color: #3db7e4;
+                float: right;
+              }
+
+            }
+          }
+        }
+      }  
+      });
+  }
+}
+
+.am-my-account-col-wrapper {
+    min-height: 400px;
+    .media-query(mobile,{
+      input, select{
+        border: none;
+        border-top: 1px solid #d9d9d9;
+        border-left: 1px solid #d9d9d9;
+        padding-left: 10px;
+      }
+
+      select{
+        background-color: @te-white;
+      }
+    });
+
+        .am-my-account-col-left {
+          clear:both;
+        .column(6);
+            .media-query(mobile,{
+                float: none;
+                width:100%;
+            });
+        }
+  
+        .am-my-account-col-right {
+        .column(6, true);            
+            .media-query(mobile,{
+                float: none;
+                width:100%;
+            });
+        }
+}
+
+
+.am-my-account-item {
+    margin: 40px 0;
+    min-height: 40px;
+        
+        .am-my-account-item-label {
+        .text-44();
+         color: @te-dark-grey;
+         .media-query(mobile,{
+            padding-bottom: 10px;
+          });
+        }
+        .am-my-account-item-value {
+        .text-44();
+        color:@te-cool-grey-9;
+        .media-query(mobile,{
+            padding-bottom: 10px;
+        });
+            a{
+            .text-44();
+            }
+        }
+        .am-my-account-item-edit-field {
+        display:none;      
+            
+            .am-floated-field {
+            width: 100%;
+            height: 32px;
+            border: none;
+            border-top: 1px solid #d9d9d9;
+            border-left: 1px solid #d9d9d9;
+            padding-left: 10px;
+             .text-44();
+              color: @te-dark-grey;
+            }
+            .am-floated-field-sh {
+            width: 80px;
+                .text-44();
+              color: @te-dark-grey;
+            }
+            select {
+              margin: 5px 0 10px 0;
+              .text-44();
+              color:@te-dark-grey;
+              display:block;
+              width: 100%;
+              height: 32px;
+              border: none;
+              border-top: 1px solid #d9d9d9;
+              border-left: 1px solid #d9d9d9;
+              padding-left: 10px;
+          }
+        }
+        .error-text {
+            .text-62();
+        color: @te-red;
+        width: 200px;
+            display: none;
+            margin: 0px 0px 20px 0px;
+        }
+        .error-field {
+            border: 1px solid @te-red;
+        }
+}
+
+
+.am-my-account-name-wrapper {
+    width:100%;
+    height:40px;
+    margin: 20px 0 0 0;
+    .media-query(mobile,{
+      height: auto;
+      margin: 20px 0 0 0;
+    });
+        .float-name {
+        float:left;
+        min-width: 48%;
+        margin: 20px 0 20px 0;
+        .media-query(mobile,{
+            width: 100%;
+            float: none;
+            margin: 20px 0;
+            input[type="text"]{
+              width: 100%;
+              height: 50px;
+              margin: 0;
+            }
+        });
+            .floated-item {
+            width: 100px;
+            }
+        }
+        .float-name-csz {
+          float:left;
+          margin: 0px 3px 20px 0;
+          width: 40%;
+          select{
+            width: 100%;
+          }
+          
+          .media-query(mobile,{
+            width: 100%;
+            margin:20px 0 0;
+            float: none;
+            input[type="text"]{
+              width: 100%;
+              height: 50px;
+            }
+          });
+         
+          .floated-item {
+            width: 100px;
+          }
+        }
+    .float-name-csz-mobile{
+        .media-query(mobile,{
+            float:none;
+            width: 100%;
+            margin:20px 0 0;
+            input[type="text"], select{
+              width: 100% !important;
+              height: 50px;
+            }
+        });
+    }
+}
+
+.am-my-account-float-clear {
+    clear: both;
+    margin: 40px 0;
+    width: 100%;
+    .media-query(mobile,{
+        margin: 20px 0 0;
+    });
+    input[type="text"], input[type="email"]{
+      width: 100%;
+      height: 50px;
+      margin: 18px 0;
+    }
+}
+
+.am-my-account-cta-section {
+  height: 100px;
+  clear: both;
+  padding: 0 42px;
+        .am-my-account-cta-buttons {
+        float:right;
+            .login-button-profile-mobile{
+              float: right;
+              .media-query(mobile,{
+                float: none;
+              });
+            }
+            .am-btn-cancel {
+            .text-80();
+              width: 300px;
+              height: 50px;
+              text-transform: uppercase;
+              line-height: 35px;
+              float: left;
+              .media-query(mobile,{
+                float: none;
+              });
+            }
+          .am-btn-disabled {
+            cursor: default;
+            background: @te-cool-grey-35;
+            border: @te-cool-grey-35;
+          }
+          a {
+            margin: 0 20px;
+            .media-query(mobile,{
+                margin: 30px 0 0;
+                width: 100%;
+            });
+          }
+        }
+        p {
+          float: left;
+            .media-query(mobile,{
+                float: none;
+                margin-top: 30px;
+            });
+        } 
+        .am-my-account-cta-link{
+            .text-42();
+            color: @te-blue;
+            cursor: pointer;
+        }
+}
+
+.am-my-account-item-fName-mobile{   
+    margin-right: 18px !important; 
+     .media-query(mobile,{
+        margin: 0 30px 0 0;
+        min-height: 30px;
+      });
+}
+
+.am-my-account-item-mobile{
+    .media-query(mobile,{
+      margin: 20px 0px 0px 0px;
+      min-height: 30px;
+      width: 100%;
+      input[type="text"], input[type="password"], select{
+        width: 100%;
+        height: 50px;
+        margin: 0;        
+      }
+    });
+    &:last-child{
+      .am-my-account-item-value{
+        padding: 0 !important;
+      }
+    }
+}
+.am-my-account-item-country-residence-mobile{
+    .media-query(mobile,{
+        margin: 20px 0 0;
+        min-height: 30px;
+        input[type="text"], input[type="email"], select{
+          width: 100%;
+          height: 50px;
+          float: none;
+          margin: 0;
+        }
+     });
+}
+.am-my-account-cta-section-profile-mobile{
+    .media-query(mobile,{
+          position: static;
+          margin: 0;
+          height: auto;
+          clear: both;
+
+        .am-my-account-cta-buttons-profile-mobile{
+            width: 100%;
+            position: static;
+            margin: 0;
+            float: none;            
+
+            .am-btn-cancel-mobile{
+              float: none;
+              width: 100%;             
+            }
+            .login-button{
+              float: none;
+              width: 100%;
+            }
+
+            .login-button-profile-mobile{              
+              display: block;
+            }
+
+            p{
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+  
+        }
+
+        
+
+    });
+}
+
+
+
+
+/* PROFILE CSS_END */
+
+
+/* SUBSCRIPTIONS CSS_START */
+.am-my-account-subscriptions-col-one {
+  .column(3);
+}
+.am-my-account-subscriptions-col-two {
+  .column(3);
+}
+.am-my-account-subscriptions-col-three {
+  .column(3);
+}
+.am-my-account-subscriptions-col-four {
+  .column(3,true);
+}
+.te-page #majorError {
+  margin: 30px 40px;
+  .media-query(mobile, {
+    width:100%;
+  });
+}
+.am-my-account-subscriptions-col-wrapper.content-well{
+	.am-my-account-cta-section{
+    .media-query(mobile, {
+      margin: 0 -7vw;
+    });
+  }
+
+  #subsErrorDiv{
+    .media-query(mobile, {
+      padding: 0 4vw 0 0;
+    });
+  }
+}
+
+
+iframe#subsIFrame {
+  height:750px;
+  .media-query(mobile, {
+    height:1600px;
+  });
+}
+
+.am-my-account-subscriptions-col-wrapper {
+  clear:both;
+  h1 {
+    .text-40();
+    margin:20px 0;
+    font-weight: normal;
+  }
+  &>label {
+    font-weight:bold;
+  }
+  padding:0;
+  .am-my-account-subscriptions-col-one, .am-my-account-subscriptions-col-two, .am-my-account-subscriptions-col-three, .am-my-account-subscriptions-col-four {
+    input[type='checkbox'] { margin:15px 0; }
+    .media-query(mobile, {
+      float:none;
+      margin:0px;
+      width:100%;
+    });
+
+  }
+  hr {margin:20px 0; clear:both;}
+}
+
+.am-my-account-cta-section-subs {
+  padding:0;
+  display: inline-block;
+  margin-top: 30px;
+  position:relative;
+  height: 100%;
+  svg#unsubscribe-icon, a#unsubscribeLink {
+    display:inline-block;
+    margin-top:10px;
+  }
+  .media-query(mobile, {
+    width:100%;
+  svg#unsubscribe-icon, a#unsubscribeLink {
+    display:inline-block;
+  }
+  a#unsubscribeLink {
+    margin:15px 0 20px 0;
+  }
+
+  });
+  #unsubscribeLink {
+    color:@te-blue;
+    .media-query(mobile, {
+      display:block;
+      margin: 0 0 30px 0;
+      clear:both;
+      float:none;
+    });
+  }
+  .am-my-account-cta-buttons-subs {
+    float:right;
+    .media-query(mobile, {
+      display:block;
+      float:none;
+      margin:0;
+      padding:0;
+      min-height: 120px;
+    });
+    #updateMySubscriptions {
+      width:350px;
+      height: 50px;
+      .media-query(mobile, {
+        display:block;
+        float:none;
+        padding:0;
+        margin:0;
+        width:100%;
+      });
+      i {
+        float: right;
+        width: 51px;
+        line-height: 51px !important;
+        text-align: center;
+        margin-left: 14px;
+        border-left: 1px solid;
+        height: 50px;
+        padding-top: 8px;
+      }
+    }
+  }
+}
+
+/* SUBSCRIPTIONS CSS_END */
+
+/* SUBSCRIPTIONS EMAIL CSS_START */
+
+.am-email-confirmation-message {
+  width: 600px;
+  margin: 0 auto 40px auto;
+  i {
+    background: #e98300;
+    border-radius: 50%;
+    color: white;
+  }
+}
+
+.am-my-account-subscription-email-wrapper{
+    width: 500px;
+   display: table;
+    margin: 0 auto;
+  
+   
+   h1{ .text-10(); padding: 20px 0px 15px 0px; text-align: center;}
+   h2{ .text-30(); padding: 15px 0px 20px 0px; text-align: center;}
+   
+   form{
+    padding: 15px 0px 10px 0px;
+        label
+       {float: left;.text-26();}
+   }
+    
+    input[type=text]{
+       display: block;
+       margin: 5px 0 10px 0;
+       height: 30px;
+       width: 100%;
+        
+     }
+    
+    
+    
+    .email-button-wrapper {
+        margin: 20px auto;
+        width: 300px;
+            .email-button {
+              clear: both;
+              margin: 15px 0;
+              height: 40px;
+                      .email-btn-cancel {
+                        width: 250px;
+                        height: 40px;
+                        text-transform: uppercase;
+                        line-height: 20px;
+                      }
+              .email-btn-disabled {
+                cursor: default;
+                background: @te-cool-grey-35;
+                border: @te-cool-grey-35;
+              }
+                     
+            }
+    }
+    
+    
+}
+
+/* SUBSCRIPTIONS EMAIL CSS_END */
+
+/* SUBSCRIPTIONS CONFIRMATION CSS_START*/
+.am-my-account-subscription-confirmation-wrapper{
+width: 500px;
+display: table;
+margin: 0 auto;
+
+   
+  h1{ .text-10(); padding: 15px 0px 15px 0px;text-align: center;}
+  h2{ .text-42(); padding: 15px 0px 20px 0px;}
+    
+    a{
+    .text-42();
+    color: @te-blue;
+    cursor: pointer;
+    }
+     label {
+       display: block;
+       .text-50();
+        padding: 15px 0px 15px 0px;
+     
+     }
+   
+}
+    
+
+/* SUBSCRIPTIONS CONFIRMATION CSS_END*/

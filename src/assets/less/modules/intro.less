@@ -1,0 +1,206 @@
+.te-intro {
+    clear: both;
+    /*padding: 40px 0 60px 0;*/
+    /*padding: 30px 0;*/
+    //margin: 60px 0;
+     .media-query(mobile, {
+            //margin: 30px 0 0;
+        });
+    h3 {
+        .column(4);
+        .text-18();
+        line-height: (44/36);
+        color: @te-orange;
+         .media-query(mobile, {
+                width:100%;
+            });
+    }    
+    h2 {
+        .column(4);
+        .text-23();
+        line-height: (44/36);
+        color: @te-orange;
+    }
+    p, dl {
+        .column(8, true);
+        .text-62();
+        line-height: 22px;
+        //padding-top: 4px;
+        color: @te-dark-grey;
+        .media-query(mobile, {
+            float: none;
+            width: 100%;
+        });
+    }
+
+    dl{
+        padding-top: (@v_space*0.4);
+        dt{
+            .icon-caret{
+                color: @te-blue;
+            }
+        }
+    }
+
+    &.te-copy-lead-in {
+        &.te-dark-theme{
+            background-color: @te-dark-blue-87;
+            .lead-in-title{
+                color: @te-white;
+            }
+            .lead-in-content{
+                color: @te-white;
+            }
+        }
+        &.te-light-theme{
+            background-color: @te-cool-grey-3;
+            .lead-in-title{
+                color: @te-dark-blue-87;
+            }
+            .lead-in-content{
+                color: @te-dark-grey-65;
+            }
+        }
+    }
+
+    &.te-copy-lead-out {
+        /*TE17-526 - Copy Lead out alignment bug fix*/
+        /*padding:60px;*/
+        //padding:55px 0;
+        &.te-dark-theme {
+            background-color: @te-dark-blue-87;
+            h3 {
+                color: @te-white;
+            }
+            p {
+                color: @te-white;
+            }
+            a {
+                color: @te-orange;
+                &:hover, &:focus{
+                    text-decoration: underline;
+                }
+            }
+        }
+        &.te-light-theme {
+            background-color: @te-cool-grey-3;
+            h3 {
+                color: @te-dark-blue-87;
+            }
+            p {
+                color: @te-dark-grey-65;
+            }
+            a {
+                color: @te-orange;
+                &:hover, &:focus{
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+        h3 {
+            .text-18();
+            line-height: (34/28);
+            .media-query(mobile, {
+                float: none;
+                width: 100%;
+                margin: 0;
+            });
+        }
+
+        p, dl{
+            .text-62();
+            color: @te-dark-grey;
+            line-height: (22/14);
+            
+        }
+        p{
+            padding-top: 0;
+        }
+        dl{
+            padding-top: 20px;
+        }
+
+        .media-query(mobile, {
+            /*margin: 30px 0;*/
+            //padding: 30px 0;
+
+            h2, h3, p, dl{
+                .mobile-full-columns(false);
+            }           
+            p{
+                padding-top: 20px;
+            }
+        });
+    }
+    &.about-te-copy-lead-out{
+	    .media-query(mobile, {
+	            margin: 24px 0 23px;
+	        });
+	    h3 {
+	        .media-query(mobile, {
+	            width: 100%;
+	            padding-bottom:17px;
+	        });
+	    }
+	    dl{
+	    	.media-query(mobile, {
+	            padding-top:18px;
+	        });
+	    }
+    }
+    
+}
+.copy-lead-out{
+    display: inline-block;
+    width: 100%;
+    margin: (@v_space*2.5) 0;
+    .media-query(mobile, {
+        margin: (@v_space*1.5) 0;
+    });
+   .te-intro{
+      margin: 0;
+      ul {
+      list-style: disc;
+      .media-query(desktop-wide, {
+        margin-left: 475px;
+       });
+       .media-query(desktop-small, {
+        margin-left: 325px;
+       });  
+      }
+    }
+}
+.copy-lead-in{
+    display: inline-block;
+    width: 100%;
+    margin: (@v_space*2.5) 0;
+    .media-query(mobile, {
+        margin: (@v_space*1.5) 0;
+    });
+    .te-intro{
+        .media-query(mobile, {
+            /*TE17-230*/
+            //margin-top:(@v_space*1.5);
+            //margin-bottom:(@v_space*1.5);
+            .lead-in-title {
+                .text-18();
+                line-height: (34/28);
+                /*TE17-230*/
+                float: none;
+                width: 100%
+            }
+            .lead-in-content{
+                .text-62();
+                line-height: (22/14);
+            }
+        });
+    }
+}
+.intro-container2{
+    .copy-lead-in{
+        .te-intro{
+            //margin: 36px 0 44px 0;
+        }
+    }
+}

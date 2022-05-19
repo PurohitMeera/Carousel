@@ -1,0 +1,84 @@
+.industry-landing-page-content {
+    background-color: @te-white;
+    .te-promo{
+    	&.te-promo-lead{
+			.container{
+				a{
+					.promo-content{
+						.follow-link{
+							i{
+								color: @te-white !important;
+							}
+						}
+					}
+					&:hover{
+						.promo-content{
+							.follow-link{
+								i{
+									color: @te-light-blue !important;
+									.media-query(mobile, {
+										color: @te-white !important;
+									});
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+    
+    /*Changes done for TE17-548  and TE17-569 - TE promo grid title top spacing issue*/
+    .promo-grid{ 
+        .te-promo-grid{
+            .te-promo-grid-head{
+                .media-query(mobile, {
+		          margin-top: 50px;
+	           });
+            }
+        }
+        
+    }
+}
+
+.te-promo-content {
+	.media-query(mobile, {
+		margin: 0 -4vw 0 !important;
+		padding-top:0 !important;
+	});
+}
+
+.content-well-parsys-top-space .section {
+	margin-top: 30px;
+    margin-bottom: 30px;
+}
+.content-well-parsys-middle-space .section {
+	margin-top: 30px;
+    margin-bottom: 30px;
+}
+.content-well-parsys-bottom-space .section {
+	margin-top: 30px;
+    margin-bottom: 15px;
+}
+.content-well-parsys-top-space .section .bio-grid-container {
+	    padding-bottom: 0px;
+}
+.content-well-parsys-middle-space .section .bio-grid-container {
+	    padding-bottom: 0px;
+}
+.content-well-parsys-bottom-space .section .bio-grid-container {
+	    padding-bottom: 0px;
+}
+ div .industry-landing-page-content .promo-mosaic {  
+     margin: 20px 0 20px -10px;	
+  }
+div .content-well-parsys-bottom-space .section .product-promos {
+	    margin-top: -25px;
+}
+div .content-well-parsys-top-space .section .product-promos {
+	    margin-top: -25px;
+}
+div .content-well-parsys-middle-space .section .product-promos {
+	    margin-top: -25px;
+}
+

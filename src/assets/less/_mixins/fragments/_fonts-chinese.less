@@ -1,0 +1,21 @@
+.ff-1(){
+    font-family:'Avenir', 'Avenir W02', Arial, Helvetica, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+
+.ff-1(@px-size; @weight: ~''; @variant) {
+    @rem-size: @px-size / @base-font-size;
+    font: @weight ~"@{px-size}px" @variant, 'Avenir', 'Avenir W02', Arial, Helvetica, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+    font-size: ~"@{rem-size}rem";
+}
+
+.ff-1(@px-size; @weight: ~'') {
+    @rem-size: @px-size / @base-font-size;
+    font: @weight ~"@{px-size}px" 'Avenir', 'Avenir W02', Arial, Helvetica, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+    font-size: ~"@{rem-size}rem";
+}
+
+
+
+
+
+

@@ -1,0 +1,283 @@
+@import (once) '../_mixins/_constants';
+@import (once) '../_mixins/_global';
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: verdana,arial,helvetica,sans-serif  !important;
+
+  font-weight: normal;
+  font-size: none;
+  font: normal;
+}
+
+b,strong
+{
+    font-weight: bold;
+}
+
+
+body {
+    font-family: verdana,arial,helvetica,sans-serif !important;
+
+    #te-page {
+        width: auto;
+        box-sizing: border-box;
+        .top-nav #te-header {
+            width: 100%;
+            height: inherit;
+            margin: 0;
+            padding: 0;
+            z-index:999;
+            box-sizing: border-box;
+            form {
+                position: static;
+                width: auto;
+                margin-bottom: 0;
+            }
+        }
+
+        .breadcrumb-navigation {
+          width: 900px;
+          margin: 30px auto 0px auto;
+          display: block;
+        }
+
+        .footer-wrapper #te-footer {
+            float: none;
+            margin: 0;
+        }
+        .top-nav,
+        .footer-wrapper {
+            a {
+                //booooo!!!! important!
+                text-decoration: none !important;
+            }
+        }
+        #TE_BreadCrumb {
+            width: 900px;
+            margin: 0 auto;
+            font-size: inherit;
+        }
+        #TE_mainBody {
+            float: none;
+            margin: 0 auto;
+            .clearfix();
+            min-height: 40em;
+        }
+
+      a:hover, a:focus, a:visited {
+        color : @te-light-blue;
+        text-decoration : none !important;
+      }
+
+      #menu-categories-li, #menu-most-searched-li, #menu-utilities-li {
+        padding: 0px;
+      }
+    }
+}
+
+
+
+
+*,
+*:after,
+*:before {
+  box-sizing:inherit;
+}
+
+
+/* this is for the social links column */
+#te-footer .footer-content-container>nav ul.footer-menu>li .footer-content ul.social-networks {
+  width: 49%;
+}
+
+.te-global-contact-modal .contact-list .content-area {
+  padding: 0;
+}
+
+#modal-body {
+  z-index: 1004;
+}
+
+#modal-bg {
+  z-index: 1001;
+}
+
+/* None of these are needed anymore for most searched formatting
+#te-header nav ul.sections li .submenu.compact ul {
+  width:100%
+}
+#te-header nav ul.sections li .submenu.compact ul li {
+  width: 30%;
+}
+
+
+
+#te-header nav ul.sections li .submenu.compact ul {
+  width:100%;
+  -moz-column-count: 4;
+  -moz-column-gap: 0px;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 0px;
+  column-count: 4;
+  column-gap: 0px;
+  height: 200px;
+}
+
+.csscolumns #te-header nav ul.sections li .submenu.compact ul li {
+  width: 100%;
+  min-height: 2.2em;
+}
+
+.no-csscolumns #te-header nav ul.sections li .submenu.compact ul li {
+  width: 25%;
+  float: left
+}
+*/
+
+#te-header nav ul.sections li .menu>ul>li {
+    padding: 0 20px;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+.menu .submenus.resSubmenus {
+    box-sizing: border-box;
+}
+
+/*Fix added for header box width*/
+#te-header .te-header-wrap{width:1024px}
+
+#te-header{
+    .top-nav-banner-wrapper{
+        .top-nav-banner-container{
+            width:1024px;
+            /* IE 10+ */
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                .welcome-container{
+                    width:535px;
+                }
+            }
+        }
+    }
+}
+
+#te-header nav ul.sections li a.resc-menu-text {width:197px;}
+
+/*FE18-16147 Header distortion issue*/
+.top-nav{
+  box-sizing: border-box;
+  #te-header{
+    box-sizing: border-box;
+    .utility-bar-wrapper{
+      box-sizing: border-box;
+    }
+    .te-header-wrap{
+      .wrapper{
+        box-sizing: border-box;
+        .cart {
+          i{
+            font-size: 20px;
+          }
+          .counter{
+            top: -12px;
+          }
+          .cart-label{
+            position: relative;
+            top:3px;
+          }
+        }
+      }
+    }
+    .primary-nav-wrapper nav {
+      .primary-nav{
+        .primary-nav-tab{
+          .products-menu{
+            box-sizing: border-box;
+          }
+        }
+      } 
+    } 
+  }
+}
+
+
+ 
+
+/* Promo Banner for New MPL */
+
+.promo-container {
+    width: 900px;
+    margin: 0 auto 20px;
+    position: relative;
+    .try-new-container {
+		background-color: #cbe3ef;
+		padding: 30px;
+		margin-top: 40px;
+		overflow: hidden;
+        .welcome-feedback-container {
+            overflow: hidden;
+            padding: 10px;
+            .welcome-copy {
+                float: left;
+                width: 60%;
+                line-height: 1.2em;
+                list-style: none;
+                .copy-header {
+                    .text-80();
+                    color: @te-dark-grey;
+                }
+                .copy-sub-header {
+                    .text-62();
+                    color: @te-dark-grey;
+                }
+                .old-page-link {
+                    cursor: pointer;
+                    margin-top: 20px;
+                    .text-62();
+                    color: #0066a1;
+                    &:hover{
+                        color: #3db7e4 !important;
+                    }
+                    i{
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .feedback-cta {
+                float: left;
+            }
+            .btn-override {
+                width: 230px;
+                cursor: pointer;
+                text-decoration: none !important;
+                background: #0066a1;
+		        color: #fff !important;
+            }
+        }
+	}
+    .triangle-down.move-left {
+        clear: both;
+        position: relative;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 20px solid #cbe3ef;
+    }
+    .close-btn-container {
+        position: absolute;
+        right:20px;
+        top:20px;
+        a {
+            text-decoration: none !important;
+            cursor: pointer;
+        }
+    }
+}

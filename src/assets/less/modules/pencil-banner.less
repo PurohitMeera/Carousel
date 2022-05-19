@@ -1,0 +1,551 @@
+//## Global Pencil Banner CSS -- Starts ##//
+#pencil-banner{
+    display: inline-block;
+    width: 100%;
+    min-height: 40px;
+    background: @te-cool-grey;
+    color: @te-white;
+    position: absolute;
+    left: 0;
+    z-index: 49;
+    top: -9999px;
+    &.hideBanner{
+        display: none;
+    }
+    .media-query(mobile, {
+        padding: 0 3vw;
+    });
+    .pencil-banner-container{
+        width: auto;
+        min-width: 880px;
+        max-width: 970px;
+        margin: 0 auto;        
+        height: 40px;
+        max-height: 40px;
+        padding: (@v_space) 0;
+        text-align: center;
+        .pencil-banner-content{
+        	display: inline-block;
+    		vertical-align: middle;
+            p{
+                display: inline-block;
+                float: left;
+                .text-80();
+                .font-lineheight(14,22);
+                padding-right: (@h_space*3);                
+                .flag-icon{
+                    margin:0 (@h_space*0.4) 0 (@h_space*0.6);
+                    width: 27px;
+                    height: 18px;
+                    line-height: inherit;
+                    .media-query(desktop-small, {
+                        width: 16px;
+                        height: 12px;
+                        line-height: 14px;
+                    });
+                    .media-query(mobile, {
+                        margin:0 0 0 (@h_space*0.6);
+                        width: 14px;
+                        height: 11px;
+                        line-height: 13px;
+                    });
+                }
+                .countryPanel{
+                    .media-query(mobile, {
+                        display:block;
+                        margin-bottom:2px;
+                    });
+                }
+                .countryName{
+                    max-width: 160px;
+                    display: inline-block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    float: right;
+                    .media-query(mobile, {
+                        float: none;
+                        position: relative;
+                        top: 6px;
+                    });
+                }
+                .media-query(desktop-small, {
+                    padding-right: (@h_space*2);
+                });
+            }
+            &.globalView-content{
+                p{
+                    padding-right: (@h_space);
+                    margin-right: (@h_space*0.8);
+                    .media-query(mobile, {
+                        padding-right: 0;
+                    });
+                }
+            }
+        }
+        .pencil-banner-cta{
+        	display: inline-block;
+    		vertical-align: middle;
+            a{
+                .text-110();
+                .font-lineheight(10,15);
+                margin-right: (@h_space*0.8);
+                display: inline-block;
+                cursor: pointer; 
+                &.transparent-cta{
+                    border: 1px solid @te-white;
+                    padding: (@v_space*0.2) (@h_space*0.8);
+                    &:hover, &:active{
+                        border: 1px solid @te-light-blue;
+                    }
+                }
+                &.blue-cta{
+                    background: @te-blue;
+                    padding: (@v_space*0.4) (@h_space*1.5);
+                    &:hover, &:active{
+                        background: @te-light-blue;
+                        color: @te-white;
+                    }
+                }
+            }
+            
+            .media-query(mobile, {
+                clear: both;
+                margin-top: (@v_space*0.1);
+                display: inline-block;
+                width: 100%;
+                a{
+                    width: 46%;
+                    text-align: center;
+                    margin-right: 0;
+                    &.transparent-cta{
+                        margin-right: (@h_space*1.6);
+                    }
+                }
+                .chooseYourCountryCta{
+                    a{
+                        width: 100%;
+                        margin-top: (@v_space*0.3);
+                    }
+                }
+            });
+        }
+        .media-query(mobile, {
+            width: 100%;
+            min-width: 100%;
+            height: 90px;
+            max-height: 90px;
+            padding-top: (@v_space);
+            text-align: initial;
+        });        
+    }
+}
+//## Global Pencil Banner CSS -- Ends ##//
+
+//## Country Selection Modal CSS -- Starts ##//
+.countrySelectorModal{    
+    #modal-body{
+        top: 10vh !important;
+        .media-query(mobile, {
+            top: 0 !important;
+        });
+        #modal-content{
+            overflow: hidden;
+            max-height: 622px;
+            height: 80vh;
+            min-height: 350px;
+            .media-query(mobile, {
+                height: @mobile-modal-body-height;
+                max-height: @mobile-modal-body-height;
+            });            
+        }
+    }
+}
+//Modal Wrapper Starts
+.countryModalWrapper{
+    width: 100%;
+    display: inline-block;
+    .media-query(mobile, {
+        min-height: ~"calc(100vh - 119px )"; //119 = 92px header + 27px top margin and padding.
+    });
+    .countryModalHeader{
+        padding: (@v_space*3.4) (@h_space*5.5) (@v_space*0) (@h_space*4.7);
+        .media-query(mobile, {
+            padding: (@v_space*1.4) 7vw (@v_space*0) 7vw;
+        });
+    .countryModalHead{
+        margin: (@v_space*2) 0px;
+        padding-left: (@h_space*5.6);
+        .worldMapImg{
+            display: inline-block;
+            float: left;
+            width: 173px;
+            height: 80px;
+            margin-right: (@h_space*1.6);
+            background: url('../../images/World_Map.svg') 0 0 no-repeat;
+            .media-query(mobile, {
+                display: none;
+            });
+        }
+        h1{
+            .text-22();
+            .font-lineheight(22,26);
+            color: @te-dark-grey;
+            margin-bottom: (@v_space*0.8);
+            .media-query(mobile, {
+                .text-32();
+                .font-lineheight(18,24);
+                margin-top: 0;
+                padding: 0 (@h_space*2);
+            });
+        }
+        p{
+            .text-62();
+            .font-lineheight(14,22);
+            color: @te-dark-grey;
+        }
+        .currLocSection{
+            display: inline-block;
+            margin-top: (@h_space*2.8);
+            span, a{
+                float: left;
+                display: inline-block;
+                margin-right: (@h_space*0.8);
+                .media-query(mobile, {
+                    float: none;
+                });
+            }
+            .isCurrLocText{
+                .text-80();
+                .font-lineheight(14,22);
+                color: @te-dark-grey;
+                .media-query(mobile, {
+                    margin-bottom: (@v_space);
+                    display: block;
+                });
+            }
+            .flag-icon{
+                width: 36px;
+                height: 24px;
+                background-size: cover;
+                margin-top: -(@v_space*0.3);
+            }
+            a{
+                .text-62();
+                .font-lineheight(14,22);
+                .media-query(mobile, {
+                position: relative;
+                top: 4px;
+                });
+            }
+            .media-query(mobile, {
+                text-align: center;
+                margin: (@v_space*1.5) auto 0;
+                display: block;
+                overflow: hidden;
+            });
+        }
+        .media-query(mobile, {
+            padding: 0;
+            text-align: center;
+        });
+    }
+    .countryModalSearch{
+        width: 100%;
+        height: 40px;
+        transform: translate3d(0,0,0);
+        .cmSearchWrap{
+            width: 640px;
+            height: 40px;
+            margin: 0 auto;
+            position: relative;
+            .cmSearchInput{
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                .text-70();
+                .font-lineheight(14,22);
+                background: @te-cool-grey-10;
+                padding: 0 (@h_space*10) 0 (@h_space*1.7);
+                border: 0px;
+                &::-ms-clear {
+                    display: none;
+                }
+            }
+            i{
+                position: absolute;
+                right: 15px;
+                top: 11px;
+                color: @te-orange;
+                &.fa-times-circle{
+                    color:@te-cool-grey-65;
+                    cursor: pointer;
+                }
+            }
+            .media-query(mobile, {
+                width: 100%;            
+            });
+        }
+        
+        &.newTopMar{
+            display: inline-block;
+        }
+        
+        &.fixedSearch{
+            width: 98%;
+            position: absolute;
+            top: 0;
+            z-index: 99;
+            left: 0;
+            margin: 0;
+            background: @te-white;
+            height: 60px;
+            .media-query(mobile, {
+                position: fixed;
+                top: 92px; 
+                width: 100%;
+                margin-top: 0;
+                z-index: 999;
+            });
+            .cmSearchWrap{
+            	top: 10px;                
+            	.media-query(mobile, {
+            		width: 86vw;
+                    z-index: 999;
+            	});
+            }
+        }
+        &.countryModalSearchOnScroll{
+            margin-top:0px;
+            .media-query(mobile, {
+                margin-top: 0px;
+            });
+        }
+    }
+    }
+
+    .countryModalContent{
+        padding: (@v_space*0) (@h_space*5.5) (@v_space*0) (@h_space*4.7);
+        width: 100%;
+        display: inline-block;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+        height:~"calc(80vh - 80px )";
+        max-height: 540px;
+        .popularLocSection, .countrySections{
+            margin-top: (@v_space*2);
+            dt{
+                position: relative;
+                margin-bottom: (@v_space*0.8);
+                p{
+                    .text-80();
+                    .font-lineheight(14,22);
+                    color: @te-dark-grey;
+                    background: @te-white;
+                    position: relative;
+                    z-index: 2;
+                    display: inline-block;
+                    padding-right: @v_space;
+                    text-transform: uppercase;
+                    .media-query(mobile, {
+                        text-transform: capitalize;
+                    });
+                }
+                span{
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
+                    border: 1px solid @te-cool-grey-10;
+                    height: 1px;
+                    left: 0;
+                    top: 10px;
+                }
+            }
+            dd{
+                ul{
+                    li{
+                        float: left;
+                        min-height: 40px;
+                        display: table;
+                        min-width: 196px;
+                        margin-right: (@h_space*0.8);
+                        span, a{
+                            vertical-align: middle;
+                            display: table-cell;
+                        }
+                        .flag-icon{
+                            width: 36px;
+                            height: 24px;
+                        }
+                        a{
+                            .text-62();
+                            padding-left: (@v_space*0.8);
+                        }
+                    }
+                }
+            }                       
+        }
+        .allCountriesSection{
+            clear: both;
+            display: inline-block;
+            width: 100%;
+            li{                        
+                .countrySections{
+                    dt{
+                        margin-bottom: 0;
+                    }
+                    dd{
+                        padding: (@v_space) 0 0 (@h_space*2.6);
+
+                        ul{
+                            display: inline-block;
+                            width: 100%;
+                            li{
+                                min-height: 20px;
+                                min-height: 20px;
+                                margin: 0 (@h_space) (@v_space) 0;
+                                min-width: auto;
+                                position: relative;
+                                .flag-icon{
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                                a{
+                                    padding-right: (@h_space*0.8);                                            
+                                }
+                                .rtBorder{
+                                    display: inline-block;
+                                    min-height: 55%;
+                                    border-right: 2px solid @te-cool-grey-35;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 4px;
+                                }
+                                &:last-child{
+                                    .rtBorder{
+                                        border: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .media-query(mobile, {
+                        dd{
+                            padding: (@v_space) 0 0 0;
+                            ul{
+                                li{
+                                    float: none;
+                                    width: 100%;
+                                    min-width: 100%;
+                                    min-height: 38px;
+                                    margin-bottom: (@v_space*1.6);
+                                    .flag-icon{
+                                        width: 35px;
+                                        height: 23px;
+                                    }
+                                    .rtBorder{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+        .media-query(mobile, {
+            height: ~"calc(100vh - 150px )";
+            max-height: ~"calc(100vh - 150px )";
+            padding: (@v_space*0) 7vw;
+            .popularLocSection{
+                dd{
+                    ul{
+                        margin-top: (@v_space*0.9);
+                        width: 100%;
+                        display: inline-block;
+                        li{
+                            min-width: 130px;
+                            width:45%;
+                            margin-right: 0;
+                            margin-bottom: (@v_space*1.4);
+                            float: left;
+                            min-height: 58px;
+                            &:nth-child(odd){
+                              margin-right: (@v_space*3.2);  
+                            }
+                            &:nth-last-child(-n+2){
+                               margin-bottom: 0; 
+                            }
+                        }
+                    }
+                }                    
+            }         
+        }); 
+    }
+    .filterSectionDiv{
+        max-height: 532px;
+        overflow-y: auto;
+        height: 65vh;
+        min-height: 300px;
+        .filterSection{
+            width: 640px;
+            margin: 0 auto;
+            height:380px;
+            li{
+                float: none;
+                min-width: 100%;
+                display: table;
+                min-height: 34px;
+                margin-bottom: (@v_space*0.8);
+                span, a{
+                    vertical-align: middle;
+                    display: table-cell;
+                }
+                .flag-icon{
+                    width: 36px;
+                    height: 24px;
+                }
+                a{
+                    .text-62();
+                    padding-left: (@v_space*0.8);
+                }
+            }
+            .noResultWrap{
+                width: 270px;
+                margin: 0 auto;
+                text-align: center;
+                padding-top: 20px;
+                i{
+                    font-size: 52px;
+                    width: 52px;
+                    height: 52px;
+                    color: @te-cool-grey-35;
+                }
+                p{
+                    .text-70();
+                    .font-lineheight(14,22);
+                    color:@te-dark-grey;
+                    margin: (@v_space) 0;
+                }
+                a{
+                    .text-62();
+                    .font-lineheight(14,22);
+                }
+                .media-query(mobile, {
+                    width: 80%;           
+                });
+            }
+            .media-query(mobile, {
+                width: 100%;  
+                padding: 0px 7vw;
+            });
+        }
+        .media-query(mobile, {
+            height: ~"calc(100vh - 150px )";
+            min-height: auto;
+            max-height: ~"calc(100vh - 150px )";
+        });
+    }
+}
+//MOdal Wrapper ends
+//## Country Selection Modal CSS -- Ends ##//

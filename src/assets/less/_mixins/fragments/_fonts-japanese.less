@@ -1,0 +1,21 @@
+.ff-1(){
+    font-family:'Avenir', 'Avenir W02', Arial, Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+.ff-1(@px-size; @weight: ~''; @variant) {
+    @rem-size: @px-size / @base-font-size;
+    font: @weight ~"@{px-size}px" @variant, 'Avenir', 'Avenir W02', Arial, Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-size: ~"@{rem-size}rem";
+}
+
+.ff-1(@px-size; @weight: ~'') {
+    @rem-size: @px-size / @base-font-size;
+    font: @weight ~"@{px-size}px" 'Avenir', 'Avenir W02', Arial, Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-size: ~"@{rem-size}rem";
+}
+
+
+
+
+
+

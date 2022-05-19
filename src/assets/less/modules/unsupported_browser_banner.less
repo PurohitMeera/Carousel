@@ -1,0 +1,25 @@
+.eu-browser-banner{
+    background-color: @te-cool-grey-10;
+    z-index:@z-main-nav;
+    .transition(all @te-speed-2 ease-out);
+    display:none;
+    .banner-content{
+	.content-well();
+	min-height: 50px;
+	padding-top: 10px;	
+	padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .btn-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+    }
+
+}    
+
+.eu-browser-banner.is-showed{
+    display: block;
+}

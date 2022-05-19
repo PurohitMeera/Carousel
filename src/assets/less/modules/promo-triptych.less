@@ -1,0 +1,153 @@
+.cmp-promo-triptych {
+    display: flex;
+    .media-query(mobile, {
+        display: block;
+    });
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        margin: 40px auto;
+        width: 100%;
+        .media-query(mobile, {
+            flex-direction: column;
+            margin: 10px auto;
+        });
+        .media-query(desktop-small, {
+            width: 100%;
+        });
+    }
+    &__left-content {
+        width: 68%;
+        margin-right: 2%;
+        .media-query(mobile, {
+            width: 100%;
+            margin: 0 auto 20px;
+        });
+        .media-query(desktop-small, {
+            width: 70%;
+            overflow: hidden;
+        });
+    }
+    &__right-content {
+        width: 30%;
+        .media-query(mobile, {
+            width: 100%;
+            margin-right: 0;
+        });
+        .media-query(desktop-small, {
+            width: 30%;
+            overflow: hidden;
+        });
+        .cmp-promo-triptych__card {
+            height: 238px;
+            .media-query(mobile, {
+                min-height: 178px;
+            });
+            &:last-child {
+                margin-top: 20px;
+            }
+            &-content {
+                height: 76px;
+            }
+            &-text {
+                height: 76px;
+                font-size: 18px;
+                padding-left: 20px;
+                line-height: 20px;
+                width: 100%;
+                .media-query(mobile, {
+                    padding: 10px 20px;
+                });
+                .media-query(desktop-small, {
+                    padding: 10px 20px;
+                });
+            }
+            &-content-background {
+                height: 76px;
+            }
+        }
+    }
+
+    &__heading {
+        color: @te-updated-dark-blue;
+        font-family: "Avenir LT W01 85 Heavy", Avenir, "Avenir W02", Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        min-height: 20px;
+    }
+    &__card {
+        position: relative;
+        height: 496px;
+        .media-query(mobile, {
+            height: auto;
+            min-height: 178px;
+        });
+        &:hover {
+            .cmp-promo-triptych__card-content-background {
+                mix-blend-mode: inherit;
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                  opacity: 1;
+                }
+            }
+        }
+    }
+    &__card-content {
+        position: absolute;
+        bottom: 0;
+        height: 91px;
+        width: 100%;
+        .media-query(mobile, {
+            height: 76px;
+        });
+    }
+    &__card-text {
+        color: white;
+        font-family: "Avenir LT W02 65 Medium", Avenir, "Avenir W02", Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        line-height: 28px;
+        padding: 20px;
+        padding-left: 40px;
+        width: 85%;
+        display: inline-block;
+        .media-query(mobile, {
+            font-size: 18px;
+            padding: 10px 20px;
+            line-height: 20px;
+            width: 100%;
+        });
+        .media-query(desktop-small, {
+            padding-top: 10px;
+            width: 100%;
+        });
+    }
+    &__card-content-background {
+        position: absolute;
+        bottom: 0;
+        height: 91px;
+        width: 100%;
+        background-color: @te-updated-dark-blue;
+        mix-blend-mode: multiply;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          opacity: 0.75;
+        }
+        .media-query(mobile, {
+            height: 76px;
+        });
+    }
+    &__card-image {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            min-width: 100%;
+            .media-query(desktop-small, {
+                height: 100%
+            });
+            .media-query(mobile, {
+               width: 100%;
+               height: auto;
+            });
+        }
+    }
+}

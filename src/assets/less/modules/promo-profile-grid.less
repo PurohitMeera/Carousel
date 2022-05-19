@@ -1,0 +1,128 @@
+.profile-promo-grid-section{
+    padding: 40px 0 50px 0;
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    h3.title{
+        font-size: 36px;
+        line-height: 1.2;
+        font-family: 'Avenir Roman', sans-serif;
+        color: @te-dark-blue-87;
+        margin-bottom: 63px;
+        text-align: center;
+        .media-query(mobile, {
+            font-size: 24px;
+            margin-bottom: 30px;
+        });
+    }
+
+    .btn{
+        height: 54px;
+        margin-right: auto;
+        text-align: center;
+        background-color: @te-orange;
+        padding: 0px 40px;
+        text-decoration: none;
+        float: none;
+        display: table;
+        bottom: 55px;
+        margin: 0 auto;
+        &:hover{
+            background-color: @te-dark-orange;
+        }
+        .media-query(mobile, {
+            bottom: 40px;
+            padding: 0px 20px;
+            margin-top: 40px;
+        });
+        .media-query(desktop, {
+            bottom: 38px;
+            margin-top: 60px;
+        });
+        span{
+            .text-80();
+            color: @te-white;
+            display: table-cell;
+            font-size: 18px;
+            font-family: 'Avenir Heavy', sans-serif;
+            vertical-align: middle;
+             .media-query(desktop, {
+                 line-height: inherit;
+                 font-size: 26px;
+             });
+        }
+    }
+     .media-query(mobile, {
+        padding: 60px 0px;
+    });
+}
+
+
+.profile-promo-grid-card{
+    margin: 0 10px;
+    background: @te-white;
+    &:hover{
+        color: @te-orange;
+        text-decoration: none;
+    }
+}
+.profile-promo-grid-card-list{
+     .media-query(desktop, {
+        display: flex;
+    });
+    .profile-promo-grid-card{
+        margin: 0 10px;
+        background: @te-white;
+        &:hover{
+            .profile-promo-grid-card-content{
+                h3, h4 {
+                    color: @te-orange;
+                    text-decoration: none;
+                }
+            }
+        }
+         .media-query(mobile, {
+            margin: 30px;
+        });
+        .media-query(desktop, {
+            max-width: 405px;
+            max-height: 513px;
+        });
+        .profile-promo-grid-card-image{
+            img{
+                text-align: center;
+                max-width: 405px;
+                max-height: 373px;
+                width: 100%;
+            }
+        }
+        .profile-promo-grid-card-content{
+            padding: 29px 25px 25px 25px;
+            background: @te-white;
+            h3{
+                font-size: 18px;
+                line-height: 1.2;
+                font-family: 'Avenir Book Oblique', sans-serif;
+                color: @te-dark-blue-87;
+                margin-bottom: 22px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            h4{
+                font-size: 12px;
+                line-height: 1.2;
+                font-family: 'Avenir Heavy', sans-serif;
+                color: @te-dark-blue-87;
+                margin-bottom: 0;
+                text-transform: uppercase;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+}

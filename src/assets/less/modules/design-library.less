@@ -1,0 +1,119 @@
+.design-library {
+    .dl_container {
+        .clearfix();
+        position: relative;
+        top: 75px;
+        width: 100%;
+    }
+    .leftPanel {
+        float: left;
+        width: 20%;
+        padding: 0 0 (@v_space*2.5) (@h_space*1);
+        border-right: 1px solid @te-dark-grey-65;
+        overflow-y: auto;
+        height: 87vh;
+        position: fixed;
+    }
+    .rightPanel {
+        float: right;
+        width: 80%;
+        height: 100vh;
+    }
+
+    .top-nav-dl {
+        background-color: @te-orange;
+        height: 75px;
+        position: fixed;
+        z-index: 99;
+        width: 100%;
+        #te-header {
+            background: transparent;
+            .logo {
+                padding-top: 18px;
+            }
+        }
+    }
+    #te-footer {
+        background-color: @te-dark-grey-94;
+        padding: (@v_space*2) 0;
+        .text-92();
+        color: @te-white;
+        text-align: center;
+        height: 51px;
+        position: fixed;
+        bottom: 0;
+        z-index: 99;
+    }
+
+    .u-vmenu {
+        margin: 0 0 (@v_space*2.5) 0;
+        li {
+            margin:(@v_space*1) (@h_space*1.5) 0 0;
+            a.design-libraryLink {
+                display: none;
+            }
+        }
+        ul {
+            li {
+                width: 100%;
+                list-style: none;
+                padding-left: (@v_space*1.5);
+                a {
+                    span {
+                        float: right;
+                        margin-top: (@v_space*.3);
+                    }
+                }
+                a[data-option='on'] {
+                    span {
+                        -webkit-transform: rotate(90deg);
+                        -ms-transform: rotate(90deg);
+                        transform: rotate(90deg);
+                        transition: transform .65s ease;
+                    }
+                }
+                a[data-option='off'] {
+                    span {
+                        transition: transform .65s ease;
+                    }
+                }
+            }
+            ul {
+                display: none;
+            }
+        }
+    }
+    .u-vmenu ul .u-vmenu ul .u-vmenu ul li a {
+        padding: (@v_space*2) (@h_space*1);
+        display: block;
+        color: @te-blue;
+        width: 100%;
+
+        &:hover {
+            color: @te-pale-blue;
+        }
+    }
+    .design-library-link{display: none;}
+    a{
+        &.active{
+            background: @te-white;
+            animation: blinkingActiveTab 2s;
+            animation-delay: 1s;
+            animation-timing-function: ease;
+            display: block;
+            color:@te-orange;
+        } 
+    }
+}
+
+@-webkit-keyframes blinkingActiveTab {
+    0%    {background: @te-light-yellow;}
+    50%   {background: @te-yellow;}
+    100%  {background: @te-white;}
+}
+
+@keyframes blinkingActiveTab {
+    0%    {background: @te-light-yellow;}
+    50%   {background: @te-yellow;}
+    100%  {background: @te-white;}
+}

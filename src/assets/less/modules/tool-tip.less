@@ -1,0 +1,45 @@
+.tool-tip-container{
+    position: absolute;
+    z-index: 11;
+    width: 300px;
+    border: 1px solid @te-cool-grey-35;
+    background-color: @te-white;
+    color: @te-cool-grey !important;
+    .tool-tip-message{
+        margin: 20px 30px 20px 20px;
+        .text-90();
+        text-align: center;
+    }
+    .tool-tip-close{
+        position: absolute;
+        right: 10px;
+        top:8px;
+        cursor: pointer;
+    }
+    .icon-close{
+        font-size: 11px;
+    }
+    .arrow-down{
+        .before {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0px 10px;
+            border-color: @te-white transparent transparent transparent;
+            z-index: 13;
+        }
+        .after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 11px 11px 0px 11px;
+            border-color: @te-cool-grey-65 transparent transparent transparent;
+            z-index: 12;
+        }
+    }
+}
+.toopltip-content{
+    display: none;
+}

@@ -1,0 +1,125 @@
+/* Chat modal css her */
+#chat-container{
+    width: 1024px;
+    margin: 0 auto;
+    display: none !important; //FE18-6140 - turn off chat modal
+     .media-query(mobile, {
+         //padding-bottom: 130px;
+         padding-bottom: 30px;
+    });
+}
+.chat-modal {
+    background: @te-light-blue;
+    padding: 13px 20px 20px;
+    color: @te-white;
+    width: 268px;
+    position: fixed;
+    bottom: 73px;
+    margin-left: 710px;
+    z-index: 49;
+    height: 223px;
+    .media-query(mobile, {
+        right: 7%;
+        bottom: 103px;
+        width: 220px;
+        padding-top: 8px;
+        padding-bottom: 15px;
+        height:156px;
+    }
+    );
+    &:after {
+        top: 100%;
+        left: 22%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-top-color: @te-light-blue;
+        border-width: 12px;
+        margin-left: -30px;
+        .media-query(mobile, {
+            /*left: 90%;*/
+            left: 25%;
+        }
+        );
+    }
+    .chat-title {
+        h3 {
+            float: left;
+            .text-20();
+        }
+        a {
+            float: right;
+            margin-top: 9px;
+            cursor: pointer;
+            &:hover {
+                i {
+                    color: @te-white !important;
+                }
+            }
+            .icon-small {
+                .media-query(mobile, {
+                    /*margin-bottom:0 !important;
+                    display:inline-block;*/
+                    margin-bottom: 7px;
+                    
+                }
+                );
+            }
+        }
+    }
+    .chat-content {
+        clear: both;
+        float: left;
+        margin-top: 10px;
+        .text-62();
+        .media-query(mobile, {
+            display: none;
+        }
+        );
+    }
+    .chat-button {
+        margin-top: 16px !important;
+        clear: both;
+        float: left;
+        .media-query(mobile, {
+            margin-top: 8px !important;
+        }
+        );
+        .live-chat {
+            &:hover {
+                background: @te-white;
+                color: @te-blue !important;
+                i {
+                    color: @te-blue;
+                }
+            }
+        }
+        a {
+            width: 200px;
+            .media-query(mobile, {
+                width: 180px;
+            }
+            );
+            .icon-small {
+                .media-query(mobile, {
+                    /*margin-bottom:0 !important;
+                    display:inline-block;*/
+                    display: block;
+                    margin-bottom: 0px;
+                }
+                );
+            }
+        }
+        p {
+            padding-top: 18px;
+            float: left;
+            .media-query(mobile, {
+                    padding-top:13px;
+                }
+                );
+        }
+    }
+}

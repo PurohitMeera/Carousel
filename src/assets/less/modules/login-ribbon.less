@@ -1,0 +1,35 @@
+.login-ribbon {
+    .column(12);
+    background-color: @te-light-pale-blue;
+    display: inline-block;
+    position:relative;
+    &:before{
+        content: '';
+        .te-sprite(@blue-carat-south);
+        position:absolute;
+        bottom: -17px;
+        left: 38px;
+    }
+    .copy-container {
+        padding: 60px 37px 37px;
+        display: table;
+        color: black;
+        span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    .close-button {
+        position: absolute;
+        top: 5px;
+        right: 27px;
+    }
+    .login-button {
+        float: right;
+        border-color: @te-pale-blue;
+        i {
+            border-left-color: @te-pale-blue;
+        }
+    }
+
+}

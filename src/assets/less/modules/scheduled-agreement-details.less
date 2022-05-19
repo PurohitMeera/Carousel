@@ -1,0 +1,1204 @@
+
+.text-align-right{
+    text-align: right;
+}
+.display-none{
+    display: none;
+}
+.display-inline-block{
+    display: inline-block;
+}
+.scheduled-order-detail-content-wrapper{
+    .schedule-order-details-error-message, .request-access-error, .session-timeout-error{
+        margin: 0 auto;
+        width: 1024px;
+        padding: 20px 42px 350px;
+        .media-query(mobile, {
+            padding: 20px 27px 350px;
+            width: 100%;
+        });
+        .media-query(desktop-wide, {
+            padding: 20px 64px 350px;
+            width: 1440px;
+        });
+        span{
+            .text-70();
+            .font-lineheight(14, 22);
+            letter-spacing: 0;
+            display: block;
+            padding: 10px 20px;
+            p{
+                display:inline-block;
+            }
+        }
+        &.error-msg{
+            span{
+                color: @te-red;
+                background-color: rgba(205, 32, 44, 0.25);
+                border-left: 4px solid @te-red;
+            }            
+        }
+        &.warning-msg{
+            span{
+                color:@te-cool-grey;
+                background-color: rgba(252, 212, 80, 0.25);
+                border-left: 4px solid @te-yellow;
+            }            
+        }
+    }
+    .schedule-order-page{
+        .schedule-main-container{
+            background-color: @te-cool-grey-5;
+            .schedule-section{
+                width: 1024px;
+                margin: 0 auto;
+                padding: 20px 42px 20px;
+                .media-query(mobile, {
+                    padding: 20px 23px 20px 27px;
+                    width: 100%;
+                });
+                .media-query(desktop-wide, {
+                    padding: 20px 64px 20px;
+                    width: 1440px;
+                    margin: 0 auto;
+                });
+                .schedule-label{
+                    .text-25();
+                    .font-lineheight(24, 28);
+                    letter-spacing: 0;
+                    color: @te-dark-grey;
+                    p{
+                        display: inline-block;
+                    }
+                }
+                .search-commerce-order-section{
+                    float: right;
+                    margin-top: 10px;
+                    .media-query(mobile, {
+                        float: none;
+                        margin-top: 20px;
+                    });
+                    .commerce-order-label{
+                        .text-42();
+                        .font-lineheight(16, 22);
+                        letter-spacing: 0;
+                        color: @te-dark-grey;
+                        .media-query(desktop-wide, {
+                            padding-right:30px;
+                        });
+                    }
+                    .track-commerce-order{
+                        .text-70();
+                        .font-lineheight(14, 22);
+                        letter-spacing: 0;
+                        color: @te-dark-grey;
+                        .track-order-angle-right{
+                            line-height: 22px;
+                            position: relative;
+                            top: 2px;
+                            padding-left: 8px;
+                        }
+                    }
+                }
+                .account-info-section{
+                    padding-top:20px;
+                    clear: both;
+                    .account-info-label{
+                        .text-42();
+                        .font-lineheight(16, 24);
+                        letter-spacing: 0;
+                        color: @te-dark-grey;
+                    }
+                    .account-info-container{
+                        margin-top: 10px;
+                        display: inline-block;
+                        width:100%;
+                        .media-query(mobile, {
+                            margin-top: 0px;
+                        });
+                        .account-info-details{
+                            float: left;
+                            width: 34%;
+                            word-break: break-word;
+                            margin-right: 20px;
+                            .text-70();
+                            .font-lineheight(14, 22);
+                            letter-spacing: 0;
+                            color: @te-dark-grey;
+                            &:last-child{
+                                width: 25%;
+                            }
+                            :first-child{
+                                .text-80();
+                            }
+                            .media-query(mobile, {
+                                float: none;
+                                width: 100%;
+                                margin: 20px 0px 0px;
+                                &:first-of-type{
+                                    margin-top: 10px;
+                                }
+                            });
+                            span{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .schedule-agreement-order-details-container,.schedule-order-line-item-container,.schedule-agreement-delivery-container{
+            width: 1024px;
+            margin: 0 auto;
+            .media-query(mobile,{
+                width: 100%;
+            });
+            .media-query(desktop-wide,{
+                width: 1440px;
+            });
+            .schedule-order-details-section{
+                margin: 18px 42px 0px;
+                border: 1px solid @te-cool-grey-10;
+                .media-query(mobile, {
+                    margin: 20px 27px 0px;
+                });
+                .media-query(desktop-wide, {
+                    margin: 20px 64px 0px;
+                });
+                .schedule-order-details-heading{
+                    background-color: @te-cool-grey-5;
+                    border-bottom: 1px solid @te-cool-grey-10;
+                    padding: 10px 20px;
+                    .text-42();
+                    .font-lineheight(16, 24);
+                    letter-spacing: 0;
+                    height:44px;
+                    p{
+                        color:@te-dark-grey;
+                    }
+                }
+                .schedule-order-details-container{
+                    padding: 0px 20px 61px;
+                    display: inline-block;
+                    width: 100%;
+                    .media-query(mobile, {
+                        padding: 0px 0px 20px 20px;
+                        display: block;
+                    });
+                    .media-query(desktop-wide, {
+                        padding: 0px 20px 20px;
+                    });
+                    .schedule-order-details-left-section, .schedule-order-details-right-section{
+                        .schedule-order-details{
+                            word-break: break-word;
+                            .text-70();
+                            .font-lineheight(14, 22);
+                            letter-spacing: 0;
+                            color: @te-dark-grey;
+                            padding: 20px 20px 0px 0px;
+                            :first-child{
+                                .text-80();
+                            }
+                            span{
+                                display: block;
+                            }
+                            .mail-tel{
+                                :first-child{
+                                    .text-70();
+                                }
+                            }
+                        }
+                    }
+                    .schedule-order-details-left-section{
+                        width: 42%;
+                        float: left;
+                        .media-query(mobile, {
+                            float: none;
+                            width: 100%;
+                        });
+                        .media-query(desktop-wide, {
+                            width: 51%;
+                        });
+                        .schedule-document-details{
+                            span{
+                                margin-bottom: 5px;
+                                &:first-child{
+                                    margin-bottom: 8px;
+                                }
+                                &:last-child{
+                                    margin-bottom: 0px;
+                                }
+                            }
+                        }
+                    }
+                    .schedule-order-details-right-section{
+                        display: inline-block;
+                        width: 58%;
+                        .media-query(mobile, {
+                            display: block;
+                            width: 100%;
+                        });
+                        .media-query(desktop-wide, {
+                            width: 49%;
+                        });
+                    }
+                }
+            }
+            /*** SHIPMENT HISTORY CSS START HERE***/
+            .shipment-history-container{
+                width: 1024px;
+                margin: 0 auto;
+                .media-query(mobile,{
+                    width: 100%;
+                });
+                .media-query(desktop-wide,{
+                    width: 1440px;
+                });
+                .shipment-tab-mobile{
+                    margin: 16px 27px 0px;
+                    padding: 20px 0px;
+                    border-top: 1px solid  @te-cool-grey-10;
+                    border-bottom: 1px solid  @te-cool-grey-10;
+                    color: @te-blue;
+                    .shipment-tab-label{
+                        .text-42();
+                        .font-lineheight(16,24);
+                        display: inline-block;
+                        text-transform: uppercase;
+                        width:94%;
+                        .shipment-label{
+                            p{
+                                display: inline;
+                            }
+                        }
+                    }
+                    .right-arrow{
+                        float: right;
+                        font-size: 22px;
+                        width: 13px;
+                    }
+                }
+                .schedule-order-shipments{
+                    .order-details-tab{
+                        background-color: @te-cool-grey-5;
+                        padding: 20px;
+                        color: @te-blue;
+                        .shipment-details-label{
+                            .text-70();
+                            .font-lineheight(14,22);
+                            letter-spacing:0;
+                            margin-left: 12px;
+                            display: inline-block;
+                        }
+                        .left-arrow{
+                            font-size: 18px;
+                            float: left;
+                            position: relative;
+                            top:1px;
+                        }
+                    }
+                    .shipment-header{
+                        .text-42();
+                        .font-lineheight(16, 24);
+                        letter-spacing: 0;
+                        color: @te-cool-grey;
+                        text-align: center;
+                        text-transform: uppercase;
+                        padding: 20px 0px 10px;
+                        border-bottom: 1px solid @border-color-10;
+                        margin: 0px 42px;
+                        .media-query(mobile,{
+                            margin: 0px 27px;
+                        });
+                        .media-query(desktop-wide,{
+                            margin: 0px 64px;
+                        });
+                        .shipment-in-last-days{
+                            display: inline-block;
+                        }
+                    }
+                    .shipment-container{
+                        margin: 20px 42px;
+                        border: solid 1px @te-cool-grey-10;
+                        .media-query(mobile,{
+                            margin: 20px 27px;
+                            padding:0px 20px;
+                        });
+                        .media-query(desktop-wide,{
+                            margin: 20px 64px;
+                        });
+                        .shipment-header-section{
+                            padding: 30px 15px;
+                            background-color:@te-cool-grey-5;
+                            .media-query(mobile,{
+                                display:none;
+                            });
+                            .media-query(desktop-wide,{
+                                padding: 30px 20px;
+                            });
+                            .shipment-table-row {
+                                list-style-type: none;
+                                margin: 0;
+                                padding: 0;
+                                overflow: hidden;
+                                li {
+                                    float: left;
+                                    .text-80();
+                                    .font-lineheight(14,22);
+                                    color:@te-dark-grey-65;
+                                    text-align: left;
+                                    text-transform: capitalize;
+                                    padding-right: 8px;
+                                    word-break: break-word;
+                                    &:nth-child(1){
+                                        width:9%;
+                                    }
+                                    &:nth-child(2){
+                                        width:12%;
+                                    }
+                                    &:nth-child(3){
+                                        width:15%;
+                                    }
+                                    &:nth-child(4){
+                                        width:21%;
+                                    }
+                                    &:nth-child(5){
+                                        width:17%;
+                                    }
+                                    &:nth-child(6){
+                                        width:13%;
+                                    }
+                                    &:nth-child(7){
+                                        width:13%;
+                                        text-align:center;
+                                        padding-right: 0;
+                                    }
+                                    .media-query(desktop-wide,{
+                                        &:nth-child(1){
+                                            width:11%;
+                                        }
+                                        &:nth-child(2){
+                                            width:12%;
+                                        }
+                                        &:nth-child(3){
+                                            width:15%;
+                                        }
+                                        &:nth-child(4){
+                                            width:19%;
+                                        }
+                                        &:nth-child(5){
+                                            width:17%;
+                                        }
+                                        &:nth-child(6){
+                                            width:14%;
+                                        }
+                                        &:nth-child(7){
+                                            width:12%;
+                                        }
+                                    });
+                                }
+                              }
+                        }
+                        .table-container{
+                            padding:0px 15px;
+                            .media-query(desktop-wide,{
+                                padding:0px 20px;
+                            });
+                            .media-query(mobile,{
+                                padding:0px;
+                            });
+                            .shipment-list {
+                                width: 100%;
+                                .shipment-item{ 
+                                    border-bottom: 1px solid @te-cool-grey-10;
+                                    &:last-of-type{
+                                        border-bottom: 0;
+                                    }
+                                    td {
+                                        vertical-align: top;
+                                        padding:20px 0px;
+                                        .text-70();
+                                        color: @te-dark-grey;
+                                        .font-lineheight(14,22);
+                                        text-align: left;
+                                        padding-right: 8px;
+                                        word-break: break-word;
+                                        &:first-child{
+                                            width:9%;
+                                        }
+                                        &:nth-child(2){
+                                            width:12%;
+                                        }
+                                        &:nth-child(3){
+                                            width:15%;
+                                        }
+                                        &:nth-child(4){
+                                            width:21%;
+                                        }
+                                        &:nth-child(5){
+                                            width:17%;
+                                        }
+                                        &:nth-child(6){
+                                            width:13%;
+                                        }
+                                        &:nth-child(7){
+                                            width:13%;
+                                            text-align: center;
+                                            padding-right: 0;
+                                        }
+                                        .shipment-details{
+                                            .download-label{
+                                                margin-left: 5px;
+                                            }
+                                            .document{
+                                                color: @te-blue;
+                                                cursor: pointer;
+                                                .text-70();
+                                                .font-lineheight(14,22);
+                                                &:hover{
+                                                    color:@te-light-blue;
+                                                }
+                                            }
+                                        }
+                                        .media-query(desktop-wide,{
+                                            &:first-child{
+                                                width:11%;
+                                            }
+                                            &:nth-child(2){
+                                                width:12%;
+                                            }
+                                            &:nth-child(3){
+                                                width:15%;
+                                            }
+                                            &:nth-child(4){
+                                                width:19%;
+                                            }
+                                            &:nth-child(5){
+                                                width:17%;
+                                            }
+                                            &:nth-child(6){
+                                                width:14%;
+                                            }
+                                            &:nth-child(7){
+                                                width:12%;
+                                            }
+                                        });
+                                        .media-query(mobile,{
+                                            width:50%;
+                                            display: inline-block;
+                                            padding:20px 0px 0px;
+                                            &:nth-child(odd){
+                                                padding-right: 5px;
+                                            }
+                                            &:nth-child(4){
+                                                width:100%;
+                                            }
+                                            &:nth-child(7){
+                                                width:100%;
+                                                text-align: left;
+                                                padding-bottom: 20px;
+                                                .col-heading{
+                                                    width: 50%;
+                                                    float: left;
+                                                    padding-bottom: 0px;
+                                                }
+                                                .shipment-details{
+                                                    width: 50%;
+                                                    display: inline-block;
+                                                }
+                                            }
+                                            .col-heading{
+                                                .text-80();
+                                                color:@te-dark-grey-65;
+                                                .font-lineheight(14,22);
+                                                text-transform: capitalize;
+                                                padding-bottom: 4px;
+                                                word-break: break-all;
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .no-shipment-container{
+                        margin: 20px 42px;
+                        padding: 118px 20px 138px;
+                        text-align: center;
+                        border: 1px solid @te-cool-grey-10;
+                        color: @te-cool-grey-9;
+                        .media-query(mobile,{
+                            margin: 20px 27px;
+                            padding: 128px 20px;
+                        });
+                        .media-query(desktop-wide,{
+                            margin: 20px 64px;
+                        });
+                        .no-shipment-icon{
+                            font-size: 24px;
+                        }
+                        .no-shipment-message{
+                            .text-40();
+                            .font-lineheight(16, 24);
+                            letter-spacing: 0;
+                            padding-top: 8px;
+                        }
+                    }
+                    .inventory-main-content{
+                        padding-bottom:16px;
+                        .media-query(mobile,{
+                            padding-bottom:0px;
+                        });
+                        .pagination{
+                            padding:0 7vw;
+                            .next{
+                                top:0;
+                            }
+                        }
+                    }
+                }
+            }
+            /*** SHIPMENT HISTORY CSs END HERE***/
+            /*****LINE ITEM SECTION START HERE*****/
+            .single-line-item{
+                padding: 20px 42px 0px;
+                .media-query(mobile,{
+                    padding: 20px 26px 0px;
+                });
+                .media-query(desktop-wide,{
+                    padding: 20px 64px 0px;
+                });
+                .single-item-heading{
+                    .text-42();
+                    color: @te-cool-grey;
+                    .font-lineheight(16,24);
+                    padding-bottom: 10px;
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid @te-cool-grey-35;
+                    text-align: center;
+                    p{
+                        display: inline-block;
+                    }
+                }
+                .main-container{
+                    width: 100%;
+                    display: inline-block;
+                    border: 1px solid @te-cool-grey-10;
+                    .first-column{
+                        width: 36%;
+                        float: left;
+                        .heading{
+                            .text-80();
+                            word-break: break-word;
+                            .font-lineheight(14,22);
+                            color: @te-dark-grey-65;
+                            background-color: @te-cool-grey-5;
+                            padding: 20px;
+                            .media-query(mobile,{
+                                display: none;
+                                background: none;
+                            });
+                        }
+                        .product-container{
+                            padding: 20px;
+                            width: 100%;
+                            display: inline-block;
+                            float: left;
+                            .img-div{
+                                width: 65px;
+                                height: 65px;
+                                float: left;
+                                margin-right: 10px;
+                                border: 1px solid @te-cool-grey-10;
+                                &:before{
+                                    background-color: @te-blue;
+                                    border-left: 27px solid @te-orange;
+                                    content: "";
+                                    display: block;
+                                    height: 4px;
+                                    position: relative;
+                                    width: 100%;
+                                }
+                                img{
+                                    height: 59px;
+                                    width: 62px;
+                                }
+                            }
+                            .product-desc{
+                                padding-left: 75px;
+                                .media-query(mobile,{
+                                    padding-left: 72px;
+                                });
+                                .partDescription{
+                                    .text-70();
+                                    .font-lineheight(14,22);
+                                    color: @te-blue;
+                                    margin-bottom: 2px;
+                                    word-break: break-word;
+                                }
+                                .partTcpn{
+                                    .text-70();
+                                    .font-lineheight(14,22);
+                                    color: @te-cool-grey-9;
+                                    margin-bottom: 2px;
+                                    .media-query(mobile,{
+                                        margin-left: 2px;
+                                    });
+                                }
+                                .custNumber{
+                                    margin-bottom: 2px;
+                                    span{
+                                        color: @te-cool-grey-9;
+                                        display:inline-block;
+                                        .text-90();
+                                        .font-lineheight(12,16);
+                                        p{
+                                            .text-94();
+                                            .font-lineheight(12,16);
+                                            margin-right:8px;
+                                        }
+                                        .media-query(mobile,{
+                                            .text-70();
+                                            .font-lineheight(14,18);
+                                            p{
+                                                .text-80();
+                                                .font-lineheight(14,18);
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                        .media-query(mobile,{
+                            width: 100%;
+                        });
+                    }
+                    .second-column,.third-column{
+                        width: 32%;
+                        float: left;
+                        .media-query(mobile,{
+                            padding:0px 20px;
+                        });
+                        &.mobile-column{
+                            .media-query(mobile,{
+                                float: right;
+                            });
+                        }
+                        &.cumulative{
+                            .media-query(mobile,{
+                                text-align: left;
+                            });
+                        }
+                        .perUnit{
+                            .text-90();
+                            color: @te-cool-grey-9;
+                            .font-lineheight(12,18);
+                            text-align: right;
+                            padding-right: 120px;
+                            p{
+                                display: inline;
+                                padding-right: 2px;
+                            }
+                            .media-query(mobile,{
+                                padding-right: 0;
+                            });
+                            .media-query(desktop-wide,{
+                                padding-right: 180px;
+                            });
+                        }
+                        
+                        .heading{
+                            .text-80();
+                            word-break: break-word;
+                            .font-lineheight(14,22);
+                            color: @te-dark-grey-65;
+                            background-color: @te-cool-grey-5;
+                            padding: 20px;
+                            text-align: right;
+                            &.unit{
+                                padding-right: 120px;
+                                .media-query(desktop-wide,{
+                                    padding-right:180px;
+                                });
+                            }
+                            .media-query(mobile,{
+                                float:left;
+                                padding: 0;
+                                background: none;
+                                width:100%;
+                                text-align: left;
+                                &.unit{
+                                    float:right;
+                                    padding-right:0px;
+                                    text-align:right;
+                                }
+                            });
+                        }
+                        .totalpc,.price{
+                            .text-70();
+                            .font-lineheight(14,22);
+                            color: @te-dark-grey;
+                            text-align: right;
+                            padding: 20px;
+                        }
+                        .price{
+                            padding-right: 120px;
+                            padding-bottom: 0;
+                            .media-query(desktop-wide,{
+                                padding-right:180px;
+                            });
+                        }
+                        .media-query(mobile,{
+                            width: 50%;
+                            .totalpc{
+                                float: left;
+                                text-align: left;
+                                padding: 10px 0px;
+                            }
+                            .price{
+                                padding: 10px 0 0;
+                                text-align: right;
+                            }
+                        });
+                    }
+                    .second-column{
+                        .media-query(mobile,{
+                            float:right;
+                        });
+                    }
+                    .third-column{
+                        .media-query(mobile,{
+                            float:left;
+                        });
+                    }
+                }
+                
+            }
+
+            /*****LINE ITEM SECTION END HERE*****/
+            /*SCHEDULE DELIVERY DETAILS SECTION START HERE*/
+            .schedule-delivery-container{
+                //margin: 18px 42px 0;
+                padding: 0 42px;
+                .media-query(desktop-wide,{
+                    //margin:18px 64px 0;
+                    padding: 0 64px;
+                });
+                .media-query(mobile,{
+                    margin: 0;
+                    padding:0;
+                });
+                .empty-schedule-delivery-container{
+                    .media-query(mobile,{
+                        padding: 0px 26px 26px;
+                    });
+                    .empty-schedule-delivery-heading{
+                        .text-42();
+                        .font-lineheight(16, 24);
+                        letter-spacing: 0;
+                        color: @te-dark-grey;
+                        text-transform: uppercase;
+                        text-align: center;
+                        padding:10px 0px;
+                        border-bottom:1px solid @te-cool-grey-35;
+                    }
+                    .empty-schedule-delivery-containt{
+                        width:100%;
+                        height:auto;
+                        height:312px;
+                        text-align:center;
+                        margin-top:20px;
+                        border:1px solid @te-cool-grey-10;
+                        .media-query(mobile,{
+                            margin-top:0px;
+                        });
+                        .msg-alignment{
+                            padding-top:118px;
+                            .empty-schedule-icon{
+                                width: 21px;
+                                height: 24px;
+                                display:inline-block;
+                                font-size: 24px;
+                            }
+                            .no-schedule-label{
+                                .text-40();
+                                .font-lineheight(16,24);
+                                color:@te-cool-grey-9;
+                                padding-top: 8px;
+                            }
+                        }
+                    }
+                };
+                .order-details-for{
+                    background-color: @te-cool-grey-5;
+                    padding:20px 26px;
+                    color:@te-blue;
+                    .left-arrow{
+                        position: relative;
+                        top:1px;
+                    }
+                    .schedule-delivery-order-label{
+                        .text-70();
+                        .font-lineheight(14,22);
+                        letter-spacing:0;
+                        margin-left:5px;
+                        p{
+                            display:inline;
+                        }
+                    }
+                    span{
+                        .text-70();
+                        .font-lineheight(14,22);
+                        letter-spacing:0;
+                    }
+                    .right-arrow{
+                        float: right;
+                        font-size:14px;
+                    }
+                }
+                .padding-mobile{
+                    padding:0px;
+                    .media-query(mobile,{
+                        padding:0px 20px;
+                    });
+                }
+                .schedule-delivery-header-mobile-view{
+                    .text-42();
+                    .font-lineheight(16, 24);
+                    letter-spacing: 0;
+                    color: @te-blue;
+                    text-transform: uppercase;
+                    text-align: left;
+                    padding:10px 0px;
+                    margin:0px 26px;
+                    border-bottom:1px solid @te-cool-grey-35;
+                    .media-query(mobile,{
+                        padding:0px 0px 20px;
+                        margin:20px 26px 0px;
+                        border-bottom:1px solid @te-cool-grey-10;
+                    });
+                    &.mobile{
+                        .schedule-tab-label{
+                            width:90%;
+                            display: inline-block;
+                            .heading{
+                                p{
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+                    .arrow-right{
+                        float:right;
+                        font-size:22px;
+                        width:13px;
+                    }
+                    span p{
+                        display: inline-block;
+                    }
+                }
+                .schedule-delivery-summary-header{
+                    .text-42();
+                    .font-lineheight(16, 24);
+                    letter-spacing: 0;
+                    color: @te-cool-grey;
+                    text-transform: uppercase;
+                    text-align: center;
+                    padding:0px 0px 10px;
+                    border-bottom:1px solid @te-cool-grey-35;
+                    .media-query(mobile,{
+                        margin:20px 26px;
+                    });
+                    span p{
+                        display: inline-block;
+                    }
+                }
+                .schedule-delivery-header{
+                    clear: both;
+                    border: 1px solid @te-cool-grey-10;
+                    margin-top: 20px;
+                    .media-query(mobile,{
+                        margin:20px 26px;
+                    });
+                    .schedule-delivery-header-section{
+                        .media-query(mobile,{
+                            display:none;
+                        });
+                        ul {
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                            background-color:@te-cool-grey-5;
+                            height: 84px;
+                            padding: 30px 20px;
+                        }
+
+                        li {
+                            float: left;
+                            display: block;
+                            .text-80();
+                            .font-lineheight(14,22);
+                            color:@te-dark-grey-65;
+                            text-align: left;
+                            width:14%;
+                            text-transform: capitalize;
+                            padding-right: 8px;
+                            word-break: break-word;
+                        }
+                        ul li:nth-child(1){
+                            width:10%;
+                            .media-query(desktop-wide,{
+                                width:16%;
+                            });
+                        }
+                        ul li:nth-child(2){
+                            width:14%;
+                        }
+                        ul li:nth-child(3){
+                            width:18%;
+                            .media-query(desktop-wide,{
+                                width:16%;
+                            });
+                        }
+                        ul li:nth-child(4){
+                            width:18%;
+                            .media-query(desktop-wide,{
+                                width:16%;
+                            });
+                        }
+                        ul li:nth-child(5){
+                            width:20%;
+                            .media-query(desktop-wide,{
+                                width:19%;
+                            });
+                        }
+                        ul li:nth-child(6){
+                            width:20%;
+                            padding-right: 0;
+                            .media-query(desktop-wide,{
+                                width:19%;
+                            });
+                        }
+                    }
+                    .table-container{
+                        padding:0px 20px;
+                        .media-query(mobile,{
+                            padding:0px 5px 0px 15px
+                        })
+                    }
+                    .schedule-delivery-list {
+                        width: 100%;
+                        td {
+                            padding:(@v_space*2) (@h_space*0.8) (@v_space) (@h_space*0);
+                            vertical-align: top;
+                            .text-70();
+                            color: @te-dark-grey;
+                            .font-lineheight(14,22);
+                            text-align: left;
+                            word-break: break-word;
+                            &:first-child{
+                                width:10%;
+                                text-transform: capitalize;
+                                .media-query(desktop-wide,{
+                                    width:16%;
+                                });
+                            }
+                            &:nth-child(2){
+                                width:14%;
+                            }
+                            &:nth-child(3){
+                                width:18%;
+                                .media-query(desktop-wide,{
+                                    width:16%;
+                                });
+                            }
+                            &:nth-child(4){
+                                width:18%;
+                                .media-query(desktop-wide,{
+                                    width:16%;
+                                });
+                            }
+                            &:nth-child(5){
+                                width:20%;
+                                .media-query(desktop-wide,{
+                                    width:19%;
+                                });
+                            }
+                            &:nth-child(6){
+                                width:20%;
+                                padding-right: 0;
+                                .media-query(desktop-wide,{
+                                    width:19%;
+                                });
+                            }
+                            .media-query(mobile,{
+                                width:50%;
+                                display: inline-block;
+                                padding:(@v_space*2) (@h_space*0) (@v_space*0);
+                                &:nth-child(odd){
+                                    padding-right: 5px;
+                                }
+                                .col-heading{
+                                    .text-80();
+                                    color:@te-dark-grey-65;
+                                    .font-lineheight(14,22);
+                                    text-transform: capitalize;
+                                }
+                                &:last-of-type{
+                                    padding:(@v_space*2) (@h_space*0) (@v_space*1);
+                                }
+                            });
+                        }
+                        .delivery-item{ 
+                            border-bottom: 1px solid @te-cool-grey-10;
+                            &:last-of-type{
+                                border-bottom: 0;
+                                td{
+                                    padding-bottom:(@v_space*2);
+                                }
+                            }
+
+                        }
+                    }
+                }
+                .adjust-pagination{
+                    padding-top:20px;
+                    .media-query(mobile,{
+                        padding:0px;
+                    });
+                    .pagination{
+                        padding:0 7vw;
+                        .next{
+                            top:0;
+                        }
+                    }
+                }
+            }
+            /*SCHEDULE DELIVERY DETAILS SECTION END HERE*/
+        }
+        .schedule-order-view-fullOrder-container{
+            background-color: @te-white;
+            display: inline-block;
+            width: 100%;
+            .view-fullOrder-section{
+                margin: 0 auto;
+                width: 1024px;
+                padding-top: 4px;
+                .media-query(mobile, {
+                    width: 100%;
+                    padding: 0px 24px 17px 28px;
+                });
+                .media-query(desktop-wide, {
+                    width: 1440px;
+                });
+                .order-summery-label{
+                    .text-30();
+                    .font-lineheight(18, 24);
+                    letter-spacing: 0;
+                    color: @te-dark-grey;
+                    float: right;
+                    margin-right: 92px;
+                    width: 256px;
+                    .media-query(mobile, {
+                        float: none;
+                        margin: 0;
+                    });
+                    .media-query(desktop-wide, {
+                        margin-right: 112px;
+                    });
+                }
+                .price-details-part{
+                    .text-42();
+                    .font-lineheight(16, 24);
+                    letter-spacing: 0;
+                    color: @te-orange;
+                    clear: both;
+                    width: 302px;
+                    float: right;
+                    margin: 8px 45px 0px 0px;
+                    .media-query(mobile, {
+                        width: 100%;
+                        float: none;
+                        margin: 8px 0px 0px;
+                    });
+                    .media-query(desktop-wide, {
+                        width: 304px;
+                        margin: 8px 64px 0px 0px;
+                    });
+                    .total-label{
+                        text-transform: uppercase;
+                        width: 46%;
+                        float: left;
+                    }
+                    .total-price{
+                        width: 46%;
+                        text-align: right;
+                        float: right;
+                    }
+                }
+                .view-schedule-order-detail-cta{
+                    .text-93();
+                    .font-lineheight(14, 16);
+                    color: @te-white;
+                    background-color: @te-blue;
+                    width: 194px;
+                    min-height: 40px;
+                    padding: 12px;
+                    margin: 10px 42px 40px 0px;
+                    clear: both;
+                    float: right;
+                    text-align: center;
+                    border: none;
+                    cursor: pointer;
+                    position: relative;
+                    &:hover{
+                        background-color: @te-light-blue;
+                    }
+                    .media-query(mobile, {
+                        margin: 10px 0px 0px;
+                        width: 100%;
+                        float: none;
+                    });
+                    .media-query(desktop-wide, {
+                        margin: 10px 64px 40px 0px;
+                    });
+                    &.spinnerloading:before{
+                        content:'';
+                        border: 4px solid @te-cool-grey-10;
+                        border-radius: 50%;
+                        border-top: 4px solid @te-white;
+                        border-left: 4px solid @te-white;
+                        border-right: 4px solid @te-white;
+                        position: absolute;
+                        left: 43%;
+                        top: 05px;
+                        z-index: 99;
+                        width: 30px;
+                        height: 30px;
+                        -webkit-animation: spin 1.5s linear infinite;
+                        animation: spin 1.5s linear infinite;
+                        pointer-events: none;
+                    }
+                    @-webkit-keyframes spin {
+                      0% { -webkit-transform: rotate(0deg); }
+                      100% { -webkit-transform: rotate(360deg); }
+                    }
+                    @keyframes spin {
+                      0% { transform: rotate(0deg); }
+                      100% { transform: rotate(360deg); }
+                    } 
+                }
+            }
+        }
+    }
+    .order-management-loading {
+        .white-ng-decloak(150px);
+        background: @te-white;
+        overflow: hidden;
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

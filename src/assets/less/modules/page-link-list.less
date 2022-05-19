@@ -1,0 +1,47 @@
+.page-link-list-container{
+    .page-link-list {
+        width:100%;
+        display: block;
+        margin: 40px 0;
+        > ul {
+			.media-query(mobile,{
+				.column-layout(1, 20px, auto);
+			});
+            .column-layout(3, 20px, auto);
+
+            > li {
+                line-height:21px;
+                padding:6px 0;
+                display:inline-block;
+                width:100%;
+                html.no-csscolumns & {
+                    display:block;
+                    width: 33.3%;
+                    float: left;
+                }
+                a{
+                    display:table-cell;
+                    max-height:42px;
+                    height:42px;
+                    overflow:hidden;
+					.media-query(mobile,{
+						height: auto;
+					});
+                }
+            }
+            html.no-csscolumns & {
+                .clearfix();
+                > li {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+.simple-page-container{   
+    .page-link-list-container{
+        .page-link-list{
+                margin: 40px 0px 0px;
+        }
+    }  
+}

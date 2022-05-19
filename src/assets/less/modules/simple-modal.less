@@ -1,0 +1,40 @@
+.simple-modal{
+    padding:40px;
+   .clearfix();
+    h2{
+        float:left;
+        width:30%;
+        .text-22();
+        padding-right:20px;
+    }
+    >div{
+        float:right;
+        width:70%;
+    }
+    p{
+        line-height:1.5em;
+    }
+}
+.simple-modal{
+    .media-query(mobile,{
+        padding: @mobile-gutter;
+        color: @te-dark-grey-94;
+        background: @te-cool-grey-5;
+        height: @mobile-modal-body-height;
+        h2, > div{
+            width: 100%;
+            float: none;
+        }
+        h2{
+            .text-31();
+            border-bottom: 1px solid @te-cool-grey-35;
+        }
+        h2:first-child{
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+        div{
+            .text-62();
+        }
+    });
+}

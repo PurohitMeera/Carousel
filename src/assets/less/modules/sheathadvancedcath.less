@@ -1,0 +1,503 @@
+// Color variables (appears count calculates by raw css)
+@sheathcolor0: #ffffff; // Appears 13 times
+@sheathcolor1: #0066a1; // Appears 3 times
+@sheathcolor2: #ededee; // Appears 3 times
+@sheathcolor3: #e2e4e4; // Appears 2 times
+@sheathcolor4: #000000; // Appears 2 times
+@sheathcolor5: #ca1a2f;
+
+// Width variables (appears count calculates by raw css)
+@sheathwidth4: 210px; // Appears 2 times
+@sheathwidth6: 170px; // Appears 2 times
+@sheathwidth8: 220px; // Appears 2 times
+@sheathwidth11: 15px; // Appears 2 times
+@sheathwidth13: 50px; // Appears 2 times
+@sheathwidth450: 450px;
+
+// Height variables (appears count calculates by raw css)
+@sheathheight0: 15px; // Appears 2 times
+@sheathheight1: 40px; // Appears 6 times
+@sheathheight2: 50px; // Appears 6 times
+@sheathheight4: 35px; // Appears 2 times
+
+* {
+	box-sizing:border-box;
+	font-family:arial;
+	margin:0;
+	padding:0;
+}
+
+.sheathskiptalk a{
+    cursor: pointer;
+}
+
+.sheathdisplayinline{
+	display:inline;
+}
+
+.sheathbackorange{
+	background-color:#e98300!important;
+}
+
+.sheathbold{
+	font-weight:bold!important;
+}
+
+.sheathmaincontainerforall{
+	width:@max-screen-width;
+	background-color:#f7f7f7;
+	margin: 0 auto;
+	padding: 30px 0px 80px 0px;
+
+	input[type=text] {
+		outline:none;
+		border:none;
+	}
+
+	em{
+		font-style:italic;
+	}
+
+	strong{
+		font-weight:bold;
+	}
+
+	select {
+		background-color:@sheathcolor0;
+		border:none;
+		padding: 10px 10px;
+		font-size: 0.875rem;
+		color: #3f4348;
+		line-height:36px;
+	}
+
+	.sheathwid941{
+		width:941px;
+	}
+
+	.sheatherrormessage{
+		display:none;
+		color: @sheathcolor5;
+		margin: 30px 0px 30px 0px;
+		font-weight: 500;
+	}
+
+	.sheatherrmark{
+		background-color: @sheathcolor5;
+		border-radius: 50%;
+		color: @sheathcolor0;
+		float: left;
+		font-weight: bold;
+		height: 17px;
+		line-height: 18px;
+		margin-right: 5px;
+		text-align: center;
+		width: 17px;
+	}
+
+	label.error{
+	display:block;
+	margin-top:6px;
+	color:@sheathcolor5;
+	}
+
+	input.error{
+	outline:1px solid #ca1a2f!important;
+	}
+
+	input.valid{
+	outline:none!important;
+	}
+
+	.sheathbottom20 {
+		margin-bottom:20px!important;
+	}
+	.sheathbottom50 {
+		margin-bottom:50px!important;
+	}
+	.sheathbottom40 {
+		margin-bottom:40px!important;
+	}
+	.sheathheading {
+		align-items: center;
+		color:#e98300;
+		display: inline-flex;
+		font-size:26px;
+		margin-bottom:30px!important;
+		text-transform:uppercase;
+	}
+	.sheathclearfloat {
+		clear:both;
+	}
+
+	.sheathnumbering {
+		background-color: orange;
+		border-radius: 50%;
+		color: @sheathcolor0;
+		float:left;
+		font-weight: bold;
+		height: @sheathheight4;
+		line-height:@sheathheight4;
+		margin-right: 13px!important;
+		text-align: center;
+		width: 35px;
+	}
+
+	.sheathheadimagecontainer{
+		p{
+			margin-bottom:0px;
+		}
+		img{
+		padding:30px 180px 30px 150px;
+		}
+	}
+}
+
+.sheathmaincontainer{
+	width:981px;
+
+	p {
+		margin-bottom:10px;
+	}
+
+	input[type=text] {
+		background-color:@sheathcolor0;
+		border:none;
+		padding:0 10px;
+	}
+
+	.right15 {
+		margin-right:15px;
+	}
+
+	.right5 {
+		margin-right:5px!important;
+	}
+
+	.wid450 {
+		margin-bottom:20px;
+		input[type=text] {
+			height:@sheathheight1;
+			width:@sheathwidth450;
+		}
+		input[type=email] {
+			padding: 0 10px;
+			height:@sheathheight1;
+			width:@sheathwidth4;
+			border:none;
+		}
+	}
+
+	.wid210 {
+		margin-bottom:20px;
+		input[type=text] {
+			height:@sheathheight1;
+			width:@sheathwidth4;
+		}
+		select {
+			height:@sheathheight1;
+			margin-right:30px;
+			width:@sheathwidth4;
+		}
+	}
+
+	textarea {
+		border:none;
+	}
+
+	input[type=radio] {
+		display:none;
+		&:checked+label {
+			&:before {
+				background-color: @sheathcolor0;
+				border: 1px solid @sheathcolor3;
+				color: #1674ae;
+				content: "\2022";
+				font-size: 1.4em;
+				line-height: 61%;
+				text-align: center;
+			}
+		}
+	}
+
+	input[type=checkbox] {
+		display:none;
+		&:checked+label {
+			&:before {
+				background-color: @sheathcolor0;
+				color:@sheathcolor1;
+				content:"\2714";
+				line-height:@sheathheight0;
+				text-align:center;
+			}
+		}
+	}
+
+	input[type=radio]+label {
+		&:before {
+			background-color: @sheathcolor0;
+			border-radius: 8px;
+			border: 1px solid @sheathcolor3;
+			content: "";
+			display: inline-block;
+			height: @sheathheight0;
+			margin-right: 8px;
+			vertical-align: text-bottom;
+			width: @sheathwidth11;
+		}
+	}
+
+	input[type=checkbox]+label {
+		&:before {
+			background-color: @sheathcolor0;
+			border-radius: 4px;
+			content: "";
+			display: inline-block;
+			height: @sheathheight0;
+			margin-right: 8px;
+			vertical-align:top;
+			width: @sheathwidth11;
+		}
+	}
+
+	.sheathleftcontainer {
+		background-color:@sheathcolor2;
+		float:left;
+		padding:30px;
+		width:701px;
+	}
+	.sheathrightcontainer {
+		float:left;
+		width:280px;
+	}
+}
+
+
+.sheathrightsub {
+	margin-bottom:20px!important;
+	padding-left:20px;
+}
+
+.sheathrighttext{
+	vertical-align: middle;
+}
+
+.sheathsubnumbering {
+	background-color:#cccccc;
+	border-radius:50%;
+	color:@sheathcolor0;
+	float:left;
+	font-weight: bold;
+	height:20px;
+	line-height:20px;
+	margin-right:12px;
+	text-align:center;
+	width:20px;
+}
+.sheathborderline {
+	border-top:1px solid #dcdcdd;
+	margin-top: 30px;
+}
+.sheathskiptalk {
+	float:right;
+	padding-top:25px;
+}
+
+.sheathsubmitbuttonleft{
+		 font-size: 100%;
+		background-color: #0066a1;
+		color: #ffffff;
+		cursor: pointer;
+		float: left;
+		height: 50px;
+		width: 170px;
+		text-align: left;
+		padding-left: 30px;
+		border: none;
+		font-weight: bold;
+	}
+
+.sheathsubmitbuttonarrow{
+		border: none;
+		font: inherit;
+		border-left: 1px solid #fff;
+		float: left;
+		font-size: xx-large;
+		height: 50px;
+		line-height: 50px;
+		padding-left: 5px;
+		width: 50px;
+		color: #fff;
+		background-color: #0066a1;
+	}
+
+.sheathprevbutton {
+		background-color: @sheathcolor0;
+		color: @sheathcolor1;
+		cursor:pointer;
+		float:left;
+		height: @sheathheight2;
+		width: @sheathwidth8;
+	}
+
+.sheathprevarrow {
+		border-right: 1px solid @sheathcolor2;
+		float: left;
+		font-size: xx-large;
+		height: @sheathheight2;
+		line-height: @sheathheight2;
+		padding-left: 15px;
+		width: @sheathwidth13;
+	}
+
+.sheathprevtext {
+		float: right;
+		font-weight: bold;
+		height: @sheathheight2;
+		line-height: @sheathheight2;
+		padding-right: 20px;
+		text-align: right;
+		width: @sheathwidth6;
+	}
+
+.sheathnextbutton {
+		background-color: @sheathcolor1;
+		color: @sheathcolor0;
+		cursor:pointer;
+		float:right;
+		height: @sheathheight2;
+		width: @sheathwidth8;
+	}
+
+.sheathnextarrow {
+		border-left: 1px solid @sheathcolor0;
+		float: left;
+		font-size: xx-large;
+		height: @sheathheight2;
+		line-height: @sheathheight2;
+		padding-left: 15px;
+		width: @sheathwidth13;
+	}
+
+.sheathnexttext {
+		float:left;
+		font-weight: bold;
+		height: @sheathheight2;
+		line-height: @sheathheight2;
+		padding-left: 20px;
+		width: @sheathwidth6;
+	}
+
+.sheathlength {
+	margin-bottom:40px;
+	label {
+		margin-right:30px;
+	}
+	input[type=text] {
+		height:@sheathheight1;
+		padding: 10px;
+		width:120px;
+	}
+}
+
+.sheathlength2 {
+	margin-bottom:40px;
+	label {
+		margin-right:28px;
+	}
+	input[type=text] {
+		font-style:italic;
+		height:@sheathheight4;
+		width: 89px;
+		font-size: x-small;
+	}
+}
+.sheathlength3 {
+	margin-bottom:40px;
+	label {
+		margin-right:30px;
+	}
+	input[type=text] {
+		height:@sheathheight1;
+		width:290px;
+	}
+}
+.sheathlength4 {
+	margin-bottom:40px;
+	label {
+		margin-right:30px;
+	}
+}
+.sheathlength5 {
+	margin-bottom:40px;
+	label {
+		margin-right:30px;
+	}
+}
+.sheathlength6 {
+	margin-bottom:40px;
+	p {
+		&:nth-child(1) {
+			text-transform:capitalize;
+		}
+	}
+	label {
+		margin-right:22px;
+		&:last-child {
+			margin-right:-5px;
+		}
+	}
+}
+.inputwid {
+	input[type=text] {
+		height:@sheathheight1;
+		width:510px;
+	}
+}
+.sheathfirstlength6 {
+	label {
+		margin-right:14px;
+	}
+}
+.sheathlength7 {
+	margin-bottom:40px;
+	textarea {
+		width:640px;
+	}
+	input[type=button] {
+		background-color:@sheathcolor4;
+		color:@sheathcolor0;
+		margin-right:10px;
+		padding:20px 30px;
+	}
+}
+.sheathfloatright {
+	float:right;
+}
+
+.sheathfloatleft {
+	float:left;
+}
+
+.sheathlength8 {
+	margin-bottom:30px;
+	input[type=button] {
+		background-color:@sheathcolor4;
+		color:@sheathcolor0;
+		margin-right:10px;
+		padding:20px 30px;
+	}
+	p {
+		&:first-child {
+			text-transform:uppercase;
+		}
+	}
+	&:last-child {
+		margin-bottom:0;
+	}
+}
+
+.sheathlengthmainback {
+	background-color: @sheathcolor2;
+	padding: 30px;
+}

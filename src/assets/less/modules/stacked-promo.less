@@ -1,0 +1,74 @@
+.stacked-promo-section{
+    .stacked-promo-img-frame{
+        width:100%;
+        box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .stacked-promo-content{
+        width: 100%;
+        h3{
+            font-size: 28px;
+            font-family: 'Avenir Roman', sans-serif;
+            margin-bottom: 25px;
+            color:#2E4957;
+            font-weight: 500;
+        }
+        p{
+            font-size: 16px;
+            font-family: 'Avenir Roman', sans-serif;
+            color:#333333;
+            margin-bottom: 30px;
+        }
+        a{
+            font-size: 18px;
+            color: #167A87;
+            font-family: 'Avenir Heavy', sans-serif;
+            text-decoration: none;
+        }
+    }
+
+    .media-query(desktop, {
+        .right-img{
+            display: flex;
+            .stacked-promo-content{
+                order: 1;
+            }
+            .stacked-promo-img-frame{
+                order: 2;
+            }
+        }
+        .left-img{
+            display: flex;
+            padding-top: 50px;
+            .stacked-promo-content{
+                order: 2;
+            }
+            .stacked-promo-img-frame{
+                order: 1;
+            }
+        }
+        .stacked-promo-content{
+            width:45%;
+            padding: 50px 0px;
+            padding-right: 10px;
+        }
+        .stacked-promo-img-frame{
+            max-width: 788px;
+            height: 400px;
+            box-shadow: none;
+            padding: 0;
+        }
+    });
+
+    .media-query(mobile, {
+        .right-img, .left-img{
+            padding: 20px;
+        }
+        .stacked-promo-content{
+            padding-top: 20px;
+        }
+    });
+}

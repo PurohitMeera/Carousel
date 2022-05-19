@@ -1,0 +1,656 @@
+.te-am-registration-page {
+    background-color: @te-cool-grey-5;
+    min-height: auto !important;
+    .white-fading-loader(@min-height: 100%, @show-class-name: loader, @background-pos: center, @background-color: transparent, @margin-top: 12px);
+    &.address-confirm {
+        margin: 0 !important;
+        .am-reg-header {
+            width: auto;
+            text-align: center;
+            background: #fff;
+            padding: 30px 0 20px;
+            margin: 0;
+            .media-query(mobile, {
+                margin: 0 -7vw;
+                text-align: left;
+                padding: 30px 7vw 20px;
+            }
+            );
+            h1 {
+                .media-query(mobile, {
+                    line-height: 32px;
+                    color: @te-dark-grey;
+                    span {
+                        display: block;
+                    }
+                }
+                );
+            }
+        }
+        .am-reg-suggestion-wrapper {
+            margin: 30px auto 0;
+            width: 800px;
+            padding: 0 20px;
+            .media-query(mobile, {
+                width: 100%;
+                padding: 0;
+                margin: 30px 0 0;
+            }   
+            );
+            p {
+                padding: 0 0 10px;
+                text-align: left;
+                .text-40();
+                .media-query(mobile, {
+                    width: 100%;
+                    display: block;
+                });
+            }
+            .am-reg-suggestion-bold {
+                .text-42();
+                padding: 0;
+                margin: 0 0 30px;
+                .media-query(mobile, {
+                    display: block;
+                    margin:0;
+                });
+            }
+            .am-column-wrapper {
+                p {
+                    width: auto;
+                }
+                a {
+                    &.login-button {
+                        margin: 40px 0 0;
+                    }
+                }
+            }
+        }
+        .am-reg-confirm-address-cta {
+            width: 500px;
+            padding-bottom: 30px;
+            .media-query(mobile, {
+                width: 100%;
+            }
+            );
+            a {
+                min-width: 80%;
+                margin: 40px 0 0 0;
+                .media-query(mobile, {
+                    width: 100%;
+                    text-align: left;
+                    display: table;
+                }
+                );
+                span {
+                    .media-query(mobile, {
+                        /*changes done for TE17-566*/
+                        display: inline-block;
+                        width: 80%;
+                        line-height: normal;
+                        vertical-align: middle;
+                        display: table-cell;
+                        text-align:center;
+                    }
+                    );
+                }
+                .btn-block-11{
+                    i{
+                        &.icon[role="presentation"]{
+                            .media-query(mobile, {
+                                display: table-cell;
+                            });
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .am-form-wrapper-left-reg-page {
+        margin-left: auto;
+        margin-right: 0;
+        width: 380px;
+        border: 0;
+        outline: none;
+        .media-query(mobile, {
+            width: 100%;
+            margin: 0;
+        }
+        );
+        input[type="text"], input[type="password"], input[type="file"], select{
+          border: none;
+          border-top: 1px solid #d9d9d9;
+          border-left: 1px solid #d9d9d9;
+          height: 32px;
+          padding-left: 15px;
+          .text-44();
+        }
+
+        input[type="text"].error-field, input[type="password"].error-field, input[type="file"].error-field, select.error-field{
+          border: 1px solid @te-red;
+        }
+        h1 {
+            margin: 0 0 20px 10px;
+        }
+        i.icon.reg-confirm-yes {
+            display: none; //has to be set to display:inline
+            margin: 6px 0 4px 0px;
+            background: @te-green;
+            color: white;
+            padding: 2px;
+            border-radius: 50%;
+        }
+        i.icon.reg-confirm-no {
+            display: none; //has to be set to display:inline
+            margin: 0px;
+            background: @te-red;
+            color: white;
+            font-size: 50%;
+            padding: 4px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-top: 10px;
+            vertical-align: text-bottom;
+        }
+        label {
+            display: block;
+            .text-44();
+            color: @te-cool-grey;
+            margin: 13px 0 8px 0;
+            .media-query(mobile, {
+                margin: 20px 0 10px 0;
+            }
+            );
+        }
+        label.am-label-checks {
+            .text-94();
+        }
+        input[type=text],
+        input[type=password] {
+            display: inline;
+            margin: 0px 0 4px 0;
+            height: 32px;
+            width: 380px;
+            .media-query(mobile, {
+                width: 100%;
+                height: 50px;
+                padding-left: 10px;
+                margin: 0;
+            }
+            );
+        }
+        label input {
+            display: inline;
+            margin: 0 3px 0 0;
+        }
+        a.login-button {
+            float: none;
+            margin: 30px 0 10px 0;
+        }
+        .error-text {
+            .text-44();
+            color: @te-red;
+            width: 300px;
+            display: none;
+            margin: 0;
+            padding-top: 5px;
+            .media-query(mobile, {
+                padding-top: 10px;
+            }
+            );
+        }
+        .error-field {
+            border: 1px solid @te-red;
+        }
+        .show-error {
+            display: none;
+        }
+        p {
+            text-align: left;
+            margin: 10px 0 0 0;
+            .text-90();
+        }
+        .reg-password-reminder {
+            .text-96();
+            margin: 5px 0 10px 0;
+            .media-query(mobile, {
+                margin: 10px 0 0;
+            }
+            );
+        }
+    }
+    .am-form-wrapper-right-reg-page {
+        margin: 0 0 0 20px;
+        border: 0;
+        outline: none;
+        .media-query(mobile, {
+            width: 100%;
+            margin: 0;
+        }
+        );
+
+        input[type="text"], input[type="password"], input[type="file"], select{
+          border: none;
+          border-top: 1px solid #d9d9d9;
+          border-left: 1px solid #d9d9d9;
+          height: 32px;
+          padding-left: 15px;
+          .text-44();
+        }
+
+        input[type="text"].error-field, input[type="password"].error-field, input[type="file"].error-field, select.error-field{
+          border: 1px solid @te-red;
+        }
+        label {
+            display: block;
+            .text-44();
+            color: @te-cool-grey;
+            margin: 13px 0 8px 0;
+            .media-query(mobile, {
+                margin: 20px 0 10px 0;
+            }
+            );
+        }
+        label.am-label-checks {
+            .text-94();
+        }
+        input[type=text],
+        input[type=password] {
+            display: inline;
+            margin: 0px 0 4px 0;
+            height: 32px;
+            width: 380px;
+            .media-query(mobile, {
+                width: 100%;
+                height: 50px;
+                margin: 0;
+                padding-left: 10px;
+            }
+            );
+        }
+        label input {
+            display: inline;
+            margin: 0 3px 0 0;
+        }
+        a.login-button {
+            float: none;
+            margin: 30px 0 10px 0;
+        }
+        .error-text {
+            .text-44();
+            color: @te-red;
+            width: 300px;
+            display: none;
+            margin: 0;
+            padding-top: 5px;
+            .media-query(mobile, {
+                padding-top: 10px;
+            }
+            );
+        }
+        .error-field {
+            border: 1px solid @te-red;
+        }
+        select {
+            margin: 0 0 4px 0;
+            .text-44();
+            color: @te-cool-grey;
+            display: inline;
+            width: 380px;
+            height: 30px;
+            -webkit-appearance: menulist-button;
+            .media-query(mobile, {
+                width: 100%;
+                height: 50px;
+                margin: 0;
+                padding-left: 10px;
+            }
+            );
+        }
+        .show-error {
+            display: none;
+        }
+        p {
+            text-align: left;
+            margin: 10px 0 0 0;
+            .text-90();
+        }
+        i.icon.reg-confirm-yes {
+            display: none;
+            margin: 0 0 4px 0px;
+            background: @te-green;
+            color: white;
+            padding: 2px;
+            border-radius: 50%;
+        }
+        i.icon.reg-confirm-no {
+            display: none;
+            margin: 0;
+            background: @te-red;
+            color: white;
+            font-size: 50%;
+            padding: 4px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-top: 10px;
+            vertical-align: text-bottom;
+        }
+    }
+    .am-reg-header {
+        text-align: center;
+        margin: 0;
+        padding: 30px 0 0;
+        background-color: @te-white;
+        .media-query(mobile, {
+            width: auto;
+            margin: 0 -7vw;
+            padding: 30px 7vw 20px;
+            text-align: left;
+        }
+        );
+        h1 {
+            margin: 0;
+            &.non-te-employee-register {
+                margin-bottom: 20px;
+            }
+            p {
+                text-align: left;
+                padding-top: 5px;
+            }
+            hr {
+                display: none;
+            }
+        }
+    }
+    .am-reg-cta-section {
+        clear: both;
+        width: 800px;
+        margin: 0 auto;
+        min-height: 400px;
+        border: 0;
+        outline: none;
+        padding-top: 23px;
+        .media-query(mobile, {
+            margin: 0 7vw;
+            width: auto;
+            padding-top: 0;
+        }
+        );
+        .text-90();
+        hr {
+            .media-query(mobile, {
+                display: none;
+            }
+            );
+        }
+        .am-reg-cta-section-item {
+            margin: 0px 0 15px 0;
+            .media-query(mobile, {
+                margin: 0 0 10px 0;
+            }
+            );
+            label {
+                .text-80();
+                color: @te-dark-grey;
+                input[type=checkbox] {
+                    margin: 2px 5px 0 0;
+                    vertical-align: top;
+                }
+            }
+            input[type=checkbox] {
+                margin: 2px 5px 0 0;
+            }
+            &.am-reg-consent {
+                display: table;
+                .media-query(mobile, {
+                    margin-bottom: 0;
+                }
+                );
+                .am-reg-consent-item {
+                    display: table-cell;
+                }
+            }
+        }
+        .am-reg-cta-section-item-remember-me {
+            margin: 15px 0 15px 0;
+            label {
+                .text-70();
+                color: @te-dark-grey;
+                font-weight: bold;
+                input[type=checkbox] {
+                    margin: 0px;
+                    vertical-align: middle;
+                }
+            }
+        }
+        .reg-button-wrapper {
+            margin: 30px 0;
+            width: 100%;
+            padding-bottom: 30px;
+            /*Fix for DCEB-5274*/
+            
+            display: table;
+            .media-query(mobile, {
+                margin-top: 0;
+            }
+            );
+            .reg-button {
+                clear: both;
+                margin: 0;
+                height: 40px;
+                display: table-cell;
+                width: 50%;
+                .media-query(mobile, {
+                    width: 100%;
+                    display: block;
+                    margin-top: 30px;
+                    height: 50px;
+                }
+                );
+                .reg-btn-cancel {
+                    .text-80();
+                    height: 52px;
+                    text-transform: uppercase;
+                    line-height: 36px;
+                    width: 70%;
+                    float: left;
+                    margin-left: 30px;
+                    background-color: #ededef;
+                    .media-query(mobile, {
+                        float: none;
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                    );
+                }
+                #submit {
+                    cursor: default;
+                    width: 70%;
+                    float: right;
+                    margin-right: 30px;
+                    .media-query(mobile, {
+                        float: none;
+                        width: 100%;
+                        margin-right: 0;
+                    }
+                    );
+                }
+                .reg-btn-disabled {
+                    cursor: default;
+                    background: @te-cool-grey-35;
+                    border: @te-cool-grey-35;
+                    width: 70%;
+                    float: right;
+                    margin-right: 30px;
+                    .media-query(mobile, {
+                        float: none;
+                        width: 100%;
+                        margin-right: 0;
+                    }
+                    );
+                }
+            }
+        }
+    }
+    .te-am-reg-conf-page {
+        background-color: @te-white;
+        .am-reg-conf-title-wrapper {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding: 45px;
+            background: @te-cool-grey-5;
+            .media-query(mobile, {
+                margin: 0;
+                height: auto;
+                padding: 30px 20px;
+                text-align: left;
+            }
+            );
+            h1 {
+                margin: 0 0 10px;
+                .text-10();
+                .media-query(mobile, {
+                    .text-20();
+                    margin: 0 5px 30px;
+                }
+                );
+            }
+            p {
+                line-height: 24px;
+            }
+        }
+        .am-reg-conf-subtitle-wrapper {
+            margin: 25px auto;
+            h2 {
+                margin: 10px 0 0;
+                .text-20();
+                color: @te-dark-grey;
+                .media-query(mobile, {
+                    margin: 10px 0 20px;
+                }
+                );
+            }
+            p {
+                margin: 5px 0 0;
+                line-height: 24px;
+            }
+        }
+        .am-reg-conf-resource-list-wrapper {
+            .clearfix();
+            .reg-conf-resource-list-left {
+                .column(6);
+                .text-90();
+                .media-query(mobile, {
+                    float: none;
+                    width: 100%;
+                }
+                );
+                dt {
+                    .text-80();
+                    margin: 0 0 5px 0;
+                }
+                dd {
+                    .text-62();
+                    line-height: 22px;
+                    padding-bottom: 30px;
+                }
+            }
+            .reg-conf-resource-list-right {
+                .column(6, true);
+                .text-90();
+                .media-query(mobile, {
+                    float: none;
+                    width: 100%;
+                }
+                );
+                dt {
+                    .text-80();
+                    margin: 0 0 5px 0;
+                }
+                dd {
+                    .text-62();
+                    padding-bottom: 25px;
+                    line-height: 22px;
+                }
+            }
+        }
+        .am-reg-conf-cta-wrapper {
+            clear: both;
+            .media-query(mobile, {
+                margin-top: 3px;
+            }
+            );
+            .am-reg-conf-buttons {
+                width: 100%;
+                padding-bottom: 30px;
+                margin: 0 auto 30px;
+                .media-query(mobile, {
+                    width: 100%;
+                    padding: 0;
+                }
+                );
+                a {
+                    margin: 0 15px;
+                    .media-query(mobile, {
+                        float: none;
+                        display: block;
+                        width: 100%;
+                        margin: 0 0 30px;
+                    }
+                    );
+                }
+                .reg-conf-resource-list-left {
+                    a {
+                        float: right;
+                        .media-query(mobile, {
+                            float: none;
+                            text-align: center;
+                            padding-left: 0;
+                        }
+                        );
+                        &.btn-block-11{
+                            i{
+                                .media-query(mobile, {
+                                    margin-left: 0;
+                                });
+                            }
+                        }
+                    }
+                }
+                .reg-conf-resource-list-right {
+                    .media-query(mobile, {
+                        clear: both;
+                    }
+                    );
+                }
+                .continue-button {
+                    background: @te-cool-grey-5;
+                    color: @te-blue !important;
+                    margin-left: 0;
+                    padding-left: 0
+                }
+            }
+        }
+    }
+    .am-reg-confirm-address-wrapper {
+        width: 100%;
+        margin: 20px 0;
+        .clearfix();
+        .text-70();
+        .am-reg-confirm-radio {
+            float: left;
+            margin: 2px 10px 0;
+        }
+        .am-reg-confirm-label {
+            float: left;
+            width: 80%;
+            .am-reg-confirm-label-name {
+                .text-80();
+            }
+            .am-reg-confirm-label-country {
+                clear: both;
+            }
+        }
+    }
+}

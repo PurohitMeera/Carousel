@@ -1,0 +1,127 @@
+.contact-information-section {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid @te-cool-grey-10;
+    background: @te-white;
+    .contact-info-header {
+        width: 100%;
+        .text-42();
+        line-height: normal;
+        padding: 20px;
+        color: @te-dark-grey;
+        border-bottom: 1px solid @te-cool-grey-10;
+        .fa-check {
+            color: @te-green;
+        }
+        p {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .contact-info-edit-link {
+            display: inline-block;
+            float: right;
+            color: @te-blue;
+            cursor: pointer;
+            &:hover{
+                color: @te-light-blue;
+            }
+            span{
+                .text-70();
+                .font-lineheight(14,22);
+            }
+            i{
+                font-size: 14px;
+                padding-right: 3px;
+            }
+            
+        }
+    }
+    .contact-info-collapsed-detail {
+        margin: 20px 20px 11px;
+        p{
+            .text-70();
+            .font-lineheight(14,22);
+            color: @te-dark-grey;
+            b{
+               .text-80(); 
+            }
+        }
+        .alternate-email-wrapper {
+            padding: 20px 0px 10px;
+            color: @te-cool-grey-9;
+            span {
+                .text-94();
+            }
+            p {
+                .text-90();
+            }
+            .place-on-behalf-text {
+                .font-lineheight(12,22);
+                p {
+                    .font-lineheight(12,18);
+                }
+            }
+            .recipient-email-address {
+                .font-lineheight(12,22);
+                p {
+                    .font-lineheight(12,18);
+                    padding-top: 4px;
+                    width: 100%;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+    
+    .contact-info-form {
+        width: 100%;
+        display: inline-block;
+        padding: 20px;
+        
+        .required-feild-message{
+            display: block;
+            .text-90();
+            .font-lineheight(12,20);
+            margin-bottom: 10px;
+            span{
+                color: @te-red;
+            }
+        }        
+        b{
+            .text-80();
+            .font-lineheight(14,22);
+            color: @te-dark-grey;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .email-text {
+            .text-70 ();
+            .font-lineheight(14,22);
+            color: @te-dark-grey;
+            span {
+                color: @te-red;
+            }
+        }        
+        .email-input-container {
+            .email-id-input {
+                min-width: 320px;
+                min-height: 30px;
+                display: inline-block;
+                border: 1px solid @te-cool-grey-35;
+                padding: 0 10px;                
+                &.error-border {
+                    border: 1px solid @te-red;
+                }
+            }
+            .email-error-msg {
+                .text-70();
+                .font-lineheight(14,22);
+                color:  @te-red;
+                margin-bottom: 15px;
+            }            
+        }
+    }
+    .contact-info-continue-cta{
+        min-width: 320px;
+    }
+}

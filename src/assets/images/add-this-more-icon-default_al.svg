@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 70 70" width="50" height="50" x="0px" y="0px" preserveAspectRatio="xMaxYMax">
+<style type="text/css">
+	.st0{opacity:0.5;}
+	.st1{fill:#FFFFFF;}
+</style>
+<g class="st0">
+	<title>Layer 1</title>
+	<path id="svg_1" d="M33.5,66C15.6,66,1,51.4,1,33.5C1,15.6,15.6,1,33.5,1S66,15.6,66,33.5C66,51.4,51.4,66,33.5,66z"/>
+</g>
+<polygon class="st1" points="34.5,44.6 24.4,27.2 44.6,27.2 "/>
+</svg>

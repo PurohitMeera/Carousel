@@ -1,0 +1,454 @@
+.reset();
+
+*, *:after, *:before { .box-sizing(border-box); outline:0 !important;}
+
+*{
+    -webkit-font-smoothing: antialiased;
+    // read http://elliotjaystocks.com/blog/kerning/ for an explanation of the following
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    -ms-font-feature-settings: "kern";
+    -o-font-feature-settings: "kern";
+    -webkit-font-feature-settings: "kern";
+    font-feature-settings: "kern";
+}
+
+* {
+	box-sizing:border-box;
+	font-family:arial;
+	margin:0;
+	padding:0;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'te-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    .ff-1();
+    //font-family:'Avenir', 'Avenir W02', Arial, Helvetica, sans-serif;
+    color:@te-cool-grey;
+}
+
+a {
+    text-decoration:none;
+    &:link,
+        &:visited {
+        color: @te-blue;
+        .icon {
+            color: @te-blue;
+        }
+    }
+    &:hover,
+        &:active,
+        &:focus {
+        color: @te-light-blue;
+        .icon {
+            color: @te-light-blue;
+        }
+    }
+}
+a.btn-clr-13{
+    &:extend(.btn-fast-on-slow-off all);
+    background:@te-blue;
+    color:@te-white !important;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active{
+        background:@te-light-blue;
+        color:@te-white !important;
+    }
+    .icon {
+        color:@te-white;
+        .media-query(mobile,{
+            margin-bottom: 0 !important;
+            display: block !important;
+        }
+        );
+    }
+}
+
+/* Prevent any object from being highlighted upon touch event*/
+* { -webkit-tap-highlight-color: transparent; }
+
+h1, h2, h3, h4, h5, h6 { font-weight:normal; }
+
+h1 {
+    .text-20();
+    color: @te-dark-grey;
+}
+// temporary header classes for testing purposes; delete once we have actual headers
+h2 {
+    .text-30();
+}
+h3 {
+    .text-20();
+}
+h4 {
+    .text-70();
+}
+
+.ng-cloak{
+    display:none;
+}
+#te-skip-navigation a,
+.visually-hidden {
+    position: absolute;
+    left: -999em;
+}
+
+#te-skip-navigation a:focus {
+    left: 10px;
+    top: 0px;
+    z-index: 999;
+    .text-70();
+    .font-lineheight(14,22);
+    z-index: 999;
+    width: 180px;
+    text-align: center;
+    height: 35px;
+    padding: 6px 2px 6px 2px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: @te-white;
+    position: absolute;
+    color: @te-blue;
+}
+
+:focus {
+    outline: 1px dotted @te-dark-grey-98;
+}
+
+#oo_tab{
+    .media-query(mobile, {
+        display: none !important;
+    });
+}
+
+#oo_bar{
+    display: none !important;
+    .media-query(mobile, {
+        display: block !important;
+    });
+}
+
+.icon-gears {
+    &:before {
+        content: "\e922";
+    }
+}
+.icon-box_pdp {
+    &:before {
+        content: "\e923";
+    }
+}
+
+.icon[role="presentation"] {
+    font-family: 'te-icon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    &.icon-alert:before {
+        content: "\e624";
+    }
+
+    &.icon-download:before {
+        content: "\e623";
+    }
+
+    &.icon-twitter:before {
+        content: "\e600";
+    }
+    &.icon-search:before {
+        content: "\e601";
+    }
+    &.icon-phone:before {
+        content: "\e602";
+    }
+    &.icon-list:before {
+        content: "\e603";
+    }
+    &.icon-linkedin:before {
+        content: "\e604";
+    }
+    &.icon-contacts:before {
+        content: "\e605";
+    }
+    &.icon-facebook:before {
+        content: "\e606";
+    }
+    &.icon-email:before {
+        content: "\e607";
+    }
+    &.icon-clock:before {
+        content: "\e608";
+    }
+    &.icon-checkbox:before {
+        content: "\e609";
+    }
+    &.icon-cart:before {
+        content: "\e60a";
+    }
+    &.icon-wrench:before {
+        content: "\e60b";
+    }
+    &.icon-superseded:before {
+        content: "\e60c";
+    }
+    &.icon-restricted:before {
+        content: "\e60d";
+    }
+    &.icon-preliminary:before {
+        content: "\e60e";
+    }
+    &.icon-pending-obsolescence:before {
+        content: "\e60f";
+    }
+    &.icon-obsolete:before {
+        content: "\e610";
+    }
+    &.icon-downarrow:before {
+        content: "\e611";
+    }
+    &.icon-uparrow:before {
+        content: "\e66a";
+    }
+    &.icon-active:before {
+        content: "\e612";
+    }
+    &.icon-product-drawing:before {
+        content: "\e613";
+    }
+    &.icon-pdf-3D:before {
+        content: "\e614";
+    }
+    &.icon-share:before {
+        content: "\e615";
+    }
+    &.icon-data-sheet:before {
+        content: "\e616";
+    }
+    &.icon-leaf:before {
+        content: "\e617";
+    }
+    &.icon-close:before {
+        content: "\e618";
+    }
+    &.icon-caret:before {
+        content: "\e619";
+    }
+    &.icon-page-prev:before {
+        content: "\e61a";
+    }
+    &.icon-page-next:before {
+        content: "\e61b";
+    }
+    &.icon-page-first:before {
+        content: "\e61c";
+    }
+    &.icon-page-last:before {
+        content: "\e61d";
+    }
+    &.icon-quickview:before {
+        content: "\e61e";
+    }
+    &.icon-view-less:before {
+        content: "\e61f";
+    }
+    &.icon-play:before {
+        content: "\e620";
+    }
+    &.icon-plus:before {
+        content: "\e621";
+    }
+    &.icon-minus:before {
+        content: "\e622";
+    }
+    &.icon-download-lines:before {
+        content: "\e625";
+    }
+    &.icon-wechat:before {
+        content: "\e626";
+    }
+    &.icon-sinaweibo:before {
+        content: "\e627";
+    }
+    &.icon-youku:before {
+        content: "\e628";
+    }
+    &.icon-caret-up:before {
+        content: "\e629";
+    }
+    &.icon-caret-down:before {
+        content: "\e62a";
+    }
+    &.icon-instagram:before {
+        content: "\e62b";
+    }
+    &.icon-youtube:before {
+        content: "\e62c";
+    }
+    &.icon-alert-icon-n:before {
+        content: "\e62d";
+    }
+    &.icon-google-plus:before {
+        content: "\e62e";
+    }
+    &.icon-in-stock:before {
+        content: "\e62f";
+    }
+    &.icon-hero-carat:before{
+        content: "\e630";
+    }
+    &.icon-faq:before{
+        content: "\e631";
+    }
+    &.icon-feedback:before{
+        content: "\e632";
+    }
+    &.icon-find-similar:before{
+      content: "\e633";
+    }
+    &.icon-compare:before{
+      content: "\e634";
+    }
+    &.icon-diamond-down-arrow:before{
+      content: "\e800";
+    }
+    &.icon-mdp-configuration:before{
+      content: "\e900";
+    }
+    &.icon-mdp-how-to-buy:before{
+      content: "\e901";
+    }
+    &.icon-mdp-view-parts:before{
+      content: "\e902";
+    }
+    &.icon-mdp-video:before{
+      content: "\e903";
+    }
+    &.icon-caret-left:before{
+      content: "\e910";
+    }
+    &.icon-gears:before{
+      content: "\e922";
+    }
+    &.icon-box_pdp:before{
+      content: "\e923";
+    }
+    &.icon-hamburger:before{
+      content: "\e924";
+    }
+    &.icon-external-page:before{
+      content: "\e925";
+    }
+    &.icon-print-page:before{
+      content: "\e926";
+    }
+    &.icon-twogears:before{
+      content: "\e927";
+    }
+    //sizes
+    &.icon-small{
+        /*font-size:@icon-small-font-size;*/		        
+        font-size:@icon-small-font-size;
+        //font-size: 18px;		
+        line-height: 1;		
+        .media-query(mobile, {		
+                margin-bottom: 7px;		
+    			display: -webkit-inline-box;		
+    			line-height: 0px;		
+            });
+    }
+    &.icon-small.font18 {          
+         font-size: 18px;
+    }
+   
+    &.icon-medium{
+        font-size:@icon-medium-font-size;
+    }
+    &.icon-large{
+        font-size:@icon-large-font-size;
+    }
+
+    //some fonts appears out of scale
+    //below are custom adjustments
+
+    &.icon-restricted.icon-small{
+        font-size:11px;
+    }
+
+    &.icon-feedback.icon-medium{
+        font-size:16px;
+    }
+
+    &.icon-downarrow.icon-small, &.icon-uparrow.icon-small {
+        font-size: 10px;
+    }
+
+    &.icon-caret.icon-large {
+        font-size: 26px;
+    }
+    &.icon-close.icon-large {
+        font-size: 34px;
+    }
+    &.icon-quickview.icon-medium,
+    &.icon-view-less.icon-medium {
+        font-size: 26px;
+        color: @te-blue;
+    }
+}
+
+// Hover behavior for edit-box
+.edit-mode-on {
+    .section {
+        .edit-box {
+            display: none;
+            position: absolute;
+        }
+
+        &:hover {
+            .edit-box {
+                display: block;
+            }
+        }
+    }
+}
+.analytics-receiver{
+    text-indent: -9999px
+}
+.te-connectivity-label{
+    font-size: .75rem;
+    padding: 4px 0;
+    text-transform: uppercase;
+    &.hidediv{
+        display: none !important;
+    }
+}
+//hide the google iframe;
+//http://stackoverflow.com/questions/18467529/google-remarketing-tag-iframe-height-issue
+iframe[name='google_conversion_frame']:extend(.off-screen){}
+iframe[name='google_conversion_frame']{
+    height: 0 !important;
+    width: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    margin-top: -13px;
+    float: left;
+}

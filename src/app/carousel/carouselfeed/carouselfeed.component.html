@@ -1,0 +1,86 @@
+<div class="main">
+    <div class="merchandising-carousel-feed">
+
+        <div class="comp-heading-ml" *ngIf="title !== ''">
+            <h2 class="cab-heading-nomargin">{{title}}</h2>
+        </div>
+    
+        <div class="fp-cab-list" *ngIf="productsData !== undefined && productsData.length > 0">
+            <div class="fp-cab-list-wrapper">
+                <div class="fp-cab-product-tile" *ngFor="let item of productsData">
+                    <div class="fp-cab-eyebrow">
+                        <div class="fb-top-heading">
+                            <p class="fp-parent-top-category truncate">{{item.parentCategory}}</p>
+                            <a class="fp-product-link"
+                                [href]="'item.productUrl' + (item.partType == 'model' ? mdpParameters : '')">
+                                <p class="mpn-number" *ngIf="item.partType !== 'model'">{{item.marketingPartNumId}}</p>
+                                <p class="description-details truncate" *ngIf="item.partType !== 'model'">
+                                    {{item.friendlyDescription ? item.friendlyDescription : item.description }}</p>
+                                <p class="truncate" *ngIf="item.partType == 'model'" data-click="merch-description">
+                                    {{item.description}}</p>
+                                <div class="img-wrapper" *ngIf="item.partType !== 'model'" data-click="merch-image">
+                                    <img [src]="host + '' + item.thumbnailUrl" [attr.alt]="item.description + '-' + item.tcpn"
+                                        loading="lazy" />
+                                </div>
+                            </a>
+    
+                            <a *ngIf="item.partType == 'model'" class="fp-view-products"
+                                [href]="item.productUrl+''+mdpParameters">
+                                <span *ngIf="item.browsableDerivedPartCnt > 0" data-click="merch-view-products">
+                                    {{teV2?.localization.merchandisingCarousel.viewProductsLabel}}<span
+                                        class="browsable-part">({{item.browsableDerivedPartCnt}})</span>
+                                </span>
+                                <div class="img-wrapper" data-click="merch-image">
+                                    <img [src]="host + '' + item.thumbnailUrl" [attr.alt]="item.description+'-'+item.tcpn"
+                                        loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+                        <div class="distributor-info">
+                            <div data-*ngIf="item.inStock && commerceUtils.isCommerceEnabled()">
+                                <p class="fp-parent-category from-label">
+                                    {{teV2?.localization.merchandisingCarousel.fromLabel}}<span>{{item.minPrice}}</span></p>
+    
+                                <!-- <a *ngIf="item.partType !== 'model'" href="#" class="add-to-cart-cta buy-now-cta teloading" data-tn-add-moq-to-cart="" data-tn-add-to-cart-modal="" [attr.data-img-src]="{{item.thumbnailUrl}}" data-moq="-1" data-tcpn="{{item.tcpn}}" data-redirect-url-on-error="{{item.productUrl}}">
+                            <i class="fa fa-cart-plus fa-lg" role="presentation"></i>
+                        </a> -->
+                                <p class="fp-parent-category in-stock">{{inStockLabel}}</p>
+                            </div>
+                            <div
+                                data-*ngIf="item.inGlobalStock && country === 'global' && !commerceUtils.isCommerceEnabled()">
+                                <p class="fp-parent-category in-stock">
+                                    {{teV2?.localization.merchandisingCarousel.inStockLabel}}</p>
+                            </div>
+                            <div data-*ngIf="item.inGlobalStock && !item.inStock && commerceUtils.isCommerceEnabled()">
+                                <p class="fp-parent-category in-stock">
+                                    {{teV2?.localization.merchandisingCarousel.inStockLabel}}</p>
+                            </div>
+                            <div data-*ngIf="!item.inGlobalStock && !item.inStock">
+                                <p class="fp-parent-category out-of-stock">
+                                    {{teV2?.localization.merchandisingCarousel.outOfStockLabel}}</p>
+                            </div>
+                        </div>
+    
+                        <div *ngIf="item.partType == 'model'" class="product-feature-desc truncate" itemprop="description">
+                            <span class="text-only"> {{item.modelDescription}} </span>
+                        </div>
+    
+                        <div *ngIf="item.partType !== 'model'" class="product-feature-desc truncate" itemprop="description">
+                            <div *ngIf="item.flattenedFeatures">
+                                <ul class="product-features">
+                                    <li *ngFor="let featureItem of item.flattenedFeatures; index as i">
+                                        <ng-container *ngIf="i < 5">
+                                            {{featureItem.label}} : <span>{{featureItem.value}}</span>
+                                        </ng-container>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
