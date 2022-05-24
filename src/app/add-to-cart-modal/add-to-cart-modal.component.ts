@@ -281,7 +281,7 @@ export class AddToCartModalComponent implements OnInit {
                 </div>
             </div>
             
-        </div> -->
+        </div>
 
       
       <!-- Customer Also bought section -->
