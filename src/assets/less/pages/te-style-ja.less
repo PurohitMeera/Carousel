@@ -1,0 +1,36 @@
+@import (once) './fragments/_mixins-japanese';
+
+@import (once) './fragments/_bases';
+
+@import (once) './fragments/_customer-service-landing-ja';
+
+@import (once) '../modules/buttons';
+
+body, h1, h2, h3, h4, h5, h6, a, b, strong, span, div, p, label, small, option, ul, li, td, tr, th, input, select{
+    //.ff-1();
+    font-family:'Avenir', 'Avenir W02', Arial, Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif !important;
+}
+
+a.btn-clr-7 {
+    .icon{
+        color:@te-white;
+    }
+}
+
+/*Shopping Cart Css*/
+.quick-atc-container{
+    .part-num-div{
+        input{
+            padding-left: 70px !important;
+        }
+    }
+}
+#te-header{
+    .te-header-wrap{
+        .cart{
+            .cart-label{
+                top:4px;
+            }
+        }
+    }
+}

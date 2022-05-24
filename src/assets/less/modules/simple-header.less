@@ -1,0 +1,34 @@
+/*
+simple header is used in several places,
+please when editing please verify it looks good on the following pages:
+  - PNP page (ie. Connectors)
+*/
+
+.simple-header {
+    h1 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color:  @te-dark-grey;
+        .font-lineheight(36,44);
+        .text-20();
+        .media-query(desktop-wide,{
+            .text-20();
+         });
+        .media-query(mobile, {
+            height: auto;
+            white-space: normal;
+        });
+    }
+    h1 {
+        &.notrim-override{
+            height: auto !important;
+            overflow:auto !important;
+            white-space:normal !important;
+            text-overflow:initial !important;
+        }
+    }
+}
+    
+
+

@@ -1,0 +1,134 @@
+.promo-ref{
+  display:inline-block;
+  .promo-ref-sm{
+    width: 313px;
+    padding: 10px;
+
+    .container {
+      height: 280px;
+
+      .promo-content {
+        position: relative;
+        background-color: @te-dark-grey-98;
+        color: #fff;
+        padding: 35px 20px;
+        height: 100%;
+        overflow: hidden;
+
+        h3,
+        .promo-content-title {
+          .text-22();
+        }
+
+        p {
+          .text-60();
+          margin: 10px 0;
+        }
+
+        .follow-link i {
+          color: @te-cool-grey-5;
+        }
+
+      }
+
+      .promo-media {
+        display: none;
+      }
+    }
+  }
+  .promo-ref-md{
+    width: 626px;
+    padding: 10px;
+
+    .container {
+      .clearfix();
+      height: 280px;
+
+      .promo-media {
+        float: left;
+        width: 240px;
+        overflow: hidden;
+
+        img {
+          width: 240px;
+        }
+      }
+
+      .promo-content {
+        position: relative;
+        background-color: #FFFFFF;
+        padding: 35px 20px;
+        width: 365px;
+        float: left;
+        height: 100%;
+        overflow: hidden;
+
+        h3,
+        .promo-content-title {
+          .text-22();
+          color: @te-orange;
+        }
+
+        p {
+          .text-70();
+          color: @te-cool-grey;
+          margin: 10px 0;
+        }
+
+        .follow-link i {
+          color: @te-dark-grey-98;
+        }
+      }
+    }
+  }
+  .promo-ref-lg{
+    width: 939px;
+    padding: 10px;
+
+    .container {
+      .clearfix();
+      height: 280px;
+
+      .promo-media {
+        float: left;
+        width: 460px;
+        height: 280px;
+        background-color: #ffffff;
+
+        .image-wrap {
+          .brandbar(60px);
+
+          img {
+            width: 460px;
+            max-height: 280px;
+          }
+        }
+      }
+
+      .promo-content {
+        position: relative;
+        background-color: @te-orange;
+        padding: 40px;
+        width: 459px;
+        float: left;
+        height: 280px;
+        overflow: hidden;
+        color: #ffffff;
+
+        h3,
+        .promo-content-title {
+          .text-12();
+        }
+
+        p {
+          .text-26();
+          padding: 20px 0;
+        }
+
+        .follow-link i {
+          color: @te-cool-grey-5;
+        }
+      }
+    }
+  }
+}

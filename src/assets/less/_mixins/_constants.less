@@ -1,0 +1,198 @@
+// Your base font-size in pixels
+@font-size: @base-font-size;
+// Shorthand for outputting ems, e.g. "12/@em"
+@em: @font-size * 1em;
+
+// Use this only for horizontal spacing (margin/padding)
+@h_space:10px;
+// Use this only for vertical spacing (margin/padding). Ex: margin: (@v_space*1.5) (@h_space*1.5) = margin: 15px 15px;
+@v_space:10px;
+
+@z-index-modal:10000;
+
+//using relative path since source directory can change based on EWT _TEincludes version
+@base-url : '../../';
+@base-url-long: "../../../";
+
+//This will be used in media query only for IE 9 and 10.
+@ie9-10: ~"screen and (min-width:0\0)";
+
+//@base-url : '/etc/designs/te';
+@font-path : '../../fonts';
+@image-path : '@{base-url}images';
+@image-path-long : '@{base-url-long}images';
+@font-family:'Avenir-Roman';
+
+@weight-bold: 900; // bold
+@weight-medium-bold:600;
+@weight-medium: 500; // a slightly heavier roman
+@weight-roman: 400;
+@weight-medium-light:300;
+@weight-light:200; // light
+
+@z-page: 1;
+@z-selectbox: 50;//STB-1244 Fix
+@z-loader: 15;
+@z-search:30;
+@z-footer:40;
+@z-main-nav:45;
+@z-modal:50;
+@z-edit:10000;
+@z-modaldesktop:2000000002;  //Using this Z-index to overlay the Feedback tab for desktop only
+
+/* color palette */
+@te-orange:#e98300;
+@te-light-orange:#e98300;
+@te-dark-orange:#C46E00;/* #a97632 is replaced by #C46E00 as per Teddy's Recommendation */
+@te-dark-orange-2:#d77800;
+@te-dark-orange-3: #c56e00;
+@te-blue:#0066a1;
+@te-dark-blue:#0065a3;
+@te-dark-blue-90: #233742;
+@te-dark-blue-87: #2e4957;
+@te-light-blue:#3db7e4;
+@te-light-blue-52:#f5fafc;
+@te-pale-blue:#7fb9d6;
+@te-light-pale-blue:#cbe3ef;
+@te-grey-green:#899f99;
+@te-green:#d6e342;
+@te-dark-green-3: #4F8A10;
+@te-dark-green-2:#8fb838;
+@te-dark-green:#1aad19;
+@te-red:#cd202c;
+@te-bright-red:#ff0000;
+@te-dark-red: #bc1f00; 
+@te-yellow:#fcd450;
+@te-light-yellow:#fef6dd;
+@te-white:#ffffff;
+@te-cool-grey-9:#747678;
+@te-light-grey: #cccccc;
+
+/* home page modules updated palette */
+@te-updated-cool-grey: #F0F2F3;
+@te-updated-grey: #BFBFBF;
+@te-updated-grey-hover: #9C9C9C;
+@te-updated-dark-grey: #3F4348;
+@te-updated-light-blue: #B6DDEB;
+@te-updated-light-blue-hover: #7B9FAD;
+@te-updated-dark-blue: #2E4957;
+@te-updated-dark-blue-hover: #22393E;
+@te-updated-aqua: #167A87;
+@te-updated-aqua-hover: #105C65;
+@te-updated-orange: #E98300;
+@te-updated-orange-hover: #AF6200;
+
+
+@te-charcoal: #2e2e2e;
+
+/* grey palette */
+@te-dark-grey:#3f4348;
+@te-dark-grey-98:#42474c; // 98% shade of @te-dark-grey
+@te-dark-grey-96:#4a4a4a; // 96% shade of @te-dark-grey
+@te-dark-grey-94:#4a4f55; // 94% shade of @te-dark-grey
+@te-dark-grey-80:#686c70; // 80% shade of @te-dark-grey
+@te-dark-grey-65:#333333; // 65% shade of @te-dark-grey
+@te-dark-grey-15:#40454b; // 15% shade of @te-dark-grey
+
+@te-cool-grey:#666;
+@te-cool-grey-65:#999;
+@te-cool-grey-35:#ccc;
+@te-cool-grey-10:#ededee;
+@te-cool-grey-7:#ebebeb;
+@te-cool-grey-5:#f7f7f7;
+@te-cool-grey-4:#f1f1f1;
+@te-cool-grey-3:#f0f2f3;
+
+/* animation speeds */
+@te-speed-1: 0.075s;
+@te-speed-2: 0.3s;
+@te-speed-3: 0.5s;
+@te-speed-4: 0.7s;
+
+
+/* icon font sizes */
+@icon-small-font-size: 13px;
+@icon-medium-font-size: 20px;
+@icon-large-font-size: 47px;
+
+
+// Programmatic approach that generated colors that were slightly off.
+/*@te-white-tint:#ffffff;
+@te-dark-grey-98:mix(@te-dark-grey,@te-white-tint,98%);
+@te-dark-grey-94:mix(@te-dark-grey,@te-white-tint,93%);
+@te-dark-grey-80:mix(@te-dark-grey,@te-white-tint,78%);
+@te-cool-grey-65:mix(@te-cool-grey,@te-white-tint,65%);
+@te-cool-grey-35:mix(@te-cool-grey,@te-white-tint,35%);
+@te-cool-grey-10:mix(@te-cool-grey,@te-white-tint,10%);*/
+
+/* border colors */
+@border-color-00:#000;
+@border-color-01:#06c;
+@border-color-02:#0090ff;
+@border-color-03:#1278c6;
+@border-color-04:#222;
+@border-color-05:#2a2a2a;
+@border-color-06:#444;
+@border-color-07:#9f9f9f;
+@border-color-08:#a1a1a1;
+@border-color-09:#c00;
+@border-color-10:#ccc;
+@border-color-11:#e23a39;
+@border-color-12:#e3e3e3;
+@border-color-13:#eee;
+@border-color-14:#f6f6f6;
+@border-color-15:#fff;
+@border-color-16: #34373b;
+@border-color-17: #d9d8d6;
+
+/* shadow colors */
+@shadow-color-0:#000;
+@shadow-color-1:#0090ff;
+@shadow-color-2:#222;
+@shadow-color-3:#c00;
+@shadow-color-4:#ccc;
+@shadow-color-5:#fff;
+
+/* responsive grid */
+@max-screen-width: 1024px;
+@max-wide-screen-width: 1440px;
+@desktop-breakpoint: 720px;
+@desktop-max-breakpoint: (@desktop-wide-breakpoint - 1);
+@desktop-wide-breakpoint: 1440px;
+@tab-breakpoint: 768px;
+@mobile-breakpoint: (@desktop-breakpoint - 1);
+@mobile-breakpoint-small: 370px;
+@mobile-columns: 3;
+@mobile-gutter: 7vw;
+@mobile-v-space: 24px;
+@mobile-header-height: 50px;
+@global-header-height:76px;
+
+/* height of mobile elements */
+@mobile-modal-header-height: 92px;
+@mobile-hamburger-modal-header-height: 77px;
+@mobile-modal-body-height:  ~"calc(100vh - " @mobile-modal-header-height ~")";
+@mobile-hamburger-modal-body-height:  ~"calc(100vh - " @mobile-header-height ~")";
+@mobile-hamburger-modal-content-height: ~"calc(100vh - " @mobile-hamburger-modal-header-height ~")";
+@mobile-addtolist-modal-button-height: 293px;
+@mobile-addtolist-modal-content-height: ~"calc(100vh - " @mobile-addtolist-modal-button-height ~")";
+@mobile-checkout-ordersummary-height:~"calc(100vh - " @mobile-header-height ~")";
+/* UI elements */
+
+@mobile-button-min-height: 70px;
+
+/*
+* This spacing is to offset the modal content from
+* getting into the trigger zone of the menu bar causing
+* the content to not be clickable.
+*
+* NOTE: The bar's native height is 44px.
+*/
+@ios-bottom-screen-offset: 64px;
+
+.capitalize {
+    text-transform: lowercase;
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}

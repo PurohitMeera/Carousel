@@ -1,0 +1,571 @@
+#csl-page-main-wrapper{    
+    width: 100%;
+    display: inline-block;
+    
+    #csl-header{
+        width: 100%;
+        min-height: 163px;
+        text-align: center;
+        padding: (@v_space*5) 0 (@v_space*6.5) 0;
+        position: relative;
+        z-index: 1;
+        .media-query(mobile, {
+            padding: (@v_space*3) 0 (@v_space*4) 0;
+            min-height: 110px;
+        });
+        h1{
+            display:inline-block;
+            .text-10();
+            color: @te-dark-grey;
+            .font-lineheight(36,44);            
+            .media-query(mobile, {
+                .text-20();
+                .font-lineheight(26,32);
+            });
+        }
+        
+        .csl-tabs-container{            
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -18%;
+            max-height: 66px;
+            width: 100%;
+            .media-query(desktop-small, {
+                max-height: 65px;
+            });
+            .media-query(IE, {
+                max-height: 73px;
+                &.stickyMenu{
+                   max-height: 57px;
+                }
+                &.scrollActive{
+                    bottom: -27%;
+                }
+            });
+            .csl-tabs-wrapper{
+                max-height: 65px;
+                width: 1312px;
+                overflow-y: hidden;
+                overflow-x: auto;                
+                margin: 0 auto;
+                
+                .media-query(desktop-small, {
+                    width: 970px;
+                });
+                .media-query(mobile, {
+                    width: 100%;
+                });
+                .media-query(IE, {
+                    max-height: 72px;
+                });
+                .media-query(mobile, {
+                    width: 94%;
+                    max-height: 56px;
+                    &::-webkit-scrollbar {
+                      height: 0px;
+                      width: 0px;
+                      background:transparent;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                      background:transparent;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                      background:transparent;
+                    }
+                });
+                ul{
+                    display: inline-block;
+                    width: auto;                    
+                    background: @te-white;
+                    li{
+                        display: inline-block;
+                        float: left;
+                        border: 1px solid @te-cool-grey-10;
+                        border-right: 0;
+                        a{
+                            color: @te-blue;                    
+                            padding: (@v_space*1.5) (@h_space*3.0);
+                            display: inline-block;
+                            .font-lineheight(16,24);
+                            &:hover{
+                                color: @te-light-blue;
+                            }
+                            &.active, &:active{
+                                .media-query(mobile, {
+                                    color: @te-blue;
+                                });                            
+                            }
+                        }
+                        &:nth-last-child(1){
+                            border-right: 1px solid @te-cool-grey-10;
+                        }
+                    }
+                    .media-query(mobile, {                    
+                        width: max-content;
+                    });
+
+                }
+            }
+            &.stickyMenu{
+                position: fixed;
+                top: 0px;
+                background: @te-white;
+                .media-query(mobile, {
+                    top: 0px;
+                });                
+            }
+            &.scrollActive{
+                bottom: -23%;
+            }
+            .media-query(mobile, {                
+                width: 100%;
+                max-height: 56px;
+                bottom: -24%;
+                
+            });
+        }
+    }
+    
+    #csl-content{
+        padding-bottom:(@v_space*2.5);
+        .media-query(mobile, {
+            padding-bottom:(@v_space*1.5);
+        });
+        .chapter-heading-tabbed{            
+            max-width: 970px;
+            margin: (@v_space*5) (@h_space*0) (@v_space*3);
+            clear: both;
+            .media-query(desktop-wide, {           
+                max-width: 1312px;
+            });
+            .media-query(mobile, {
+                max-width: 100%;
+                margin: (@v_space*3) (@h_space*0) (@v_space*2);
+                &:nth-child(1){
+                    margin-top: (@v_space*5);
+                }
+            });
+            h2{
+                .text-28();
+                .font-lineheight(20,26);
+                text-transform: uppercase;
+                width: 100%;
+                text-align: center;
+                color:@te-dark-grey;
+            }
+            &:first-child{
+                margin-top: (@v_space*7.5);
+            }
+        }
+        
+        //~~~ Contact us Section Css - Start ~~~//
+        .csl-Contact-Main-Wrapper{
+            overflow: hidden;
+            width: 1440px;
+            .media-query(desktop-small, {
+                width: 1024px;
+            });
+            .media-query(mobile, {
+                width: 100%;
+            });
+            .customer-service-landing-contactus{
+                float: left;
+                border: 1px solid @te-cool-grey-10;
+                max-width: 415px;
+                width: 33%;
+                margin: (@v_space*2) (@h_space*3) 0 0;
+                height: auto;
+                min-height: 130px;
+                overflow: hidden; 
+                padding-bottom: @v_space*1.5;
+                &:nth-child(-n+3){
+                    margin-top: 0;                    
+                }
+                .csl-contactUs-block{
+                    overflow: hidden;
+                    >i{
+                        width: 26px;
+                        height: 26px;
+                        position: relative;
+                        top: 23px;
+                        left: 21px;
+                        font-size: 17px;
+                        color: @te-cool-grey-65;
+                        .media-query(desktop-small, {
+                            width: 17px;
+                            height: 17px;
+                            font-size: 15px;
+                            top: 25px;
+                            left: 25px;
+                        });
+                        .media-query(mobile, {
+                            width: 26px;
+                            height: 26px;
+                            left: 20px;
+                        });
+                    }
+                    .cls-contactUs-inner-wrap{
+                        width: 82%;
+                        float: right;
+                        margin-right: (@v_space*2);
+                        .media-query(desktop-small, {
+                            width: 76%;
+                            margin-right: (@v_space*1.3);
+                        });
+                        .media-query(mobile, {
+                            width: 78%;
+                        });
+                        h3{
+                            .text-42();
+                            .font-lineheight(16,24);
+                            color:@te-dark-grey;
+                            margin: (@v_space*1.8) 0 (@v_space);
+                        }
+                        p{
+                            width: 100%;
+                            .text-62();
+                            .font-lineheight(14,22);
+                            margin-bottom: @v_space;                            
+                            b{
+                                .text-93();
+                            }
+                            >img, >a{
+                                width:129px;
+                                height: auto;
+                                max-width: 129px;
+                                margin-top: 0;                                
+                                .media-query(mobile, {
+                                    width: 60%;    
+                                    max-width: 122px;
+                                    float: right;
+                                    margin-top: -37px;
+                                });
+                            }
+                            >a {
+                                img{
+                                    width: 100%;
+                                    height: auto;
+                                }
+                                .media-query(mobile, {
+                                    float: none;
+                                });
+                            }
+                        }
+                        a{
+                            .text-62();
+                            color:@te-blue;
+                            .font-lineheight(14,22);
+                            i{
+                                display: inline-block;
+                                margin-left: 8px;
+                                width: 17px;
+                                height: 17px;
+                                font-size: 15px;
+                                vertical-align: middle;
+                            }
+                            &:hover{
+                                color: @te-light-blue;
+                            }
+                        }
+                        .dynamic{
+                            .contact-list{
+                                &:nth-child(1){
+                                    p{
+                                        &:nth-child(1){
+                                           .text-40();
+                                            .font-lineheight(16,24);
+                                            color: @te-dark-grey; 
+                                        }                                          
+                                    }
+                                }
+                                p{                                    
+                                    & > a{
+                                        .media-query(mobile, {
+                                            float: none;
+                                            width: 100%;
+                                            max-width: 100%;
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }                
+                }                
+                .media-query(desktop-small, {
+                    max-width: 306px;
+                    margin-right: (@h_space*2);
+                    height: auto;
+                });
+                .media-query(mobile, {
+                    max-width: 100%;
+                    width: 100%;
+                    height: auto;
+                    min-height: auto;
+                    margin-bottom: @v_space;
+                    margin-top: 0;
+                    padding-bottom: @v_space;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                });
+            }
+            &.grid-4-column{
+                .customer-service-landing-contactus{
+                    max-width: 303px;
+                    width: 25%;
+                    margin-right: (@h_space*3.2);
+                    &:nth-child(-n+4){
+                        margin-top: 0;                   
+                    }
+                    .media-query(desktop-small, {
+                        max-width: 225px;
+                        margin-right: (@h_space*2);
+                    });
+                    .csl-contactUs-block{
+                        & > i{
+                            left:20px;
+                            width: 21px;
+                            height: 21px;
+                            font-size: 14px;
+                            .media-query(desktop-small, {
+                                top:20px;
+                                left: 10px; 
+                            });
+                        }
+                        .cls-contactUs-inner-wrap{
+                            width: 78%;                            
+                            .media-query(desktop-small, {
+                                width: 78%; 
+                            });
+                        }
+                    }
+                }
+            }
+        }
+        .customer-service-landing-contactus{
+            visibility: hidden;
+        }
+        //~~~ Contact us Section Css - Ends ~~~//
+        
+        //~~~ Tools and Resources Css - Starts ~~~//
+        .centered-rich-text-editor{
+            text-align: center;
+        }
+        .centered-rich-text-wrap{         
+            width: auto;
+            display: inline-block;
+            text-align: center;
+            i{
+                float: left;
+                width: 18px;
+                height: 18px;
+                font-size: 14px;
+                position: relative;
+                top: 4px;
+                color: @te-cool-grey-65;
+            }
+            p{
+                color: @te-cool-grey-9;
+                .text-90();
+                .font-lineheight(12,20);
+                &:nth-of-type(1){
+                   margin-left: (@h_space*2); 
+                }
+                a{
+                    color: @te-blue;
+                }
+                .media-query(mobile, {
+                    text-align: left;
+                    margin-left: (@h_space*2.5);
+                });
+            }          
+            .media-query(mobile, {
+                max-width: 100%;
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+                padding: (@v_space*0) (@h_space*0);
+            });
+        }
+        
+        .csl-tools-resources-grid{
+            margin: (@v_space*3) auto 0 auto;
+            width: 1090px;
+            overflow: hidden;
+            .media-query(desktop-small, {
+                width: 100%;
+                margin: (@v_space*3) 0 0 0;
+            });
+            .media-query(mobile, {
+                margin: (@v_space*2) 0 0 0;
+                width: 100%;
+            });
+            .csl-tools-resources-tiles{
+                float: left;
+                width: 220px;
+                margin: (@v_space*3.2) (@h_space*6.9) 0 0;
+                
+                h3{
+                    font: unset;
+                    padding-right: @h_space;
+                    a{
+                        .text-40();
+                        .font-lineheight(16,24);
+                        color: @te-blue;
+                        margin-bottom: @v_space;
+                        &:hover{
+                            color: @te-light-blue;
+                        }
+                    }
+                    i{
+                        color: @te-cool-grey-65;
+                        width: 18px;
+                        height: 18px;
+                        font-size: 14px;
+                        text-align: center;
+                        margin-left: @h_space*0.3;
+                    }
+                    
+                }
+                p{
+                    color: @te-cool-grey-9;
+                    .text-62();
+                    .font-lineheight(14,22);                    
+                }
+                
+                &:nth-child(-n+4){
+                    margin-top: 0;                    
+                }
+                &:nth-child(4n+4){
+                    margin-right: 0;
+                }
+                &:nth-child(4n+4) + div{
+                    clear: left;                    
+                }
+                
+                .media-query(desktop-small, {
+                    margin-right: (@h_space*2);
+                    &:nth-child(4n+4){
+                        margin-right: 0;
+                    }
+                });
+                .media-query(mobile, {
+                    width: 100%;
+                    margin: (@v_space*2) 0 0 0;
+                    &:first-child{
+                        margin-top: 0;
+                    }
+                });
+            }
+        }
+        
+        //~~~ Tools and Resources Css - Ends ~~~//
+        
+        //~~~ Help with Te.com - starts ~~~//
+        .promo-grid{
+            margin: (@v_space*0) (@h_space*0);
+            .te-promo-grid-head{
+                display:none;
+            } 
+        }
+        .te-promo-grid{
+            .te-promo-content{
+                .promo-grid-content{
+                    .floating-wrapper.small{
+                        .media-query(mobile, {
+                            margin: (@v_space*0) (@h_space*0) (@v_space*2)!important;                            
+                        });                        
+                    }
+                    & > div.floating-wrapper.small:nth-last-child(2){
+                       .media-query(mobile, {
+                            margin: (@v_space*0) (@h_space*0) (@v_space*0)!important;                            
+                        });
+                    }
+                }
+            }
+        }
+        .te-promo{
+            &.te-promo-crafted.small{
+                .container{
+                    .promo-content{                        
+                        .content-wrapper{
+                            .media-query(mobile, {
+                                padding: (@v_space) (@h_space*0) (@v_space*0);
+                            });                            
+                        }
+                        .content-type{
+                            .text-96();
+                            .font-lineheight(12,18);
+                            .media-query(mobile, {
+                                color:@te-dark-grey-65;
+                            });                            
+                        }
+                    }
+                }
+            }
+        }        
+        
+        //~~~ Help with Te.com - ends ~~~//
+        
+        //~~~ FAQ Section Css - Start ~~~//
+        .customer-service-landing-faq{
+            .csl-faq-links-wrapper{
+                text-align:center;                
+                display: flex;
+                flex-wrap: wrap;                
+                justify-content: center;
+                .csl-faq-links{
+                    display:inline-block;
+                    margin:(@v_space*0) (@h_space*0) (@v_space*2) (@h_space*0);
+                    &:first-child{                        
+                        .link{
+                            padding:(@v_space*0) (@h_space) (@v_space*0) (@h_space*0);
+                        }
+                    }
+                    &:last-child{
+                        .link{
+                            border-right:0px solid @te-cool-grey-35;
+                            padding:(@v_space*0) (@h_space*0) (@v_space*0) (@h_space);
+                        }
+                    }
+                    .link{
+                        .text-44();
+                        .font-lineheight(16,24);
+                        text-align:center;
+                        color:@te-blue;
+                        padding:(@v_space*0) (@h_space);
+                        border-right:2px solid @te-cool-grey-35;
+                        display:inline-block;
+                        &:hover, &:focus{
+                            color:@te-light-blue;
+                        }
+                        
+                    }
+                }
+            }
+        }
+        //~~~ FAQ Section Css - ends ~~~//
+    }
+    
+    //common important CSS
+    .csl-grey-bg{
+        background: @te-cool-grey-5;
+    }
+    .clear{
+        clear: both;
+    }
+
+    .copy-module-body{
+        .content-area{
+            ul {
+                li {
+                    line-height: 1.6em;
+                }
+            }
+        }
+    }
+    
+}

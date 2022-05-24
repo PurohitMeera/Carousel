@@ -1,0 +1,101 @@
+.contact-our-media-team-div{
+    text-align: center;
+    margin: 15px 0;
+    .media-query(mobile, {
+        margin:0;
+        padding: 30px 7vw;
+        background-color: @te-cool-grey-5;
+    });
+    a{
+       .media-query(mobile, {
+           padding: 17px 0 16px;
+           display: block;
+           background-color: @te-cool-grey-10;
+           .text-62();
+           margin:0 20px;
+        }); 
+    }
+}
+.corp-news-releases-tabpanel{
+	.contact-our-media-team-div{
+	    .media-query(mobile, {
+	        padding-top: 110px;
+	    });
+    }
+}
+.news-center-article-list{
+	position: relative;
+    width: @max-screen-width;
+    margin: 0 auto;
+}
+.dialog_header{
+	height: 65px;
+    background-color: #696e78;
+    text-align: center;
+    line-height: 3;
+    color: @te-white;
+    font-size: 22px;
+    .media-query(mobile, {
+        .text-27();
+        background: none;
+        color: @te-dark-grey;
+        padding: 24px 25px 1px;
+        text-align: left;
+        height: auto;
+    });
+}
+.dialog_closeBtn{
+	position: absolute;
+	display: inline-block;
+	right: 18px;
+	top: 15px;
+	height: 17px;
+	width: 17px;
+	cursor: pointer;
+}
+.dialog_closeBtn_left, .dialog_closeBtn_right{
+	position: absolute;
+	display: inline-block;
+	top: 8px;
+	height: 2px;
+	width: 17px;
+	background: @te-white;
+	border-radius: 2px;
+	transForm: rotate(45deg);
+}
+.dialog_content_layout{
+	padding-top: 20px;
+    padding-right: 25px;
+}
+.dialog_content_global{
+	overflow: hidden;
+}
+.dialog_content{
+	padding-left: 25px;
+	word-wrap: break-word;
+    p{
+        .media-query(mobile, {
+            .text-62();
+            color: @te-cool-grey-9;
+        });
+    }
+    .desktop{
+        margin-bottom: 16px;
+    }
+    .cta{
+        &.mobile{
+            display: none;
+            .media-query(mobile, {
+                display: table;
+                margin-top: 9px;
+            });
+        }
+    }
+}
+.dialog_content_tel, .dialog_content .dialog_content_contact{
+	width: 70px;
+	display: inline-block;
+}
+.dialog_content li{
+    line-height: 2;
+}

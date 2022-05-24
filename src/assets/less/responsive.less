@@ -1,0 +1,49 @@
+.mobile, .te-mobile-test, .desktop, .te-desktop-test, .desktop-wide, .te-desktop-wide-test, .desktop-small, .te-desktop-small-test {
+    display: none;
+}
+
+//.editorial-parsys > .section {
+//    .media-query(mobile,{
+        //hide all sections by default
+//        display:none
+//    });
+    // these will get overriden if there is a
+    // .mobile and .desktop class on the module
+//}
+
+.desktop-wide, .te-desktop-wide-test {
+    display: block; //< this rule also affects non responsive pages
+    .media-query(desktop-small,{
+        display: none;
+    });
+    .media-query(mobile,{
+        display: none;
+    });
+}
+
+.desktop-small, .te-desktop-small-test {
+    display: block; //< this rule also affects non responsive pages
+    .media-query(desktop-wide,{
+        display: none;
+    });
+    .media-query(mobile,{
+        display: none;
+    });
+}
+
+.desktop, .te-desktop-test {
+    display: block; //< this rule also affects non responsive pages
+    .media-query(mobile,{
+        display: none;
+    });
+}
+
+.mobile, .te-mobile-test {
+    .media-query(mobile,{
+        display: block;
+    });
+}
+
+.te-mobile-test:extend(.off-screen){};
+.te-desktop-test:extend(.off-screen){};
+.te-desktop-wide-test:extend(.off-screen){};

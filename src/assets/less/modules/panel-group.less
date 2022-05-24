@@ -1,0 +1,14 @@
+.panel-group{
+    :focus{
+        outline: none;
+    }
+    .panels > div{
+        display:none;
+
+        &.active{
+            display:block;
+            //overflow:auto;
+            overflow: visible;
+        }
+    }
+}

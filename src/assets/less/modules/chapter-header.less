@@ -1,0 +1,32 @@
+.chapter-heading{
+    margin:(@v_space*2.5) 0px;
+    width: 100%;
+    display: inline-block;
+    height:auto;
+    padding-bottom: 5px;
+    ul{
+        li{
+            a{
+                white-space: nowrap;
+                max-width: none;
+            }
+        }
+    }
+    .media-query(mobile,{
+        margin:(@v_space*1.5) 0px;
+    });
+    .chapter-header {
+        text-align: center;
+        .text-22();
+        .font-lineheight(22, 26);
+        color: @te-cool-grey;   
+        &.te-light-theme{
+            background-color: @te-cool-grey-3;
+            color: @te-dark-blue-87;
+        }
+        &.te-dark-theme{
+            background-color: @te-dark-blue-87;
+            color: @te-white;
+        }         
+    }
+}

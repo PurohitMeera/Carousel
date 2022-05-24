@@ -1,0 +1,783 @@
+myaccount-well {
+    min-width: 1024px;
+    .media-query(mobile, {
+        min-width: 0;
+        overflow-x: hidden;
+    }
+    );
+}
+
+.te-am-page-my-account{
+    .media-query(mobile, {
+        overflow: hidden;
+    }
+    );
+}
+.am-my-account-payment-col-wrapper {
+    overflow: hidden;
+    .media-query(mobile, {
+        border-bottom: 1px solid @te-cool-grey-35;
+        min-height: 300px;
+    }
+    );
+    #subsErrorDiv {
+        display: none;
+    }
+}
+
+.content-grid-override {
+    .media-query(mobile, {
+        padding: 0 !important;
+    }
+    );
+}
+
+.myaccount-container.modal-dialog {
+    display: none;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.ma-account {
+    .warning-area {
+        background: @te-green;
+        padding: 20px;
+        margin: 20px 0;
+        .media-query(mobile, {
+            margin: 20px 0 0;
+        }
+        );
+    }
+    .warning-info{
+        margin: 20px 0 0;
+    }
+    .hide-error-msg {
+        display: none;
+    }
+    .header-content{
+        overflow: auto;
+        h1{
+            .text-20();
+        }
+    }
+    
+    .am-my-account-title-wrapper {
+        padding: 19px 0 13px 0 !important;
+        height: auto;
+        .media-query(mobile, { 
+            padding: 19px 0 7px 0;
+            height: auto;
+        }
+        );
+        .warning-info {
+            .media-query(mobile, { 
+                margin: 13px 0 7px 0;
+        }
+        );
+        }
+        .am-my-account-enable-sso {
+            .media-query(mobile, {
+                display: none;
+            }
+            );
+        }
+    }
+    .cart-continue-shop {
+        &.mobile {
+            display: none;
+            .media-query(mobile, {
+                display: block;
+                padding: 20px;
+                background: @te-white;
+                float: left;
+                width: 100%;
+                .btn-clr-13{
+                    width: 100%;
+                }
+            }
+            );
+        }
+    }
+    .am-my-account-nav-buttons {
+        .media-query(mobile, {
+            padding: 0;
+        }
+        );
+        &.mobile {
+            display: none;
+            .media-query(mobile, {
+                display: block;
+                height:0px;
+            }
+            );
+        }
+        .desktop {
+            display: block;
+            .media-query(mobile, {
+                display: none;
+            }
+            );
+        }
+        .btn-height{
+            height: 53px !important;
+        }
+        .btn-group-9 {
+            .media-query(mobile, {
+                border: 0;
+                width: 100%;
+            }
+            );
+            li {
+                .media-query(mobile, {
+                    width: 100%;
+                    border-bottom: 1px solid @te-cool-grey-35;
+                }
+                );
+
+                a {
+                    padding: 8px 0 15px !important;
+                    .media-query(mobile, {
+                        .text-26();
+                        color: @te-blue;
+                        border: 0;
+                        text-align: left;
+                        width: 100%;
+                        padding: 15px 20px 14px 18px !important;
+                    }
+                    );
+                    i {
+                        display: none;
+                        .media-query(mobile, {
+                            font-size: 20px;
+                            display: inline-block;
+                            float: right;
+                            color: @te-blue;
+                        }
+                        );
+                    }
+                }
+                &:active{
+                    border: 0;
+                }
+                &.active {
+                    a {
+                        padding: 8px 0 15px !important;
+                        .media-query(mobile, {
+                            border: 0;
+                            color: @te-light-blue;
+                        }
+                        );
+                        i {
+                            display: none;
+                            .media-query(mobile, {
+                                color: @te-light-blue;
+                            }
+                            );
+                        }
+                    }
+                    &.border-bottom-hide {
+                        .media-query(mobile, {
+                            border-bottom: none !important;
+                        }
+                        );
+                    }
+                }
+            }
+        }
+    }
+}
+
+.myaccount-container {
+    float: left;
+    width: 100%;
+    padding: 28px 0 20px;
+    .media-query(mobile, {
+        padding: 0;
+    }
+    );
+    a,
+    button {
+        color: @te-blue;
+        outline: 0px;
+        border:0;
+    }
+
+    button:hover,
+    button:focus,
+    a:hover,
+    a:focus {
+        color: @te-light-blue;
+    }
+    .title {
+        .text-62();
+        .font-lineheight(14,22);
+        color: @te-dark-grey;
+        text-transform: uppercase;
+        padding: 10px 0 10px;
+    }
+    .change-payment-container {
+        width: 100%;
+        float: left;
+        margin: 0;
+
+        div.payment-wrapper {
+            width: 940px;
+            margin: 0 auto;
+            .media-query(mobile, {
+                width: 100%;
+            }
+            );
+            .empty-container{
+                .text-30();
+                margin-top: -4px;
+                line-height: 23px;
+            }
+            div.content-grid {
+                .flex-grid(@width: 940px, @justify-content: flex-start);
+               
+                div.grid-item {
+                    .flex-item();
+                    width: 460px; //460 or 300
+                    margin: 0 20px 25px 0;
+                    padding: 15px 20px 17px;
+                    border: 1px solid @te-cool-grey-35;
+                    background: @te-white;
+                    min-height: 255px;
+                    position: relative;
+                    &:nth-child(even) {
+                        margin-right: 0;
+                        float: right;
+                    }
+                    .linking {
+                        .column(12);
+                        position: absolute;
+                        bottom: 20px;
+                        a {
+                            .text-62();
+                            float: left;
+                        }
+                        .pipe {
+                            border-right: 1px solid @te-dark-grey-94;
+                            height: 17px;
+                            margin: 0 10px;
+                            float: left;
+                        }
+                        .media-query(mobile, {
+                            position: initial;
+                            margin: 5px 0 0;
+                        });
+                    }
+                }
+                .content-info {
+                    .column(12);
+                    min-height: 140px;
+                    .content-left {
+                        float: left;
+                        width: 54%;
+                        .content-margin{
+                            margin-top:-4px;
+                        }
+                        .f-width {
+                            width: 100%;
+                            color: @te-cool-grey-9;
+                            .text-96();
+                            .font-lineheight(12,18);
+                            i {
+                                color: @te-green;
+                                margin: 2px 5px 0 0;
+                                float: left;
+                                .media-query(mobile, {
+                                    line-height:1 !important;
+                                }
+                                );
+                            }
+                            &.default {
+                                padding: 10px 0;
+                                margin-top: 10px;
+                                position: absolute;
+                                bottom: 47px;
+                                span{
+                                    margin: 0;
+                                    float: left;
+                                }
+                                .media-query(mobile, {
+                                    position: initial;                                    
+                                });
+                            }
+                        }
+                        .media-query(mobile,
+                        {
+                            width: 100%;
+                        }
+                        );
+                    }
+
+                    .content-right {
+                        float: left;
+                        width: 46%;
+                        .media-query(mobile,
+                        {
+                            width: 100%;
+                        }
+                        );
+                        .content {
+                           margin-top:-3px; 
+                        }
+                    }
+                    .visa {
+	                    background: url('../../images/visa.svg') 0 0 no-repeat;
+	                    width: 68px;
+	                    height: 40px;
+                        background-size: 70%;
+	                }
+	                .amex {
+	                    background: url('../../images/amex.svg') 0 0 no-repeat;
+                        width: 40px;
+                        height: 40px; 
+                        margin-right: 5px;
+                        background-size: 70%;
+	                }
+	
+	                .master {
+	                    background: url('../../images/mastercard_New.svg') 0 0 no-repeat;
+	                    width: 52px;
+	                    height: 40px;
+                        background-size: 70%;
+	                }
+                    .content {
+                        color: @te-dark-grey;
+                        p {
+                            .text-62();
+                            .font-lineheight(14,22);
+                            padding: 1px 0;
+                            &.first-child{
+                                text-transform: uppercase !important;
+                            }
+                            a {
+                                margin: 10px 0 0;
+                                float: left;
+                            }
+                            &.upper {
+                                text-transform: uppercase;
+                            }
+                            &:first{
+                                 .text-62();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//MA Address Book
+.change-address-container {
+    float: left;
+    width: 100%;
+    padding: 0px 0 20px 0;
+    margin-bottom: 0px;
+    .media-query(mobile,
+    {
+        padding: 0;
+        margin-bottom: 0;
+    }
+    );
+    div.address-wrapper {
+        width: 940px;
+        margin: 0 auto;
+        .media-query(mobile,
+        {
+            width: 100%;
+        }
+        );
+        div.content-grid {
+            .flex-grid(@width: 940px,
+            @justify-content: flex-start);
+            div.grid-item {
+                .flex-item();
+                width: 300px; //460 or 300
+                padding: 16px 20px 20px;
+                margin: 0 20px 20px 0;
+                border: 1px solid @te-cool-grey-35;
+                background: @te-white;
+                height:365px;
+                word-break: break-all;
+                position: relative;
+                .media-query(mobile,{
+                    height: auto;
+                }
+                );
+                &:nth-child(3n + 3) {
+                    margin-right: 0;
+                    float: right;
+                }
+                .linking {
+                    .column(12);
+                    position: absolute;
+                    bottom: 20px;
+                    a {
+                        .text-62();
+                        float: left;
+                        &.delete-label{
+                            padding-right:15px;
+                            .media-query(mobile,{
+                                padding-right:0px;
+                            });
+                        }
+                    }
+                    .pipe {
+                        border-right: 1px solid @te-dark-grey-94;
+                        height: 17px;
+                        margin: 0 10px;
+                        float: left;
+                    }
+                    .media-query(mobile,{
+                        position: initial;
+                        margin-top: 20px;
+                    });
+                }
+
+                &.empty-container {
+                    border: 1px dashed @te-cool-grey-35;
+                    background: @te-white;
+                    .media-query(mobile,
+                        {
+                            height: 75px;
+                        }
+                        );
+                    span{
+                        .text-62();
+                        }
+                    a {
+                        .column(12);
+                        .text-62();
+                        .font-lineheight(14,22);
+                        text-align: center;
+                        padding: 0;
+                        .media-query(mobile,
+                        {
+                            padding: 3px 20px;
+                            min-height: auto;
+                        }
+                        );
+                    }
+                    .content-info {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: auto;
+                        height: 20px;
+                        min-height: 20px;
+                        .media-query(mobile,
+                        {
+                            min-height: auto;
+                        }
+                        );
+                    }
+                }
+            }
+            .content-info {
+                .column(12);
+                min-height: 140px;
+                .f-width {
+                    width: 100%;
+                    color: @te-cool-grey-9;
+                    .text-96();
+                    .font-lineheight(12,18);
+                    i {
+                        color: @te-green;
+                        margin: 2px 5px 0 0;
+                        float: left;
+                        .media-query(mobile,
+                        {
+                           margin: 9px 5px 0 0; 
+                        }
+                        );
+                    }
+                    &.default {
+                        padding: 20px 0 0;
+                        .media-query(mobile,{
+                           padding: 15px 0 0; 
+                        }
+                        );
+                        span {
+                            margin: 0;
+                            float: left;
+                        }
+                    }
+                }
+                .address-name {
+                    .text-26();
+                    font-weight: 300;
+                    .font-lineheight(22,32);
+                    color: @te-dark-grey;
+                    margin-bottom: 10px;
+                }
+                .address {
+                    .text-62();
+                    .font-lineheight(14,22);
+                    color: @te-dark-grey;
+                }
+            }
+        }
+    }
+}
+
+/*delete address book modal window*/
+
+.addressbook-delete-modal {
+    margin: auto 20px;
+    height: 285px;
+    .modal-header {
+        .text-26();
+        color: @te-dark-grey;
+        margin:25px 0 12px !important;
+        .media-query(mobile,{
+            margin: 25px 0 0 !important;
+        });
+    }
+    h2 {
+        padding: 0 20px;
+    }
+    .address-wrapper {
+        padding: 0 20px;
+        overflow: hidden;
+        .media-query(mobile,{
+            padding: 0 20px 5px;
+        });
+        .pull-left {
+            float: left;
+        }
+
+        .pull-right {
+            float: right;
+        }
+        .content-info {
+            .column(12);
+            min-height: 120px;
+            margin-bottom: 8px;
+            .media-query(mobile,{
+                margin-bottom: 0;  
+             });
+            .address-name {
+                .text-26();
+                color: @te-dark-grey;
+                margin: 18px 0;
+                .media-query(mobile,{
+                    margin: 19px 0 6px 0;
+                });
+            }
+            .address {
+                .text-44();
+                color: @te-dark-grey;
+            }
+        }
+    }
+    .cta-container {
+        width: 100%;
+        padding: 17px 20px 20px 20px;
+        overflow: hidden;
+        .secondary-cta-pos {
+            float: left;
+            margin-right: 27px;
+        }
+        .secondary-cta {
+            background: @te-white;
+            width: 200px;
+            display: inline-block;
+            padding: 16px 0;
+            box-shadow: 1px 1px 1px @te-cool-grey-35;
+            border: 1px solid @te-cool-grey-10;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer; //font: 900 14px 'Avenir','Avenir W02',Arial,Helvetica,sans-serif;
+            .text-80();
+            .media-query(mobile,
+            {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            );
+        }
+        .primary-cta {
+            float: left;
+            cursor: pointer;
+        }
+        .btn-override {
+            width: 250px;
+            .media-query(mobile,
+            {
+                width: 100%;
+            }
+            );
+        }
+        .top-margin {
+            margin-top: 20px;
+        }
+    }
+}
+/*delete payment address modal window*/
+
+.payment-delete-modal {
+    margin: auto 20px;
+    height: 250px;
+    .modal-header {
+        .text-26();
+        color: @te-dark-grey;
+    }
+    h2 {
+        padding: 26px 20px 20px 20px;
+    }
+    .payment-wrapper {
+        padding: 0 20px 0 20px;
+        .content-info {
+            .column(12);
+            min-height: 125px;
+            margin-bottom: 9px;
+            .content-left {
+                float: left;
+                width: 40%;
+                .media-query(mobile,
+                {
+                    width: 100%;
+                    margin-bottom: 21px;
+                }
+                );
+                .content {
+                    margin-top:-4px;
+                }
+            }
+            .title {
+                .text-44();
+                color: @te-dark-grey;
+                text-transform: uppercase;
+                padding: 0 0 12px;
+            }
+            .address-name {
+                .text-30();
+                color: @te-dark-grey;
+            }
+            .address {
+                .text-44();
+                color: @te-dark-grey;
+            }
+            .content-right {
+                float: left;
+                width: 46%;
+                .media-query(mobile,
+                {
+                    width: 100%;
+                    margin-bottom: 17px;
+                }
+                );
+                .content {
+                    margin-top:-3px;
+                }
+            }
+            .visa {
+                background: url('../../images/visa.svg') 0 0 no-repeat;
+                width: 68px;
+                height: 30px;
+                background-size: 70%;
+                .media-query(mobile,
+                {
+                   margin-top: 4px;
+                }
+                );
+            }
+            .amex {
+                background: url('../../images/amex.svg') 0 0 no-repeat;
+                width: 68px;
+                height: 30px;
+                background-size: 70%; 
+                .media-query(mobile,
+                {
+                   margin-top: 4px;
+                }
+                );
+            }
+
+            .master {
+                background: url('../../images/mastercard_New.svg') 0 0 no-repeat;
+                width: 68px;
+                height: 30px;
+                background-size: 70%;
+                .media-query(mobile,
+                {
+                   margin-top: 4px;
+                }
+                );
+            }
+            .content {
+                color: @te-dark-grey;
+                p {
+                    .text-62();
+                    padding: 1px 0;
+                    a {
+                        margin: 10px 0 0;
+                        float: left;
+                    }
+                    &.upper {
+                        text-transform: uppercase;
+                    }
+                    &:first{
+                         .text-30();
+                    }
+                }
+            }
+        }
+    }
+    .cta-container {
+        width: 100%;
+        padding: 20px;
+        .secondary-cta-pos {
+            float: left;
+            margin-right: 30px;
+        }
+        .secondary-cta {
+            background: @te-white;
+            width: 200px;
+            display: inline-block;
+            padding: 16px 0;
+            box-shadow: 1px 1px 1px @te-cool-grey-35;
+            border: 1px solid @te-cool-grey-10;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer; 
+            .text-80();
+            .media-query(mobile,
+            {
+                width: 100%;
+                margin-bottom: 22px;
+            }
+            );
+        }
+        .primary-cta {
+            float: left;
+            cursor: pointer;
+        }
+        .btn-override {
+            width: 250px;
+            .media-query(mobile,
+            {
+                width: 100%;
+            }
+            );
+        }
+        .top-margin {
+            margin-top: 20px;
+        }
+    }
+}
+

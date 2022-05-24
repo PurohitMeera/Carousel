@@ -1,0 +1,293 @@
+.source-module {
+    padding: 25px 0 15px;
+    border-top: 1px solid @te-cool-grey-10;
+    position: relative;
+    &:first-child {
+      border:0;
+    }
+    .media-query(mobile,{
+        padding: 25px 0 0px;
+    });
+    &.has-eyebrow{
+        .source-image {
+            .media-query(mobile,{
+                margin-top: 30px;
+            });
+        }
+    }
+    
+    .source-image {
+		.column(2);
+        .brandbar();
+        zoom: 1;
+		.media-query(mobile,{
+			float:none;
+			width: 140px;
+			margin-right:0;
+            margin-top: 5px;
+		});
+        .media-query(desktop-wide,{
+			width:140px;
+            margin-right:(@v_space*4);            
+		});
+        .source-image-container {
+            width: 140px;
+            height: 140px;
+            border: 1px solid @border-color-14;
+            border-top-width: 0;
+            overflow: hidden;
+            display: block;
+            img {
+                display: block;
+                min-width: 100%;
+                height: 100%;
+                width: 100%;
+            }
+            &.download-icon,
+            &.te-icon {
+                background: 50% 50% no-repeat;
+            }
+            &.download-icon {
+                //background-image: url('@{image-path}/download-icon.svg');
+                html.no-svg & {
+                    //background-image: url('@{image-path}/download-icon.png');
+                }
+            }
+            &.te-icon {
+                //background-image: url('@{image-path}/te-connectivity-logo.svg');
+                html.no-svg & {
+                    //background-image: url('@{image-path}/te-connectivity-logo.png');
+                }
+            }
+        }
+    }
+
+    .source-copy {
+        .column(10, true);
+        padding-left: 10px;
+		.media-query(mobile,{
+			float:none;
+			width:auto;
+			margin-right:0;
+			padding-left:0;
+		});
+        
+        .media-query(desktop-wide,{
+			float: left;
+            padding-left: 0px;
+		});
+        &.truncate {
+            height: 144px;
+            overflow: hidden;
+            word-wrap: normal !important;
+            padding-top: 20px;
+			.media-query(mobile,{
+				height:auto;
+                padding-top: 17px;
+			});
+        }
+
+        h3 {
+            .text-20();
+            color: @te-blue;
+            padding-top: 9px;
+            .media-query(mobile, {
+                padding-top: 0;
+				margin-bottom: 10px;
+            });
+            &:hover,
+            &:active,
+            &:focus{
+                color: @te-light-blue;
+            }
+        }
+        
+        p {
+            color: @te-cool-grey;
+            .text-70();
+            line-height: (22/14);
+            .media-query(mobile,{
+               color: @te-dark-grey;
+                .text-62();                
+            });
+        }
+        p:last-child{
+            .media-query(mobile,{
+               padding:0px 0px 26px;                
+            });  
+            
+        }
+        p:last-child:empty{
+            .media-query(mobile,{
+               padding:0px 0px 3px;                
+            });
+        }
+        
+        .resource-date {
+            .media-query(mobile,{
+               color: @te-cool-grey-9;
+            });
+        }
+        h2.resource-date {
+            .text-40();
+        }
+
+        .resource-eyebrow {
+            height: 30px;
+            padding: 0 50px 0 8px;
+            text-transform: uppercase;
+            line-height: 30px !important;
+            position: absolute;
+            top: 0;
+            background-color: @te-cool-grey-10;
+            .media-query(mobile, {
+                padding: 0 8px;
+            });
+        }
+        
+        a:link, a:visited {
+            .resource-type {
+                color: @te-cool-grey;
+            }
+        }
+
+        .resource-type {
+            color: @te-cool-grey;
+            .text-92();
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            .media-query(mobile, {
+                margin-bottom: 0;                  
+                color: @te-dark-grey;
+            });
+        }
+
+        h2 {
+            .text-20();
+            padding-bottom: 5px;
+            line-height: (29/26);
+            color: @te-blue;
+            .media-query(mobile, {
+                padding-bottom: 0;
+            });
+        }
+    }
+}
+
+.te-news-article-summary {
+    .media-query(mobile,{
+        padding: 30px 0 0px;
+    });
+    .source-copy {
+        .media-query(mobile, {
+	        float:none;
+	    });
+        h3 {
+            padding-bottom: 15px;
+            .media-query(mobile, {
+                padding-bottom: 0px;
+                margin-bottom:20px;
+            });
+        }
+    }
+    .source-image {
+    	.media-query(mobile, {
+	        float:none;
+	        width:140px;
+            margin-bottom:27px;
+	    });
+    }
+}
+
+.source-module.te-related-materials {
+    .media-query(mobile, {
+        padding: 30px 0 27px;
+    });
+    
+    .source-image {
+        .media-query(mobile, {
+            width: 140px;
+            float: none;
+			margin-top:30px;
+        });
+    }
+    
+    .source-copy {
+        .media-query(mobile, {
+            float: none;
+        });
+        
+        h2 {
+            .media-query(mobile, {
+                .text-62();
+                color: @te-cool-grey-9;
+                line-height: (22/14);
+            });
+        }
+        
+        h3 {
+            .media-query(mobile, {
+                .text-20();
+                color: @te-blue;
+                line-height: (32/26);
+            });
+        }
+        
+        p {
+            .media-query(mobile, {
+                .text-62();
+                color: @te-dark-grey;
+                line-height: (22/14);
+                margin-top: 20px;
+            });
+        }
+    }
+}
+
+.freeform-container{
+    .iframe-wrapper{     
+       position:static!important;        
+    }
+}
+
+.document-listing-entry-container{
+    .page-listing-entry{
+        .source-module{
+            .source-copy{
+                p{
+                    .media-query(mobile, {
+                        color: @te-dark-grey;
+                    });
+                }
+            }
+        }
+    }
+}
+
+#newscenternav-dl{
+    .panel-group{
+        #new-product-releases-tabpanel{
+           .media-query(mobile, {
+                margin: 30px 0px 0px;
+            });            
+        }
+        #te-news-tabpanel{
+            .media-query(mobile, {
+                margin: 30px 0px 0px;
+            });
+        }
+    }
+}
+.document-listing-entry{
+    .source-module{
+        &.te-related-materials{
+            .source-copy{ 
+                &.truncate{
+                    .media-query(mobile, {
+                        height: 100%;
+                    });
+                }
+            }
+        }
+    }
+}

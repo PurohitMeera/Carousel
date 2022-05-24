@@ -1,0 +1,145 @@
+.track-order-content-wrapper{
+    background-color: @te-cool-grey-5;
+    .track-order-container{
+        width: 1024px;
+        margin: 0 auto;
+        .media-query(mobile, {
+            width: 100%;
+        });
+        .media-query(desktop-wide, {
+            width: 1440px;
+        });
+        .track-your-order-main-content{
+            width: 320px;
+            height: auto;
+            margin: 0px 342px 0px 362px;
+            padding: 30px 0 56px 0;
+            .media-query(mobile, {
+                margin: 0px auto;
+            });
+            .media-query(desktop-wide, {
+                margin: 0px 558px 0px 562px;
+            });
+            .track-your-order-title{
+                .text-22();
+                .font-lineheight(22,26);
+                color: @te-dark-grey;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .no-order-found,.mule-sap-error, .session-timeout-error{
+                .text-70();
+                .font-lineheight(14,22);
+                background-color: rgba(245,211,213, 0.8);
+                color: @te-red;
+                border-left: 4px solid @te-red;
+                padding: 8px 10px 8px 6px;
+                margin: 4px 0px 10px;
+            }
+            .session-timeout-error{
+                p{
+                    display: inline;
+                }
+            }
+            .search-by-container{
+                .search-by-label{
+                    .text-70();
+                    .font-lineheight(14,16);
+                    color: @te-dark-grey;
+                    letter-spacing: 0;
+                }
+                .track-order-dropdown{
+                    width: 100%;
+                    height: 30px;
+                    .text-70();
+                    color: @te-dark-grey;
+                    .font-lineheight(14,18);
+                    padding: 5px 8px;
+                    letter-spacing: 0;
+                    margin-top: 8px;
+                    border: 1px solid @te-cool-grey-35;
+                    border-radius: 4px;
+                }
+            }
+            .input-section{
+                margin-top: 18px;
+                .target-value-class{
+                   .text-70();
+                    .font-lineheight(14,16);
+                    color: @te-dark-grey;
+                    letter-spacing: 0; 
+                }
+                input{
+                    .text-70();
+                    .font-lineheight(14,22);
+                    padding: 4px 10px;
+                    width: 100%;
+                    margin-top: 8px;
+                    height: 30px;
+                    border: solid 1px @te-cool-grey-35;
+                    background-color: @te-white;
+                    color: @te-dark-grey;
+                    &.error-border{
+                        border: solid 1px @te-red;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .input-inline-error{
+                .text-70();
+                color: @te-red;
+                .font-lineheight(14,22);
+            }
+            .view-order-cta{
+                margin-top: 20px;
+                width: 100%;
+                position: relative;
+                background-color: @te-blue;
+                text-align: center;
+                display: block;
+                padding: 12px;
+                height: 40px;
+                color: @te-white;
+                cursor: pointer;
+                .text-93();
+                .font-lineheight(14,16);
+                border: 0;
+                &:hover{
+                    background-color: @te-light-blue;
+                }
+                &.spinnerloading:before{
+                    content:'';
+                    border: 4px solid @te-cool-grey-10;
+                    border-radius: 50%;
+                    border-top: 4px solid @te-white;
+                    border-left: 4px solid @te-white;
+                    border-right: 4px solid @te-white;
+                    position: absolute;
+                    left: 43%;
+                    top: 05px;
+                    z-index: 99;
+                    width: 30px;
+                    height: 30px;
+                    -webkit-animation: spin 1.5s linear infinite;
+                    animation: spin 1.5s linear infinite;
+                    pointer-events: none;
+                }
+                @-webkit-keyframes spin {
+                  0% { -webkit-transform: rotate(0deg); }
+                  100% { -webkit-transform: rotate(360deg); }
+                }
+                @keyframes spin {
+                  0% { transform: rotate(0deg); }
+                  100% { transform: rotate(360deg); }
+                }
+            }
+            #track-order-qualtrics{
+                margin-top: 20px;
+                &:empty{
+                    display: none;
+                }
+            }
+            
+        }
+    }
+}

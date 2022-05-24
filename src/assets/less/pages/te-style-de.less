@@ -1,0 +1,101 @@
+@import (once) './fragments/_mixins-roman';
+
+@import (once) './fragments/_bases';
+
+@import (once) '../modules/buttons';
+
+//@import (once) './fragments/_modules';
+
+.product-compare-page {
+  .compare-leaf-attrs {
+    margin-top: 15px;
+  }
+}
+
+.te-promo{
+	.container{
+		.promo-content{
+			.promo-content-title{
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+.product-hero {
+	.content-hero {
+		h3 {
+			line-height: 1.3;
+		}
+	}
+}
+.picture-nav{
+	.view-all{
+		h4{
+			line-height: 20px;
+			.header-title{
+				display: none;
+			}
+		}
+	}
+}
+.search-items-list {
+    table {
+        thead {
+            th {
+                .dist-heading {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+.search-items-list {
+    .table-inner-wrapper {
+        .scrollable.table-container td {
+            .right-side-desc {
+                .buy-te-com {
+                    .buyontecom-tag{
+                        padding-left: 11px;
+                        padding-right: 3px;
+                        i{
+                            padding-right: 1px;
+                        }
+                        .media-query(mobile,{
+                            padding-left: 10px;
+                            padding-right: 3px;
+                            i{
+                                padding-right: 1px;
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    }
+}
+#pdp-productcompatible {
+    &.te-global-contact-modal {
+        .media-query(mobile, {
+            padding: 25px 7vw;
+            margin-bottom: 240px;
+            &.bottom-space-for-iphone{
+                margin-bottom: 250px; 
+            }
+        });
+    }
+}
+a.btn-clr-1{
+    &:extend(.btn-fast-on-slow-off all);
+    background:@te-blue;
+    color:@te-white;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active{
+        background:@te-light-blue;
+    }
+    .icon {
+        color:@te-white;
+        margin:0 5px 0 0;
+    }
+}

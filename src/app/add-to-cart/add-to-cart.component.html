@@ -1,0 +1,609 @@
+<div class="glLoading" data-ng-class="{loading:cartLoading}">
+    <div class="wrapper content-well">
+        <div class="display-inline-table" data-ng-if="!isShoppingCartEmpty">
+            <section id ="shop-cart-top" class="shoppingCart-checkout">               
+                <div class="cart-checkout-panel" data-ng-hide="cartLoading">
+                    <div class="cart-samples-link"></div>   
+                    <div class="cart-head">
+                        <h1 ng-if="isCommerceCountry">{{shoppingCartTitle}}</h1>
+                        <h1 class="dynamic-text-color" ng-if="!isCommerceCountry" data-ng-bind-html="teStoreShoppingCart | htmlSafe"></h1>
+                        <div class="shippingRuleToolTip">
+                        	<p> <span ng-if="!sampleOnly">{{country === cartLabels.countryUsaLabel ? shippingRestrictionLabel : tesogShippingRestrictionLabel}}</span>
+                            <span ng-if="sampleOnly">{{teConnectivityShipOnline}}</span>
+                            <span class="view-country" no-icon="true" data-tn-tooltipster-directive="" data-tooltip-content="#tooltip-shipping-rules-content" data-width="306" data-mobile-position="0"
+                                    data-height="none">{{viewCountryList}}</span></p>
+				        </div>
+                    </div>
+                    <div class="mobile cart-subtotal-top" ng-if="!sampleOnly">
+                        <div class="left-container-cart">
+                            <div class="product-for-purchase" data-ng-bind-html="mixedCartSummaryCommerce|htmlSafe">
+                            </div>
+                            <div>
+                                ({{cartData.regularEntries.length + cartData.mtoEntries.length}} 
+                                <span class="items-count" data-ng-bind-html="(cartData.regularEntries.length + cartData.mtoEntries.length == 1?itemLabel: itemsLabel) | htmlSafe"></span>)
+                            </div>
+                        </div>
+                        <div class="cart-subtotal-value">
+                            <span>{{cartData.subTotal.formattedValue}}</span>
+                        </div>
+                    </div>
+                    <div class="mobile cart-subtotal-top" ng-if="cartData.sampleEntries && cartData.sampleEntries.length>0">
+                        <div class="left-container-cart">
+                            <span class="samples" data-ng-bind-html="mixedCartSummarySample|htmlSafe"></span>
+                            ({{cartData.sampleEntries.length}} <span class="items-count" data-ng-bind-html="(cartData.sampleEntries.length == 1?itemLabel: itemsLabel) | htmlSafe"></span>)
+                        </div>
+                        <div class="cart-subtotal-value">
+                            <span data-ng-bind-html="freeLabelSamples|htmlSafe"></span>
+                        </div>
+                    </div>
+                    <div class="checkout-errMsg hidediv">{{checkoutErrBelowLabel}}</div>
+                    <div class="cart-continue-shop" >
+                        <a href="{{sitePath }}/product-{{cartData.lastAddedTcpn}}.html"
+                        class="btn-block-13">{{sampleOnly?samplesContinueShopping:continueShopping}}</a>
+                    </div>                    
+                    <div class="cart-continue-checkout">
+                        <a href="{{cartLabels.checkoutUrl}}" class="btn-block-11 btn-clr-13 cart-checkout-button">
+                            <span>{{sampleOnly?samplesCheckout:checkoutLabel}}</span>
+                            <i class="icon icon-caret icon-medium" role="presentation"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>			
+        </div>
+        <div class="cartTransfer" ng-if="cartTransferMessage">{{cartTransferMessage}}</div>
+        <div class="cartSwitched error" ng-if="sectionSwitchError">{{itemsUnableTransferred}}</div>
+        <div class="sample-items-available hidediv"data-ng-bind-html="onlyFreeSampleItems|htmlSafe"></div>
+		<div class="cart-remove-info product-remove hidediv desktop">
+        	<p>{{productRemovedMessage}}</p>
+        </div>
+        <div class="cart-remove-info cart-update quanitityboxheader hidediv desktop"></div>
+        <div class="cart-remove-info error desktop" ng-if="showIneligibleItemError">
+        	<p>{{unexpectedErrorMessage +' '+ callSupportErrorMessage}}</p>
+        </div>
+        <!--/* Mobile specific */-->
+        <div class="cart-remove-info product-remove hidediv mobile">
+			<p>{{productRemovedMessage}}</p>
+		</div>
+        <div class="cart-remove-info cart-update quanitityboxheader hidediv mobile">
+            <p>{{cartUpdatedMessage}}</p>
+        </div>
+		<!--/* Mobile specific. Product for purchase and samples will appears at the top portion of the page as well.*/ -->
+		<hr class="mobile divider" data-ng-if="!isShoppingCartEmpty"/>
+        <div ng-if="showLoginMessage  && !isShoppingCartEmpty" class="switching-country-banner">
+            <p class="description" data-ng-bind-html="loginPromptMessage | htmlSafe"></p>
+        </div>
+        <div ng-if="!isShoppingCartEmpty && (samplesCountry || isCommerceCountry)" data-tn-quick-item-entry-directive="" data-tcpn="" data-sample-add-to-cart="true"></div>
+        <div class="display-inline-table" data-ng-hide="cartLoading" data-ng-if="!isShoppingCartEmpty">
+            <section class="shoppingCart-distributors">
+                <div class="distributor-head">
+	                    <div class="cart-product-remove-info" ng-if='mtoShippingRestrictionOnOffToggle'>
+							<p>{{productAvailableInternationally}}</p>
+						</div>
+                        <div ng-show="displayEmptyCartBannerOnSamples" class="cart-sample-banner">
+                            <p class="display-banner" data-ng-bind-html="formedTag | htmlSafe"></p>
+                        </div>
+                </div>
+                <div class="shop-items-container" ng-if="cartData.regularEntries.length > 0">
+                    <div class="shop-items-header">
+                        <span class="items-count">{{cartData.regularEntries.length}} </span><span class="items-count-msg" data-ng-bind-html="(cartData.regularEntries.length == 1?oneItemInStockLabel: moreItemsInStockLabel) | htmlSafe"></span>
+                    </div>
+                    <table class="regular-parts distributor-list distributor-list-width" data-ng-class="{suppressBottomBorder:cartLoading}">
+                         <tbody>
+                            <tr class="header-row ict-view">
+                                <th>{{productLabel.toLowerCase()}}</th>
+                                <th>{{availabilityLabel.toLowerCase()}}</th>
+                                <th>{{unitPriceLabel.toLowerCase()}}</th>
+                                <th>{{quantityLabel.toLowerCase()}}</th>
+                                <th data-ng-bind-html="extendedPriceLabel.toLowerCase() | htmlSafe"></th>
+                                <th></th>
+                            </tr>
+                            <tr class="distributor-item" data-ng-class="{'shipping-restriction': ((teusaRestrictionOn && cartEntry.fulfilledBy === '0494_STORE') || (tesogRestrictionOn && (cartEntry.fulfilledBy === 'DIGIKEY' || cartEntry.fulfilledBy === 'LADDUS')) || (laddRestrictionOn && cartEntry.fulfilledBy === 'LADDUS'))}" data-ng-repeat="cartEntry in cartData.regularEntries" data-ng-init="partIndex = cartEntry.entryNumber">
+                                <td>
+                                    <div class="product-image">
+                                        <div class="imgdiv">
+                                            <a href="{{sitePath}}/product-{{cartEntry.product.tcpn}}.html"> <img
+                                                ng-src="{{cartEntry.product.imagePath}}"  loading="lazy" /></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-desc">
+                                        <ul>
+                                            <li itemprop="name" class="distributor-name"><a
+                                                href="{{sitePath}}/product-{{cartEntry.product.tcpn}}.html" itemscope
+                                                itemtype="https://schema.org/Organization">{{cartEntry.product.description}}</a></li>
+                                            <li>{{cartEntry.product.tcpn}}</li>
+                                            <li class="inline-restriction-msg" data-ng-if="laddRestrictionOn && !tesogRestrictionOn && cartEntry.fulfilledBy === 'LADDUS'">
+                                                <span>{{laddIneligibleItemMsg}}</span>
+                                            </li>
+                                            <li class="inline-restriction-msg" data-ng-if="((teusaRestrictionOn && cartEntry.fulfilledBy === '0494_STORE') || (tesogRestrictionOn && (cartEntry.fulfilledBy === 'DIGIKEY' || cartEntry.fulfilledBy === 'LADDUS')))">
+                                                <span>{{$root.commerceUtils.isCurrentSiteTESOG()? tesogIneligibleItemMsg : teusaIneligibleItemMsg}}</span>
+                                            <li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="col-heading mobile">{{availabilityLabel.toLowerCase()}}</div>
+                                    <div class="item-status">{{inStockLabel}}</div>
+                                    <span class= "available-Qty">{{cartEntry.product.stock.stockLevel}}</span>
+                                    <div class="distributor-canShip">{{$root.localization.commerceCodeLabels[this.cartEntry.product.shippingMessageCode]}}</div>
+                                </td>
+
+                                <td class="unit-price-inventory">
+                                    <div class="col-heading mobile">{{unitPriceLabel.toLowerCase()}}</div>                        
+                                    <div class="unit-price" data-ng-repeat="priceData in cartEntry.product.prices">
+                                        <div data-ng-if="$index < 3">
+                                            <div class="pull-left unit-column">{{priceData.minQuantity}}+</div>
+                                            <div class="pull-right unit-column">{{$root.commerceUtils.getFormattedCurrency(priceData.currencyIso, priceData.value, 5)}}</div>
+                                        </div>
+
+                                        <div data-ng-if="$index >= 3" ng-show="isPricesListMore_{{partIndex}}">
+                                            <div class="pull-left unit-column">{{priceData.minQuantity}}+</div>
+                                            <div class="pull-right unit-column">{{$root.commerceUtils.getFormattedCurrency(priceData.currencyIso, priceData.value, 5)}} </div>
+                                        </div>
+
+                                        <div class="show-more" data-ng-if="cartEntry.product.prices.length > 3 && $last">
+                                            <a class="view-more" href=""
+                                                ng-class="isPricesListMore_{{partIndex}} ? 'remove' : ''"
+                                                data-ng-click="toggleViewMore(partIndex)">
+                                                {{viewMoreLabel}}
+                                            </a> <a class="view-less " href=""
+                                                ng-class="isPricesListMore_{{partIndex}} ? 'show' : ''"
+                                                data-ng-click="toggleViewMore(partIndex)">
+                                                {{viewLessLabel}}
+                                            </a>
+                                        </div>
+                                   </div>                           
+                                </td>
+                                <td class="distributor-qnty">
+                                    <div class="col-heading mobile">{{quantityLabel.toLowerCase()}}</div>
+                                    <div class="quantity-input-div"></div>
+                                    <input type="text" data-tn-update-item="" class="quantity-input"
+                                        value="{{cartEntry.quantity}}" data-item-tcpn="{{cartEntry.product.tcpn}}"
+                                        data-item-min="{{cartEntry.product.stockMetaData.minimumOrderQuantity}}" 
+                                        data-item-increments="{{cartEntry.product.stockMetaData.standardPackagingQty}}"
+                                        data-item-av="{{cartEntry.product.stock.stockLevel}}" 
+                                        ng-disabled="((teusaRestrictionOn && cartEntry.fulfilledBy === '0494_STORE') || (tesogRestrictionOn && (cartEntry.fulfilledBy === 'DIGIKEY' || cartEntry.fulfilledBy === 'LADDUS')) || (laddRestrictionOn && cartEntry.fulfilledBy === 'LADDUS'))" />
+                                        <div class="warning-text" data-err-attr="{{cartEntry.product.tcpn}}" data-err-entry="{{cartEntry.entryNumber}}"></div>                   
+                                    <div class="info-view">{{packagingLabel}}: {{cartEntry.product.stockMetaData.packagingType}}</div>                            
+                                </td>
+
+                                <td class="total-price">
+                                    <div class="col-heading mobile" data-ng-bind-html="extendedPriceLabel.toLowerCase() | htmlSafe"></div>
+                                    <span>{{cartEntry.totalPrice.formattedValue}}</span>
+                                </td>
+
+                                <td class="remove-product">
+                                    <a href="#shop-cart-top" class="icon-right" data-tn-remove-item="" data-remove-item="{{cartEntry.entryNumber}}" data-dtm-tcpn="{{cartEntry.product.tcpn}}" data-dtm-distributor="{{cartData.storeDetails.uid}" data-dtm-quantity="{{cartEntry.quantity}}" data-dtm-price="{{cartEntry.totalPrice.formattedValue}}">
+                                        <label class="mobile delete-copy">{{deleteLabel}}</label>
+                                        <i class="fa fa-times desktop" role="presentation"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>   
+                  </table>
+                </div>
+                 <div class="shop-items-container mto-items-section" ng-class="{'spacer': cartData.regularEntries.length > 0 && cartData.mtoEntries.length > 0}"  ng-if="cartData.mtoEntries.length > 0">
+                     <div class="shop-items-header">
+                         <span class="items-count">{{cartData.mtoEntries.length}} </span><span class="items-count-msg" data-ng-bind-html="(cartData.mtoEntries.length == 1?oneMTOItemLabel: moreMTOItemsLabel) | htmlSafe"></span>
+                     </div>
+                     <div class="note-container sample-note-container">
+                         <div ng-if="mtoShippingRestrictionOnOffToggle" class="highlight-note {{mtoRestrictionOn? 'highlight-note__emphasize':'highlight-note__normal'}}" data-ng-bind-html="mtoShippingtoCountryMessage | htmlSafe"></div>
+                     </div>
+                     <table class="mto-parts distributor-list distributor-list-width" data-ng-class="{suppressBottomBorder:cartLoading}">
+                             <tbody>
+                                <tr class="header-row ict-view">
+                                    <th>{{productLabel.toLowerCase()}}</th>
+                                    <th>{{availabilityLabel.toLowerCase()}}</th>
+                                    <th>{{unitPriceLabel.toLowerCase()}}</th>
+                                    <th>{{quantityLabel.toLowerCase()}}</th>
+                                    <th data-ng-bind-html="extendedPriceLabel.toLowerCase() | htmlSafe"></th>
+                                    <th></th>
+                                </tr>
+                                <tr class="distributor-item" data-ng-class="{'mto-restriction': mtoRestrictionOn}" data-ng-repeat="cartEntry in cartData.mtoEntries" data-ng-init="partIndex = cartEntry.entryNumber">
+                                    <td>
+                                        <div class="product-image">
+                                            <div class="imgdiv">
+                                                <a href="{{sitePath}}/product-{{cartEntry.product.tcpn}}.html"> <img
+                                                    ng-src="{{cartEntry.product.imagePath}}" loading="lazy" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-desc">
+                                            <ul>
+                                                <li itemprop="name" class="distributor-name"><a
+                                                    href="{{sitePath}}/product-{{cartEntry.product.tcpn}}.html" itemscope
+                                                    itemtype="https://schema.org/Organization">{{cartEntry.product.description}}</a></li>
+                                                <li>{{cartEntry.product.tcpn}}</li>
+                                                <li class="desktop dynamic-text-color" data-ng-bind-html="mtoNonCancelableMessage | htmlSafe"></li>
+                                                <li data-ng-if="cartLabels.isLaddNonShippedItemsValidationEnabled && cartEntry.fulfilledBy === cartLabels.laddusLabel"><span>{{productShipToUsaOnlyLabel}}</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mto-item-note mobile dynamic-text-color" data-ng-bind-html="mtoNonCancelableMessage | htmlSafe"></div>
+                                    </td>
+
+                                    <td>
+                                        <div class="col-heading mobile">{{availabilityLabel.toLowerCase()}}</div>
+                                        <div class="item-status" data-ng-bind-html="specialOrderLabel | htmlSafe"></div>
+                                        <span class= "special-order-shipping" data-ng-bind-html="specialOrderShippingMsg.replace('{1}',cartEntry.product.stock.standardLeadTime) | htmlSafe"></span>
+                                        <div class="distributor-canShip">{{$root.localization.commerceCodeLabels[cartEntry.product.shippingMessageCode]}}</div>
+                                    </td>
+
+                                    <td class="unit-price-inventory">
+                                        <div class="col-heading mobile">{{unitPriceLabel.toLowerCase()}}</div>                        
+                                        <div class="unit-price" data-ng-repeat="priceData in cartEntry.product.prices">
+                                            <div data-ng-if="$index < 3">
+                                                <div class="pull-left unit-column">{{priceData.minQuantity}}+</div>
+                                                <div class="pull-right unit-column">{{priceData.formattedValue}}</div>
+                                            </div>
+
+                                            <div data-ng-if="$index >= 3" ng-show="isPricesListMore_{{partIndex}}">
+                                                <div class="pull-left unit-column">{{priceData.minQuantity}}+</div>
+                                                <div class="pull-right unit-column">{{priceData.formattedValue}} </div>
+                                            </div>
+
+                                            <div class="show-more" data-ng-if="cartEntry.product.prices.length > 3 && $last">
+                                                <a class="view-more" href=""
+                                                    ng-class="isPricesListMore_{{partIndex}} ? 'remove' : ''"
+                                                    data-ng-click="toggleViewMore(partIndex)">
+                                                    {{viewMoreLabel}}
+                                                </a> <a class="view-less " href=""
+                                                    ng-class="isPricesListMore_{{partIndex}} ? 'show' : ''"
+                                                    data-ng-click="toggleViewMore(partIndex)">
+                                                    {{viewLessLabel}}
+                                                </a>
+                                            </div>
+                                       </div>                           
+                                    </td>
+
+                                    <td class="distributor-qnty">
+                                        <div class="col-heading mobile">{{quantityLabel.toLowerCase()}}</div>
+                                        <div class="quantity-input-div"></div>
+                                        <input type="text" data-tn-update-item="" class="quantity-input"
+                                            value="{{cartEntry.quantity}}" data-item-tcpn="{{cartEntry.product.tcpn}}"
+                                            data-item-min="{{cartEntry.product.stockMetaData.minimumOrderQuantity}}" 
+                                            data-item-increments="{{cartEntry.product.stockMetaData.standardPackagingQty}}"
+                                            data-item-av="{{cartEntry.product.stock.stockLevel}}"
+                                            data-ismto="true" 
+                                            ng-disabled="mtoRestrictionOn"/>
+                                            <div class="warning-text" data-err-attr="{{cartEntry.product.tcpn}}" data-err-entry="{{cartEntry.entryNumber}}"></div>                   
+                                        <div class="info-view">{{packagingLabel}}: {{cartEntry.product.stockMetaData.packagingType}}</div>                            
+                                    </td>
+
+                                    <td class="total-price">
+                                        <div class="col-heading mobile" data-ng-bind-html="extendedPriceLabel.toLowerCase() | htmlSafe"></div>
+                                        <span>{{cartEntry.totalPrice.formattedValue}}</span>
+                                    </td>
+
+                                    <td class="remove-product">
+                                        <a href="#shop-cart-top" class="icon-right" data-tn-remove-item="" data-remove-item="{{cartEntry.entryNumber}}" data-dtm-tcpn="{{cartEntry.product.tcpn}}" data-dtm-distributor="{{cartData.storeDetails.uid}" data-dtm-quantity="{{cartEntry.quantity}}" data-dtm-price="{{cartEntry.totalPrice.formattedValue}}">
+                                            <label class="mobile delete-copy">{{deleteLabel}}</label>
+                                            <i class="fa fa-times desktop" role="presentation"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>   
+                     </table>
+                </div>
+                
+                <div class="shop-items-container sample-items-section {{(cartData.regularEntries.length > 0 || cartData.mtoEntries.length > 0)?'spacer':''}}"  ng-if="cartData.sampleEntries && cartData.sampleEntries.length > 0">
+                     <div class="shop-items-header">
+                         <span class="items-count">{{cartData.sampleEntries.length}} </span><span class="items-count-msg" data-ng-bind-html="(cartData.sampleEntries.length == 1?sampleItem: sampleItems) | htmlSafe"></span>
+                     </div>
+                     <div class="note-container sample-note-container">
+                         <div class="highlight-note highlight-note__normal" data-ng-bind-html="sampleShippedFreeCharge | htmlSafe"></div>
+                     </div>
+                     <table class="mto-parts distributor-list distributor-list-width">
+                             <tbody>
+                                <tr class="header-row ict-view ict-view-sample">
+                                    <th data-ng-bind-html="productSamples.toLowerCase()|htmlSafe"></th>
+                                    <th data-ng-bind-html="availabilitySamples.toLowerCase()|htmlSafe"></th>
+                                    <th data-ng-bind-html="unitPriceSamples.toLowerCase()|htmlSafe"></th>
+                                    <th data-ng-bind-html="quantitySamples.toLowerCase()|htmlSafe"></th>
+                                    <th data-ng-bind-html="extendedPriceSamples.toLowerCase()|htmlSafe"></th>
+                                    <th></th>
+                                </tr>
+                                <tr class="distributor-item" data-ng-repeat="sampleEntry in cartData.sampleEntries" data-ng-init="partIndex = sampleEntry.entryNumber">
+                                    <td>
+                                        <div class="product-image">
+                                            <div class="imgdiv">
+                                                <a href="{{sitePath}}/product-{{sampleEntry.product.tcpn}}.html"> <img
+                                                    ng-src="{{sampleEntry.product.imagePath}}" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-desc">
+                                            <ul>
+                                                <li itemprop="name" class="distributor-name"><a
+                                                    href="{{sitePath}}/product-{{sampleEntry.product.tcpn}}.html" itemscope
+                                                    itemtype="https://schema.org/Organization">{{sampleEntry.product.description}}</a></li>
+                                                <li>{{sampleEntry.product.tcpn}}</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-heading mobile" data-ng-bind-html="availabilitySamples.toLowerCase()|htmlSafe"></div>
+                                        <div ng-if="sampleEntry.product.stock.stockLevelStatus==='INSTOCK'" class="item-status" data-ng-bind-html="inStockSamples | htmlSafe"></div>
+                                        <div ng-if="sampleEntry.product.stock.stockLevelStatus==='BACKORDERED' || sampleEntry.product.stock.stockLevelStatus==='OUTOFSTOCK'" class="item-status backorder-header" data-ng-bind-html="backordered.toLowerCase()| htmlSafe"></div>
+                                        <div ng-if="sampleEntry.product.stock.stockLevelStatus==='LOWSTOCK'" class="item-status backorder-header" data-ng-bind-html="lowInventory.toLowerCase()| htmlSafe"></div>
+                                        <div class="backorder-section" ng-if="sampleEntry.product.stock.stockLevelStatus==='BACKORDERED'">
+                                            <span class="backorder-desc" data-ng-bind-html="backorderText|htmlSafe">
+                                            </span>
+                                            <a href="" class="backorder-tooltips">
+                                                <i data-tn-tooltipster-directive=""
+                                                data-tooltip-content="#tooltip-backorder-lowinventory-content{{$index}}"
+                                                data-width="306" data-mobile-position="20"
+                                                class="tooltipBtn fa fa-question-circle" role="presentation">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="lowinventory-section" ng-if="sampleEntry.product.stock.stockLevelStatus==='LOWSTOCK'">
+                                            <span class="backorder-desc" data-ng-bind-html="inventoryText|htmlSafe"></span>
+                                            <a href="" class="backorder-tooltips">
+                                            <i data-tn-tooltipster-directive=""
+                                                data-tooltip-content="#tooltip-backorder-lowinventory-content{{$index}}"
+                                                data-width="306" data-mobile-position="20"
+                                                class="tooltipBtn fa fa-question-circle" role="presentation"></i>
+                                            </a>
+                                        </div>
+                                        <div class="toopltip-content">
+                                            <div id="tooltip-backorder-lowinventory-content{{$index}}">
+                                                <div class="tooltip-inner-content">
+                                                    <p ng-if="sampleEntry.product.stock.stockLevelStatus==='BACKORDERED' || sampleEntry.product.stock.stockLevelStatus==='OUTOFSTOCK'" data-ng-bind-html="backorderTooltip|htmlSafe"></p>
+                                                    <p ng-if="sampleEntry.product.stock.stockLevelStatus==='LOWSTOCK'" data-ng-bind-html="inventoryTooltip|htmlSafe"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="unit-price-inventory">
+                                        <div class="col-heading mobile" data-ng-bind-html="unitPriceSamples.toLowerCase()| htmlSafe"></div>                        
+                                        <div class="unit-price free-sample" data-ng-bind-html="freeSamples.toLowerCase()|htmlSafe">
+                                        </div>                           
+                                    </td>
+                                    <td class="distributor-qnty">
+                                        <div class="col-heading mobile" data-ng-bind-html="quantitySamples.toLowerCase()|htmlSafe"></div>
+                                        <div class="quantity-input-div"></div>
+                                        <input type="text" data-tn-update-item="" class="quantity-input {{sampleEntry.quantity > sampleEntry.product.stock.stockLevel ? 'qty-input-error' : '' }}"
+                                            value="{{sampleEntry.quantity}}" 
+                                            data-item-tcpn="{{sampleEntry.product.tcpn}}"
+                                            data-item-min="{{sampleEntry.product.stockMetaData.minimumOrderQuantity}}" 
+                                            data-item-increments="{{sampleEntry.product.stockMetaData.standardPackagingQty}}"
+                                            data-item-av="{{sampleEntry.product.stock.stockLevel}}"
+                                            data-isSample="true" data-index="{{$index}}"
+                                            data-orderable="{{isCommerceCountry && (sampleEntry.product.orderable === 'true') && isShipToCountryCommerce}}"/>
+                                        <div class="warning-text-wrapper">
+                                            <div class="warning-text sample-warning" data-err-attr="{{sampleEntry.product.tcpn}}" data-err-entry="{{sampleEntry.entryNumber}}"></div>
+                                            <a href="" class="buy-more-warning hidediv" data-tn-add-moq-to-cart="" data-buyMore-index="{{$index}}" data-img-src="{{sampleEntry.product.imagePath}}" data-moq="-1" data-tcpn="{{sampleEntry.product.tcpn}}" data-tn-add-to-cart-modal="" data-ng-bind-html="buyMoreFromTheTeStoreLabel|htmlSafe"></a>
+                                        </div>
+                                        <div class="sample-warning-text" ng-show = "sampleEntry.quantityValidationStatus !== 'VALID' ">
+                                            <span data-ng-bind-html="sampleEntry.quantitySpecialScenario|htmlSafe"></span>
+                                        </div>                   
+                                        <div class="info-view"><span class="dynamic-text-color samples-packaging" data-ng-bind-html="packagingSamples|htmlSafe"></span> {{sampleEntry.product.stockMetaData.packagingType}}</div>
+                                        <div class="outofstock-error-message outofstock-{{$index}} hidediv">{{outofstockmsg}}</div>
+                                        <a href="" data-buyMore-index="{{$index}}" data-img-src="{{sampleEntry.product.imagePath}}" class="buy-more-link" ng-if="isCommerceCountry && (sampleEntry.product.orderable === 'true') && isShipToCountryCommerce" data-tn-add-moq-to-cart="" data-moq="-1" data-tcpn="{{sampleEntry.product.tcpn}}" data-tn-add-to-cart-modal="" data-ng-bind-html="buyMoreFromTeStoreLabel|htmlSafe"></a>
+                                    </td>
+
+                                    <td class="total-price">
+                                        <div class="col-heading mobile" data-ng-bind-html="extendedPriceSamples.toLowerCase() | htmlSafe"></div>
+                                        <span class="free-label" data-ng-bind-html= "freeLabelSamples.toLowerCase()|htmlSafe"></span>
+                                    </td>
+
+                                    <td class="remove-product">
+                                        <a href="#shop-cart-top" class="icon-right" data-tn-remove-item="" data-remove-item="{{sampleEntry.entryNumber}}" data-dtm-tcpn="{{sampleEntry.product.tcpn}}" data-dtm-distributor="{{cartData.storeDetails.uid}" data-dtm-quantity="{{sampleEntry.quantity}}" data-dtm-price="{{sampleEntry.totalPrice.formattedValue}}">
+                                            <label class="mobile delete-copy">{{deleteLabel}}</label>
+                                            <i class="fa fa-times desktop" role="presentation"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>   
+                     </table>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Shopping Cart Empty -Featured products content Starts -->
+			 
+			<section class="empty-cart-section" data-ng-if="isShoppingCartEmpty">
+
+                <div class="display-inline-table">
+                    <section class="shoppingCart-checkout-empty">
+                        <div class="cart-checkout-panel">
+                            <div class="cart-head">
+                                <h1 ng-if="!samplesCountry">{{shoppingCartTitle}}</h1>
+                                <h1 class="dynamic-text-color" ng-if="samplesCountry" data-ng-bind-html="teStoreShoppingCart | htmlSafe"></h1>
+                                <div class="sample-product-features-not-available" ng-if="samplesCountry">
+                                    <p class="at-times">{{teConnectivityShipOnline}}
+                                    <span class="view-country" no-icon="true" data-tn-tooltipster-directive="" data-tooltip-content="#tooltip-shipping-rules-content" data-width="306" data-mobile-position="0"
+                                    data-height="none">{{viewCountryList}}</span></p>
+                                </div>
+                            </div>
+                            <div class="cart-continue-shop" ng-switch on="cartLabels.lastTcpnAvailable" ng-show="isShoppingCartEmpty">
+                                <a ng-switch-when="true"  href="{{cartLabels.continueShoppingLink}}" class="btn-block-13">{{samplesCountry?samplesContinueShopping:continueShopping}}</a>
+                                <a ng-switch-default href="{{samplesCountry?homePagelink : continueToPageLink}}" class="btn-block-13">{{samplesCountry?samplesContinueShopping:continueShopping}}</a>                            
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="product-features-not-available" ng-if="!samplesCountry">
+                     <p class="dynamic-text-color" data-ng-bind-html="emptyCartLabel | htmlSafe"></p>
+                </div>
+                <div class="cart-sample-banner" ng-if="displayEmptyCartBannerOnSamples">
+                    <p class="display-banner dynamic-text-color" data-ng-bind-html="formedTag | htmlSafe"></p>
+                </div>
+                <div ng-if="showLoginMessage" class="switching-country-banner">
+                    <p class="description" data-ng-bind-html="loginPromptMessage | htmlSafe"></p>
+                </div>
+                <div ng-if="samplesCountry || isCommerceCountry" data-tn-quick-item-entry-directive=""></div>
+                <div class="cart-no-item-section" ng-if="isShoppingCartEmpty && (samplesCountry || isCommerceCountry)">
+                    <div class="cart-content-wrapper">
+                        <div class="cart-icon-wrapper">
+                            <i class="fa fa-shopping-cart fa-lg" role="presentation"></i>
+                            <span class="cart-item-count">0</span>
+                        </div>
+                        <p class="empty-cart-label dynamic-text-color" data-ng-bind-html="emptyShoppingCart|htmlSafe"></p>
+                        <div ng-hide="samplesCountry" class="empty-cart-msg dynamic-text-color" data-ng-bind-html="searchProductLabel|htmlSafe"></div>
+                        <div ng-show="samplesCountry" class="empty-cart-msg dynamic-text-color" data-ng-bind-html="searchProductLabelSample|htmlSafe"></div>
+                        <div ng-hide="samplesCountry" class="empty-cart-learn-msg dynamic-text-color" data-ng-bind-html="learnOrderingLabel|htmlSafe"></div>
+                        <div class="empty-cart-learn-msg dynamic-text-color" data-ng-bind-html="learnSampleLabel|htmlSafe"></div>
+                    </div>
+                </div>
+                <!-- Promo section -->                
+                <div id="shop-promo" class="wrapper">
+                </div>
+                
+			</section>        
+                                
+		<!-- Shopping Cart Empty -Featured products content Ends -->
+
+        <div class="display-inline-table faq-subtotal-container" data-ng-hide="cartLoading" data-ng-class="{suppressBottomBorder:cartLoading}">
+
+            <!-- FAQ Section [Start]-->
+            <div class="faq-returns" ng-if="isCommerceCountry">
+                <div class="cart-accepted-payment {{teV2.commerceSettings.enablePaypalPaymentMode?'hide-paypal':''}}" ng-show="showAcceptedPayments">
+                	<p class="faq-returns-head" data-ng-bind-html="acceptedPaymentMethods|htmlSafe"></p>
+                    <span ng-repeat="icons in acceptedPayments" class="accepted-icons {{icons.text}}"></span>
+                </div>
+                <div class="tesogStoreTooltip">
+                    <p class="store-info">{{shoppingPaymentInformation}}</p>                    
+                    <a href=""><i class="tesog-tooltip fa fa-question-circle" role="presentation" data-tn-tooltipster-directive="" 
+                data-tooltip-content="#tooltip-tesog-teusa" data-width="306" data-mobile-position="0" data-height="none"></i></a>
+                    <span class="star-note">{{isTESOGStore? teusaCrossStoreFootMsg : tesogCrossStoreFootMsg}}</span>
+                </div>
+                <div class="toopltip-content">
+                    <div id="tooltip-tesog-teusa">   
+                        <div class="tooltip-inner-content">
+                            {{shoppingPaymentTooltip}}
+                            <span class="tooltip-star-note">{{isTESOGStore? tesogCrossStoreFootMsg : teusaCrossStoreFootMsg}}</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="faq-returns-head">{{faq}}</p>
+                <div class="chat-callUs-label dynamic-text-color" data-ng-bind-html="samplesFaqDesc|htmlSafe"></div>
+                <div class="learn-ordering-msg dynamic-text-color" data-ng-bind-html="learnOrderingLabel|htmlSafe"></div>
+                <div class="learn-ordering-msg dynamic-text-color" data-ng-bind-html="learnSampleLabel|htmlSafe"></div>
+                <p class="faq-returns-head">{{returns}}</p>
+                <p class="faq-returns-info" data-ng-bind-html="returnsDescription | htmlSafe"></p>
+                <div ng-hide = "$root.commerceUtils.isCurrentSiteTESOG() || (deliveryCountry ==='US' && sampleOnly) || (deliveryCountry !== cartLabels.countryUS2CharIsoLabel)">
+                    <p class="faq-returns-head taxExemptContent " data-ng-bind-html="taxExemptionMsg | htmlSafe"></p>
+                    <a class="taxExempt" href="" data-ng-bind-html="taxExemptionModalLink | htmlSafe" data-tn-tax-exempt-modal-directive=""></a>
+                </div>
+            </div>
+            <div class="faq-returns faq-sample" ng-if="samplesCountry">
+                <p class="faq-returns-head samples dynamic-text-color" data-ng-bind-html="helpSection | htmlSafe"></p>
+                <div class="chat-callUs-label dynamic-text-color" data-ng-bind-html="samplesFaqDesc|htmlSafe"></div>
+                <div class="learn-ordering-msg dynamic-text-color" data-ng-bind-html="learnSampleLabel|htmlSafe"></div>
+            </div>
+
+            <!-- FAQ Section [End]-->
+            
+            <div class="shoppingCart-subtotal hidediv" data-ng-show="!isShoppingCartEmpty">
+            	<div data-tn-free-shipping-banner="" class="freeShippingBannerWrapper"></div>
+                <div class="update-spinner"></div>
+                <div class="cart-price-section" data-tn-cart-country-selector-directive="">
+                    <div class="cart-subtotal shipping-label">
+                        <label>{{shippingtoCountryLabel}}</label>
+                    </div>
+                    <div class="shipping-dropdown">
+                        <select name="countryName" class="shoppingSelect" ng-model="cartCountry" ng-options="countryName.text for countryName in shipCountryList track by countryName.id" required>   
+                        </select>
+                    </div>
+                    <div class="yellow-box" ng-if="showBoxMessage && !sampleOnly && !checkForOnlyMtoProducts">
+                        <p class="headingMessage" ng-bind-html="messageheader | htmlSafe"></p>
+                        <p class="descriptionMessage" ng-bind-html="messageContent | htmlSafe"></p>
+                        <span class="yellow-box-foot-msg">{{ yellowBoxFootMsg }}</span>
+                        <p class="transferLabel" ng-bind-html="tesogCartsTransferredLabel | htmlSafe"></p>
+                    </div>
+	                <div class="cart-subtotal" ng-if="!sampleOnly">
+	                    <div class="cart-total-label">
+                        <span class="cart-total-head"  data-ng-bind-html="mixedCartSummaryCommerce|htmlSafe">
+                        </span>
+                        ({{cartData.regularEntries.length + cartData.mtoEntries.length}} <span class="total-items" 
+                        data-ng-bind-html="(cartData.regularEntries.length + cartData.mtoEntries.length == 1?itemLabel: itemsLabel) | htmlSafe"></span>)
+	                    </div>
+	                    <div class="cart-price-span cart-span-head">
+	                        <span>{{cartData.subTotal.formattedValue}}</span>
+	                    </div>
+	                </div>
+	                <div class="cart-subtotal" ng-if="cartData.sampleEntries && cartData.sampleEntries.length>0">
+	                	<div class="cart-total-label">
+                        <span class="cart-total-sample-label" data-ng-bind-html="mixedCartSummarySample|htmlSafe"></span>
+                        ({{cartData.sampleEntries.length}} <span class="total-sample-items" data-ng-bind-html="(cartData.sampleEntries.length == 1?itemLabel: itemsLabel) | htmlSafe"></span>)
+	                    </div>
+	                    <div class="cart-price-span free-label-summary">
+                            <span data-ng-bind-html="freeLabelSamples|htmlSafe"></span>
+	                    </div>
+	                </div>
+                    <div class="cart-subtotal">
+	                	<div class="cart-total-label cart-main-total">
+	                        <span data-ng-bind-html="shippingLabel|htmlSafe"></span>
+	                    </div>
+	                    <div class="cart-price-span total-cartAmount" 
+                        ng-if="(cartData.regularEntries.length>0 || cartData.mtoEntries.length>0)">
+	                        <span>{{shippingCost}}</span>
+	                    </div>
+                        <div ng-if="sampleOnly" class="cart-price-span total-cartAmount">
+                            <span data-ng-bind-html="freeLabelSamples|htmlSafe"></span>
+	                    </div>
+	                    <div class="cart-total-msg">
+	                        <label>{{shippingtoOthercountriesLabel}}</label>
+	                    </div>
+	                </div>
+                    <div ng-if="!sampleOnly" class="cart-subtotal">
+                        <div class="tax-label">
+                            <label>{{taxLabel}}</label>
+                        </div>
+                        <div class="tax-label tax-pay">
+                            <span>{{taxValue}}</span>
+                        </div>
+                    </div>
+	                <div class="cart-subtotal cart-total-amt">
+	                    <div class="cart-total-label main-total-cart">
+	                        <label>{{totalAmount}}</label>
+	                    </div>
+	                    <div ng-if="(cartData.regularEntries && cartData.regularEntries.length>0 || cartData.mtoEntries && cartData.mtoEntries.length>0)" class="cart-price-span net-cart-amount">
+	                        <span>{{totalPriceWithTax}}</span>
+	                    </div>
+                        <div ng-if="sampleOnly" class="cart-price-span net-cart-amount">
+                            <span data-ng-bind-html="freeLabelSamples|htmlSafe"></span>
+	                    </div>
+	                </div>
+                    <div class="cart-incoterm-msg" ng-if="(incoTermsMessages && !isTESOGStore) || isTESOGStore">
+                        <p ng-if="incoTermsMessages">{{incoTermsMessages[1] ? incoTermsMessages[1].message :  incoTermsMessages[0].message}}</p>
+                        <p class="paid-desc" ng-if="incoTermsMessages[1]">{{incoTermsMessages[0].message}}</p>
+                        <span ng-if="isTESOGStore && !cartData.cartType.sampleOnly" class="tesog-seller-msg {{incoTermsMessages?'':'nomar-top'}}">{{$root.localization.formLabels.tesogSellerMsg}}</span>
+                    </div>
+				</div>
+                <div class="cart-checkout-main" data-ng-hide="cartLoading">
+                <div class="cart-checkout-errMsg hidediv"> {{checkoutErrAboveLabel}}</div>
+                    <div class="cart-shop">
+                        <a href="{{sitePath }}/product-{{cartData.lastAddedTcpn}}.html" class="btn-block-13">{{sampleOnly?samplesContinueShopping:continueShopping}}</a>
+                    </div>
+                    <div class="cart-checkout">
+                        <a href="{{cartLabels.checkoutUrl}}" class="btn-block-11 btn-clr-13 checkout-button">
+                            <span>{{sampleOnly?samplesCheckout:checkoutLabel}}</span>
+                            <i class="icon icon-caret icon-medium checkout-button-icon" role="presentation"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Compatible parts - Tooling or Required Parts content Starts -->
+        <div data-ng-if="!isShoppingCartEmpty" data-tn-tooling-and-required="" data-tcpns="{{cartLabels.cartTcpnList}}" data-ng-hide="cartLoading"></div>
+        <div  class="cart-faq-info {{compatibleProducts.length > 0 ? 'displayTopBorder' : ''}} " data-ng-hide="cartLoading" data-ng-bind-html="samplesCountry ? (safetyAgencyApproval | htmlSafe) : (8 | htmlSafe)" ></div> 
+	</div>
+    
+    
+
+    <!-- Compatible parts - Tooling or Required Parts content Ends -->
+
+    <div data-tn-chat-modal-directive id="chat-container"></div>
+	<div class="toopltip-content">
+	    <div id="tooltip-shipping-rules-content" class="samples-tooltip">   
+	        <div class="tooltip-inner-content">
+	            <p>{{shippingTooltipHeadLabel}}</p>
+	            <ul class="cab-list">
+                     <li ng-repeat="ship in shipCountryList">{{ship.text}}</li>
+	            </ul>
+	        </div>
+	    </div>
+    </div>
+    <div data-tn-cart-checkout-restriction-modal=""></div>
+</div>

@@ -1,0 +1,740 @@
+
+/*featured Products Styles under Store Landing page*/
+.merchandising-carousel-curated, .merchandising-carousel-feed, .similar-parts-carousel, .replacement-part-list{
+    margin: (@v_space*2.5) 0;
+    display: inline-block;
+    width: 100%;
+	.merchandising-carousel-container, .similar-parts-carousel-container, .replacement-parts-carousel-container{
+		.wrapper{
+			&.ng-cloak{
+                .white-ng-decloak(@min-height:387px);
+                &:before {
+                    background-size: 60px;  
+                }
+            }
+            &.loading {
+                .white-ng-decloak(387px);
+                overflow: hidden;
+                &:before {
+                    background-size: 60px; 
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+		}
+		&.te-dark-theme{
+			background-color: @te-dark-blue-87;
+			h2 {
+				&.cab-heading-nomargin {
+					color: @te-white;
+				}	
+			}
+			.fp-cab-product-tile {
+				background-color: @te-white;
+			}
+			.fp-cab-list-wrapper {
+				.cab-navigation {
+					.font-lineheight(30,20);
+					background-color: @te-orange;
+					padding: 0px 9px;
+					border-radius: 50%; 
+					color: @te-white;
+				}
+				.cab-prev{
+					left: -33px;
+				}
+			}
+		}
+		&.te-light-theme{
+			background-color: @te-cool-grey-3;
+			h2 {
+				&.cab-heading-nomargin {
+					color: @te-dark-blue-87;
+				}
+			}
+			.fp-cab-product-tile {
+				background-color: @te-white;
+			}
+			.fp-cab-list-wrapper {
+				.cab-navigation {
+					.font-lineheight(30,20);
+					background-color: @te-orange;
+					padding: 0px 9px;
+					border-radius: 50%; 
+					color: @te-white;
+				}
+				.cab-prev{
+					left: -33px;
+				}
+			}
+		}
+		.content-well{
+			.media-query(mobile, {
+				padding: 0;
+			});
+		}
+		h2{
+			.text-22();
+			margin: 0 0 (@v_space*2.5) 0;    		
+			color: @te-cool-grey;
+			text-align: center;
+			.media-query(mobile, {
+				text-align: center;
+				margin: (@v_space*1.5) 0;
+			});
+			a{
+				line-height: 22px;
+				.text-62();
+				padding-left: 2px;
+				text-transform: capitalize;
+				.media-query(mobile, {
+					display: block;
+					padding-top:5px;
+				});
+			}
+		}
+        .fp-cab-list-wrapper{
+            .media-query(mobile, {
+                width: 252px;
+                margin-bottom: (@v_space*1.5);
+            });
+			width: 100%;
+			.clearfix();
+    		margin-bottom: (@v_space*2.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+            -webkit-transition: opacity 1s ease;
+            
+            &.slick-initialized {
+                visibility: visible;
+                opacity: 1;    
+            }
+            .cab-navigation{
+                .center-content(vertical);
+                cursor: pointer;
+                font-size: 50px;
+                color: @te-cool-grey-35;
+                
+                &.slick-disabled {
+                    display: none !important; 
+                    pointer-events:none;
+                }
+            }
+            .cab-prev{
+				left: -27px;
+				&:hover{
+					color: @te-light-blue;
+				}
+            }
+            .cab-next{
+				right: -21px;
+				&:hover{
+					color: @te-light-blue;
+				}
+            }
+            .media-query(desktop-wide,{
+                .cab-prev{
+                    left: -40px;
+                }
+                .cab-next{
+                    right: -14px;
+                }
+            });
+            
+            .fp-cab-product-tile{
+				width: 225px;
+				float: left;
+				margin: 0 10px 0 0;
+                height: 387px;
+				border: solid 1px @te-cool-grey-10;
+				.media-query(desktop-wide, {
+					width: 238px !important;
+					margin: 0 25px 0 0;
+				});
+				.media-query(mobile, {
+					width: 240px;
+					margin: 0 10px 0 0;
+				});
+				&:first-child{
+					margin-left: 0;
+				}
+				.fp-cab-eyebrow{
+					padding:10px;
+					.fb-top-heading{
+						height:207px;
+                        position: relative;
+					}
+					.fp-parent-top-category{
+						margin-bottom: 2px;
+						text-transform: uppercase;
+						.text-100();
+						color: @te-cool-grey-65;
+						max-height:24px;
+						.media-query(mobile, {
+							margin-bottom: 1px;
+						});
+					}
+					.distributor-info{
+						.clearfix();
+						border-bottom: 2px solid @te-orange;
+						margin-bottom: 6px;
+						height:24px;
+						.fp-parent-category{
+							margin-bottom: 6px;
+							text-transform: uppercase;
+							.text-100();
+							color: @te-cool-grey-65;							
+							&.from-label{
+								.text-96();
+								color:@te-dark-grey;
+								width: auto;
+								max-width: 110px;
+								text-transform: capitalize;
+								float: left;
+								.media-query(desktop-wide, {									
+									color:@te-dark-grey-96;
+									max-width: 115px;
+								});
+								span{
+									color: @te-orange;
+									padding-left: 5px;
+									.text-93();
+									.media-query(mobile, {									
+										.text-91();
+									});
+								}
+							}
+							&.in-stock,&.out-of-stock{
+								float: right;
+								.text-94();
+								color: @te-dark-grey;
+								text-transform: capitalize;
+								width: 65px;
+								text-align: right;
+                                margin-right:3px;
+								.media-query(desktop-wide, {
+									width: 65px;
+                                    margin-right:2px;
+								});
+								.media-query(mobile, {
+									width: 109px;
+                                    margin-right:0px;
+								});
+							}
+							&.out-of-stock{
+								width: 85px;
+								.media-query(desktop-wide, {
+									width: 85px;
+								});
+							}						
+						}
+						.add-to-cart-cta{
+							background: none;
+							color: @te-orange !important;
+							border: none;
+							width: auto;
+							display: block;
+							box-shadow: none !important;
+							font-size: 10px;
+							padding: 0 0 0 3px;
+							float: right;
+							margin:0;
+                            z-index: 39;
+							i{
+								line-height: 15px !important;
+								width: auto;
+								margin: 0;	
+								padding-top: 0px;
+								&:hover{
+									color: @te-light-blue;
+								}						
+							}
+							span{
+								display: none;
+							}
+						}
+					}
+                    .fp-product-link{
+                        color: @te-blue;
+                        line-height: 1.57;
+                        text-align: left;
+                        .text-62();
+                        max-height: 35px;
+                        display: block;
+                        span{
+                            color: @te-orange;
+                            padding-left: 10px;
+                            .text-110();
+                        }
+                        .mpn-number{
+                            .text-70();
+                            .font-lineheight(14, 20);
+                            color: @te-blue;
+                            padding:(@v_space*0.2) (@h_space*0) (@v_space*0);
+                        }
+                        p{
+                            &.truncate{
+                                overflow: hidden;
+                                max-height: 40px;
+                                word-wrap: normal !important;
+                            }
+                        }
+                        .description-details {
+                            .text-90();
+                            .font-lineheight(12, 18);
+                            color: @te-dark-grey;
+                            padding:(@v_space*0.2) (@h_space*0) (@v_space*0);
+                            display:block;
+                            &.truncate {
+                                overflow: hidden;
+                                max-height: 40px;
+                                height: 40px;
+                                word-wrap: normal !important;
+                            }
+                        }                     
+                        .img-wrapper{
+                            padding-top: 10px;
+                        }
+                    }
+                    .fp-view-products{
+						display: block;
+						span{
+							display: inline-block;
+							color: @te-orange;
+							.text-110();							
+							.browsable-part{
+								padding-left: 5px;
+								.media-query(mobile, {
+									display: inline-block;
+    								padding-left: 2px;
+								});
+							}
+						}
+					}
+					.add_to_cart_cta{
+						span{
+							.text-96();
+						}
+
+					}
+					.product-feature-desc{						
+						max-height: 129px;
+						.text-only{
+							width: 100%;
+							line-height: 1.33;
+							text-align: left;
+							color: @te-dark-grey;
+							.text-96();
+						}
+					}
+
+					.img-wrapper{
+                        position: absolute;
+                        bottom: 0px;
+						height: 114px;
+						width:203px;
+						text-align: center;
+						overflow: hidden;
+						margin: 0 0 17px 0;
+						.media-query(desktop-wide, {
+							height: 114px;
+							width:220px;
+						});
+						.media-query(mobile, {
+							height: 114px;
+							width:100%;
+						});
+                        &.similar-part-img-wrapper{
+                            width: auto;
+                            img{
+                                width: 180px;
+                                margin-left: 8px;
+                            }
+                        }
+						img{
+							height: 114px;
+							width: auto;
+							.media-query(desktop-wide, {
+								height: 114px;
+								width: auto;
+							});
+						}
+                        &.adjust-replace-img{
+                            height:auto;
+                            width:100%;
+                            margin: 0 0 2px 0;
+                            .media-query(desktop-wide, {
+                                height: auto;
+                                width:220px;
+                            });
+                        }
+					}
+				}
+
+				.product-features{
+					margin: 0;
+					height: auto;
+					li{
+						width: 100%;
+						margin: 0;
+						border: none;
+						.text-90();
+						line-height: 16px;
+						color:@te-cool-grey-9;
+						padding-bottom: 2px;
+						span{
+							margin: 0;
+							border: none;
+							.text-94();
+							line-height: 16px;
+							color:@te-dark-grey;
+						}
+					}
+				}
+			}
+		}
+	}
+    
+
+    /* Slider*/
+    .slick-slider
+    {
+        position: relative;
+        display: block;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y pinch-zoom;
+        touch-action: pan-y pinch-zoom;
+        -webkit-tap-highlight-color: transparent;
+
+        .slick-track,.slick-list{
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .slick-list
+    {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        
+        .media-query(mobile,{
+            overflow: inherit;
+        });
+        &:focus{
+            outline: none; 
+        }
+        &.dragging{
+            cursor: pointer;
+            cursor: hand;
+        }
+    }
+
+    .slick-track
+    {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        .clearfix();
+    }
+}
+.similar-parts-carousel{
+    margin: 0;
+	.similar-parts-carousel-container{
+        margin: 20px 0;
+        .media-query(mobile, {
+            margin: 0;
+        }); 
+		.fp-cab-list-wrapper{
+			.media-query(mobile, {
+				margin-bottom: 9px;
+			});
+		}
+		.comp-heading-ml{
+			.clearfix();
+		}
+		h1{
+			.text-16();
+			text-transform: inherit;
+			text-align: left;
+			color: @te-dark-grey;
+			margin: 0 0 21px 0;
+			.media-query(desktop-wide, {
+				padding-top:5px;
+			});
+			.media-query(mobile, {
+				text-align: left;
+				margin-top: 0;
+			});
+		}
+		.view-more-similar-parts{
+			width: 200px;
+			position: absolute;
+            top: -41px;
+            .text-80();
+			right: -30px;
+			.media-query(desktop-wide, {
+				right: -35px;
+			});
+			.media-query(mobile, {
+				position: inherit;
+                width: 100%;
+                top: 10px;
+                right: auto;
+                text-align: center;
+			});
+			a{
+				&.secondary-cta-no-icon{
+					padding:0;
+					text-transform: capitalize;
+				}
+			}
+		}
+		.fp-cab-list{
+            position: relative;
+			width:916px;
+			.media-query(desktop-wide, {
+				width: 1235px;
+			});
+			.media-query(mobile, {
+				width: 100%;
+			});
+            &.similar-part-fp-cab-list{
+                width:940px;
+                .media-query(desktop-wide, {
+                    width:1312px;
+                });
+                .slick-track{
+                    .media-query(mobile, {
+                        //to override the slick-track css for similar part
+                        width:1300px !important;
+                    });
+                }
+            }
+			.fp-cab-list-wrapper{
+				.media-query(desktop-wide, {
+					margin-bottom: 5px;
+				});
+				.fp-cab-product-main-tile{
+					width: 225px;
+					float: left;
+					margin: 0 4px 0 0;
+					height: 415px;
+					.media-query(desktop-wide, {
+						width: 236px !important;
+						margin: 0 10px 0 0;
+					});
+					.media-query(mobile, {
+						width: 220px;
+						margin: 0 10px 0 0;
+						height: 417px;
+					});
+                    &.similar-part-main-tile{
+                        padding: 15px 0px;
+                        height: auto;
+                        //width of fp-cab-product-main-tile class we are getting from js file. Only for similar part width should be 'auto'. to override, '!important' is used.
+                        width: auto !important;
+                        .media-query(mobile, {
+                            height: auto;
+                            padding: 20px 0px;
+                        });
+                        .media-query(desktop-wide, {
+                            padding: 20px 0px;
+                        });
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+                    }
+                    &.this-product-main-tile{
+                        padding: 15px;
+                        background-color: @te-cool-grey-5;
+                        .media-query(desktop-wide, {
+                            //to override the width in desktop-wide only for similar part, '!important' is used.
+                            width: 276px !important;
+                            padding: 20px;
+                        });
+                        .media-query(mobile, {
+                            padding: 20px;
+                        });
+                    }
+                    .similar-part-main-tile-container{
+                        width: 224px;
+                        .media-query(desktop-wide, {
+                            width: 237px;
+                        });
+                        .media-query(mobile, {
+                            width: 242px;
+                        });
+                        .fb-cab-product-tile-desc{
+                            height:30px;
+                            .text-80();
+                            color: @te-dark-grey;
+                        }
+                        .fp-cab-product-tile{
+                            background-color: @te-white;
+                            width: 100%;
+                            float: none;
+                            margin: 0;
+                            height: 385px;
+                            .fp-cab-eyebrow{
+                                .media-query(desktop-wide, {
+                                    padding: 8px 10px 10px;
+                                });
+                                .media-query(mobile, {
+                                    padding: 8px 10px 10px;
+                                });
+                                .fp-view-products{
+                                    padding-top:5px;
+                                    span{
+                                        .text-94();
+                                    }
+                                }
+                                .distributor-info{
+                                    height: 28px;
+                                    margin-bottom: 8px;
+                                    .fp-parent-category{
+                                        &.from-label{
+                                            .text-90();
+											width: auto;
+											max-width: 110px;
+                                            .media-query(desktop-wide, {
+                                                color: @te-dark-grey;
+												max-width: 115px;
+                                            });
+                                            span{
+                                                .text-94();
+                                            }
+                                        }
+                                        &.in-stock{
+                                            width: 65px;
+ 
+                                            .media-query(desktop-wide, {
+                                                width: 65px;
+                                            });
+                                            .media-query(mobile, {
+                                                width: 100px;
+                                                margin-right:0px;
+                                            });
+                                        }
+										&.out-of-stock{
+											width: 85px;
+											.media-query(desktop-wide, {
+												width: 85px;
+											});
+											.media-query(mobile, {
+                                                width: 100px;
+                                                margin-right:0px;
+                                            });
+										}
+                                    }
+                                    .add-to-cart-cta{
+                                        padding-left:8px;
+                                    }
+                                }
+                            }
+                            .product-features{
+                                li{
+ 
+                                    color: @te-dark-grey;
+                                    span{
+                                        color: @te-dark-grey;
+                                    }
+                                }
+                            }
+                       }
+                    }
+					.fb-cab-product-tile-desc{
+						height:30px;
+						.text-80();
+						color: @te-dark-grey;
+					}
+					.fp-cab-product-tile{
+						width: 100%;
+						float: none;
+						margin: 0;
+						height: 385px;
+						.fp-cab-eyebrow{
+							.media-query(desktop-wide, {
+								padding: 8px 10px 10px;
+							});
+							.media-query(mobile, {
+								padding: 8px 10px 10px;
+							});
+							.fp-view-products{
+								padding-top:5px;
+								span{
+									.text-94();
+								}
+							}
+							.distributor-info{
+								height: 28px;
+								margin-bottom: 8px;
+								.fp-parent-category{
+									&.from-label{
+										.text-90();
+										width: auto;
+										max-width: 110px;
+										.media-query(desktop-wide, {
+											color: @te-dark-grey;
+											max-width: 115px;
+										});
+										span{
+											.text-94();
+										}
+									}
+									&.in-stock{
+										width: 65px;
+                                        margin-right:0px;
+										.media-query(desktop-wide, {
+											width: 65px;
+										});
+										.media-query(mobile, {
+											width: 100px;
+                                            margin-right:0px;
+										});
+									}
+									&.out-of-stock{
+										width: 85px;
+										margin-right:0px;
+										.media-query(desktop-wide, {
+											width: 85px;
+										});
+										.media-query(mobile, {
+											width: 100px;											
+										});
+									}
+								}
+								.add-to-cart-cta{
+									padding-left:8px;
+								}
+							}
+						}
+						.product-features{
+							li{
+								
+								color: @te-dark-grey;
+								span{
+									color: @te-dark-grey;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}

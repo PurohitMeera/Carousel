@@ -1,0 +1,88 @@
+.hero-news{
+    .te-news-page-hero{
+        border-bottom: 1px solid @te-cool-grey-10;
+        padding-top: 53px;
+        .media-query(mobile, {
+            padding:25px 0 0;
+         });
+        .source-copy {
+            .column(12, false);
+
+            &.edit-mode{
+                margin-bottom:50px;
+            }
+
+            padding-left:0px;
+            h2 {
+                .text-23();
+                padding-bottom: 60px;
+                color:@te-orange;
+                .column(8, false);
+                .media-query(mobile, {
+                    .column(12, false);
+                    .text-120();
+                });
+            }
+
+            .detail-column{
+                .column(4, true);
+                padding-top: 5px;
+                .media-query(mobile, {
+                    .column(12, false);
+                    padding-top:22px;
+                });
+
+                .published-date{
+                    padding-bottom:16px;
+                    .media-query(mobile, {
+                        padding-bottom:25px;
+                    });
+                }
+                .contact-info{
+                    padding-bottom:33px;
+                    .media-query(mobile, {
+                        padding-bottom:27px;
+                    });
+                }
+
+                h4{
+                   .text-80();
+                    color:@te-cool-grey-9;
+                    line-height: (16/14);
+                    &.cap{
+                        text-transform: uppercase;
+                        padding-bottom:5px;
+                        .media-query(mobile, {
+                            padding-bottom:14px;
+                        });
+                    }
+                }
+
+                p{
+                    color:@te-cool-grey-9;
+
+                    .text-96();
+                    line-height: (32/12);
+                    .media-query(mobile, {
+                        .text-90();
+                        padding: 0;
+                    });
+
+                    b{
+                        .text-80();
+                    }
+                }
+            }
+        }
+
+        .cta-container-wrap {
+            .media-query(mobile, {
+                position:static;
+                margin-bottom: 30px;
+            });
+            .cta-single-wrap {
+                padding: 0;
+            }
+        }
+    }
+}

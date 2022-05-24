@@ -1,0 +1,99 @@
+.cmp-promo-resources {
+    margin: 10px 0;
+    &.style2 {
+        a:link,
+        a:visited {
+            color: @te-white;
+        }
+        .cmp-promo-resources__resource {
+            background: @te-updated-dark-blue;
+            &:hover {
+                background: @te-updated-dark-blue-hover;
+            }
+        }
+    }
+    &.style3 {
+        a:link,
+        a:visited {
+            color: @te-white;
+        }
+        .cmp-promo-resources__resource {
+            background: @te-updated-aqua;
+            &:hover {
+                background: @te-updated-aqua-hover;
+            }
+        }
+    }
+    &.stacked-style {
+        .cmp-promo-resources__resource {
+            display: flex;
+            flex-direction: column;
+            padding-left: 17px;
+            span {
+                width: 100%;
+            }
+        }
+        .cmp-promo-resources__icon {
+            position: initial;
+            margin-bottom: 10px;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        &.heightened {
+
+        }
+        .media-query(mobile, {
+            flex-direction: column;
+        });
+    }
+    &__resource {
+        background: @te-updated-orange;
+        color: @te-white;
+        font-family: "Avenir LT W01 85 Heavy", Avenir, "Avenir W02", Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        padding: 20px 17px;
+        margin: 0 12.5px;
+        width: 25%;
+        display: flex;
+        position: relative;
+        align-items: center;
+        text-align: center;
+
+        span {
+            flex-grow: 4;
+            margin-left: 5px;
+        }
+
+        &:hover {
+            background:  @te-updated-orange-hover;
+        }
+
+        .media-query(desktop-small, {
+            font-size: 16px;
+        });
+
+        .media-query(mobile, {
+            width: 100%;
+            padding: 20px 30px;
+            margin: 12.5px 0;
+        });
+    }
+    &__icon {
+        font-size: 35px;
+        .media-query(desktop-small, {
+            font-size: 28px;
+        });
+
+        .media-query(mobile, {
+            font-size: 35px;
+
+        });
+    }
+    a:link,
+    a:visited {
+        color: @te-white;
+    }
+}

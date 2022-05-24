@@ -1,0 +1,209 @@
+/*COMMON CLASSESS FOR ALL TEMPLATES (PASSWORD & EMAIL RELATED)- START*/
+
+
+.te-am-your-acct-change-email {
+  background-color: #ededee;
+  margin: -4px 0 -20px 0;
+  .white-fading-loader(@min-height: 100%, @show-class-name: loader, @background-pos:top, @position:inherit, @background-color:transparent, @margin-top:12px);
+  min-height: 530px;
+  overflow: hidden;
+    .media-query(mobile,{
+        min-height: auto;
+    });
+    
+     .ce-global-err-msg-mobile{
+        width: 470px;
+         .media-query(mobile,{
+             width: 100%;
+             margin-left: 25px;
+             margin-top: 30px;
+             margin-bottom: 0px;
+         });
+     }
+  }
+
+.am-your-acct-change-email-title-wrapper {
+    width: 100%;
+    height: 80px;
+    background: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: -4px 0 0 0;
+    h1 {
+      float: left;
+    }
+    .am-my-account-enable-sso {
+      float:right;
+      .text-94();
+    }
+}
+
+.change-email-button-wrapper {
+        margin: 20px auto;
+        width: 300px;
+        padding-bottom: 30px;
+    
+        .media-query(mobile,{
+            padding-left: @mobile-gutter;
+            padding-right: @mobile-gutter;
+            padding-bottom: 30px;
+            margin-top:30px;
+            width: 100%;        
+        });
+            .change-email-button {
+              .clearfix();
+              margin: 0;
+              height: auto;
+                a.btn-block-11{
+                    margin-bottom: 20px;
+                    .media-query(mobile,{
+                        width: 100%;
+                    });   
+                }
+                  .change-email-btn-cancel {
+                    width: 300px;
+                    height: 50px;
+                    text-transform: uppercase;
+                    line-height: 30px;
+                    padding-top: 14px;
+                    .text-80();
+                    .media-query(mobile,{
+                        width: 100%;
+                    });
+                  }
+                .change-email-btn-disabled {
+                    cursor: default;
+                    background: @te-cool-grey-35;
+                    border: @te-cool-grey-35;
+                  }
+                     
+            }
+    }
+
+   .error-field {
+        border: 1px solid @te-red;
+    }
+
+/*COMMON CLASSESS FOR ALL TEMPLATES (PASSWORD & EMAIL RELATED)- END*/
+
+/* CHANGE_EMAIL_CSS - START*/
+.am-your-acct-change-email-wrapper{
+    width: 675px;
+   /*display: table;*/
+    margin: 0 auto;
+    padding: 0 7vw;
+    .media-query(mobile,{
+        width: 100%;
+    });
+  
+   h1{
+       .text-20(); padding: 20px 25px 5px 0;text-align: center;color:@te-dark-grey; 
+       .media-query(mobile,{
+           padding-top:30px;
+            width: 100%;
+            padding-bottom: 10px;
+        });
+    }
+   h2{ .text-30(); padding: 15px 0px 20px 0px;}
+    
+   form{
+    padding: 15px 0px 15px 0px;
+       .media-query(mobile,{
+            width: 100%;
+            float: none;
+            padding: 0;
+       });
+       
+        label
+       {float: left;
+           .text-44();
+           color:@te-dark-grey;
+           padding-top:20px;
+           padding-bottom: 10px;
+       }
+   }
+   
+    input[type=text],input[type=password]{
+        .text-62();
+        color:@te-dark-grey; 
+        display: block;
+        margin: 0;
+        height: 32px;
+        width: 460px;
+        border: none;
+        border-top: 1px solid #d9d9d9;
+        border-left: 1px solid #d9d9d9;
+        padding-left: 10px;
+        .media-query(mobile,{
+            width:100%;
+            font-size:16px;
+            height: 50px;
+        });
+     }
+    
+    .ce-error-msg-mobile{
+        margin-top: 10px;
+        margin-bottom: 0;
+        .media-query(mobile,{
+             margin-bottom: 0;
+             margin-top: 10px;
+        });
+     }
+     
+     .ce-eula-error-msg-mobile{
+         .media-query(mobile,{
+             padding-left: 25px;
+             padding-right: 25px;
+             width: 100%;
+             margin-bottom: 0px;
+         });
+     }
+ 
+}
+
+.am-your-acct-change-email-cta-section {
+  clear: both;
+  width: 465px;
+  margin: 0 auto;
+  border: 0;
+  outline: none;
+  .text-90();
+    .media-query(mobile,{
+        float: none;
+        padding: 30px 7vw 0;
+        width: 100%;
+    });
+    .am-your-acct-change-email-cta-section-item {
+    margin: 15px 0 30px;
+    .media-query(mobile,{
+        margin: 0;
+    });
+    }
+    
+     a{
+    .text-62();
+    color: @te-blue;
+    cursor: pointer;
+    }
+    label.am-your-acct-label-checks {
+       .text-62();
+        color:@te-dark-grey;
+        line-height: 22px;
+     }
+    
+}
+
+   .am-your-acct-change-email-consent {
+        display: table;
+       .media-query(mobile,{
+           margin-top: 0px;
+       });
+      .am-your-acct-change-email-consent-item {
+        display: table-cell;
+        input[type=checkbox]{
+          margin-right: 10px;
+        }
+      }
+
+}
+/* CHANGE_EMAIL_CSS - END*/

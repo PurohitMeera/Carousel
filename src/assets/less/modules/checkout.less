@@ -1,0 +1,672 @@
+.checkout-header-grey-bar{
+    display: inline-block;
+    width: 100%;
+    background: @te-cool-grey;
+    border-top: 2px solid @te-orange;
+    .checkout-header-grey-bar-container{
+        width: 1440px;
+        padding: 10px 72px;
+        margin: 0 auto;
+        .text-117();
+        color: @te-white;
+        text-transform: uppercase;
+        .font-lineheight(10,12);
+        min-height: 32px;
+        .media-query(desktop-small, {
+            width: 1024px;
+            padding: 10px 24px;
+        });
+        .media-query(mobile,{
+            width: 100%;
+            padding:10px 22px;
+        });
+    }    
+}
+.checkout-header {
+    height: 109px !important; // important required to overwrite height setting up from JS.
+    background-color: @te-white;
+    border-bottom: 1px solid @te-cool-grey-10;
+    .media-query(mobile,{
+        height: 80px !important; // important required to overwrite height setting up from JS.
+    });
+    #te-non-nav-header {
+        float: left;
+        width: auto;
+        padding: 0;
+        .media-query(mobile, {
+            padding:0 !important;
+        });        
+    }
+    .wrapper {
+        .logo {
+            width: auto;
+            .media-query(mobile, {
+                float: none;
+                width: 86px;
+                height: 45px;
+                margin-right: 0;
+            });
+            #te-logo {
+                .media-query(mobile, {
+                    float: none;
+                    width: 100%;
+                    height: 100%;
+                    margin-top: 0;
+                });
+            }
+        }
+        .checkout-header-help-text{
+            float: left;
+            display: inline-block;
+            margin-top: 26px;
+            .text-70();
+            .font-lineheight(14,22);
+            color:@te-cool-grey-9;
+            .header-livechat{
+                i{
+                    margin-right: 5px;
+                }
+                color: @te-blue !important;
+                &:hover,
+                &:active,
+                &:focus {
+                    color: @te-light-blue !important;
+                }
+            }
+            p{
+                display: inline;
+                br{
+                    display: none;
+                }
+            }
+        }
+        .cart {
+            .media-query(mobile, {
+                display:block !important;
+                position: absolute;
+                right: 15px !important;
+            });
+        }
+    }
+    #te-header {
+        nav {
+            .cart {
+                float: right;
+                right: 0;
+                border: none;
+                width: auto;
+                margin-right: 20px;
+                .media-query(mobile, {
+                    position: absolute;
+                });
+                a{
+                    padding: 29px 10px;
+                }
+                i{
+                    left: -4px;   
+                }
+            }
+        }
+    }
+}
+
+.no-mar-rt{
+    margin-right: 0 !important;
+}
+#modal-body.small-15{
+    height: auto;
+    #modal-content{
+        height: 80vh;
+        max-height: 515px;            
+    }
+    .media-query(mobile, {
+        #modal-content{
+            height: 100%;
+            max-height: 100%;
+            background: @te-cool-grey-10 !important;
+            padding-bottom: 0;// STB-299 fix
+        }
+    });
+}
+.clearfix{
+    clear:both;
+}
+.checkout-content-wrapper{
+    width: 100%;
+    display: inline-block;    
+    .checkout-content{
+        overflow: hidden;
+        &.content-well{
+           .media-query(mobile, {
+                padding: 0 !important; // In Mobile left and rigth gutter are not required.
+                position: relative;
+            }); 
+        }
+        //***Checkout Directive CSS Starts
+        .checkout-page-container{
+            margin-top: 22px;
+            width: 1088px;
+            margin: 20px auto 0;
+            .media-query(desktop-small, {
+                width: 100%;
+            });
+            .media-query(mobile, {
+                width: 100%;
+                margin-top: 80px;
+            });
+            .checkout-title{
+                .text-14();
+                .font-lineheight(32,36);
+                color: @te-dark-grey;
+                margin-bottom: 20px;
+                .media-query(mobile, {
+                    padding: 0 7vw;
+                });
+            }
+            
+            .checkout-help-text{
+                .text-31();
+                .font-lineheight(18,24);
+                color:@te-cool-grey-9;
+                margin-bottom: 22px;
+                p{
+                    display: inline;
+                    br{
+                        display: none;
+                    }
+                }
+                .checkout-livechat{
+                    i{
+                        margin-right: 5px;
+                    }
+                    color: @te-blue;
+                    display: inline-block;
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: @te-light-blue;
+                    }
+                }
+                .media-query(mobile, {
+                    .desktop{
+                       display: none;
+                    } 
+                    &.mobile{
+                        display: inline-block;
+                        padding: 0 7vw;
+                        margin-bottom: 20px;
+                        .checkout-livechat{
+                            display: block;
+                        }
+                    }
+                });
+            }
+            
+            //** Checkout Left Section CSS - Starts
+            .checkout-left-section{
+                float: left;
+                width: 640px;
+                position: relative;
+                z-index: 1;
+                .media-query(desktop-small, {
+                    width: 620px;
+                });
+                
+                .checkout-contact-information, .checkout-shipping-address, .checkout-shipping-method-information, .checkout-trade-compliance, .checkout-add-payment, .checkout-review-section-information{
+                    margin-bottom: 20px;
+                    display: inline-block;
+                    width: 100%;
+                    .media-query(mobile,{
+                        &.collapsed {
+                            padding: 0 7vw;
+                        }
+                    });
+                }
+                .media-query(mobile,{
+                    width:100%;
+                });
+            }
+            //** Checkout Left Section CSS - Ends
+            
+            //** Checkout Right Section CSS - Starts
+            .checkout-right-sticky-container{
+                position: fixed;
+                left: auto;
+                top: auto;
+                width: 1088px;
+                margin: 0 auto;
+                height: 68vh;
+                overflow: auto;
+                .media-query(desktop-small, {
+                    width: 940px;
+                    height: 65vh;
+                });
+                
+                //this below mention media query is specific case scenerio so internally handled.
+                //no need of mixin. in future is required it will be converted to mixins to use at other places.
+                @media (min-width: @desktop-breakpoint) and (max-height: 400px) {
+                    height: 59vh !important;
+                }
+                
+                .media-query(mobile, {
+                    position: absolute;
+                    width: 100%;
+                    z-index: 9;
+                    top: 0;
+                    height: 65px;
+                    &.fixed{
+                        position: fixed;
+                    }
+                });
+                
+                &.transparentBg{
+                    .media-query(mobile, {
+                        background: rgba(0,0,0,0.5);
+                        height: @mobile-checkout-ordersummary-height;
+                    });                    
+                }
+                
+               .checkout-right-section{
+                    float: right;
+                    width: 416px;
+                    z-index: 1;
+                    .media-query(desktop-small, {
+                        width: 299px;
+                    });
+                   .media-query(mobile, {
+                        width: 100%;
+                    });                    
+                } 
+            }            
+            //** Checkout Right Section CSS - Ends
+            
+            //** Checkout Order Summary CSS - Starts
+            // Keeping this section seperate to make it flexible for mobile and desktop
+            .checkout-order-summary {
+                width: 100%;
+                border: 1px solid @te-cool-grey-10;
+                background: @te-white;
+                margin-top: 20px;
+                .order-summary-header {
+                    width: 100%;
+                    .text-42();
+                    line-height: normal;
+                    padding: 20px;
+                    color: @te-dark-grey;
+                    i{
+                        display: none;
+                    }
+                }
+                .order-summary-details {
+                    .details-blocks {
+                        padding: 0 20px;
+                        .order-summary-row {
+                            width: 100%;
+                            display: inline-block;
+                            margin-bottom: 4px;
+                            color: @te-dark-grey;
+                            .text-70();
+                            .font-lineheight(14,24);
+                            .summary-left-col {
+                                width: 65%;
+                                display: inline-block;
+                                float: left;
+                                b {
+                                   .text-80();                                 
+                                }
+                                &.taxLabel{
+                                    width: 45%;
+                                }
+                                .media-query(desktop-small, {
+                                    width: 60%;
+                                    &.taxLabel{
+                                        width: 45%;
+                                    }
+                                });
+                            }
+                            .summary-right-col {
+                                width: 35%;
+                                text-align: right;
+                                display: inline-block;
+                                float: right;
+                                b {
+                                   .text-80(); 
+                                }
+                                &.taxVal{
+                                    width: 55%;
+                                }
+                                &.bold-text{
+                                    font-weight: 900;
+                                }
+                                .media-query(desktop-small, {
+                                    width: 40%;
+                                    &.taxVal{
+                                        width: 55%;
+                                    }
+                                });
+                            }
+                            small{
+                                .text-90();
+                                line-height: normal;
+                                color: @te-cool-grey-9;
+                            }
+                        }
+                        &.order-summary-total {
+                            border-top: 1px solid @te-cool-grey-10;
+                            padding: 20px;
+                            margin-top: 16px;
+                            
+                            label, span, p {
+                                .text-28();
+                                color: @te-orange;
+                            }
+                            label {
+                                width: 30%;
+                            }
+                            div {
+                                width: 65%;
+                                text-align: right;
+                                display: inline-block;
+                                float: right;
+                                b{
+                                    margin-right: 9px;
+                                    .text-90();
+                                    line-height: normal;
+                                    color: @te-cool-grey-9;
+                                    font-weight: 500 !important; //important required for overwrite other css.
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                .terms-condition-container{
+                    padding: 0px 20px;
+                    .media-query(mobile,{
+                        padding: 0px 26px;
+                    });
+                    .memo-heading{
+                        color: @te-dark-grey;
+                        float: left;
+                        width: 100%;
+                        margin: 0px 0px 10px 0px;
+                        .chk-holder{
+                            .custom-tick-checkbox();
+                            .media-query(mobile, {
+                                margin: 0;
+                                float: left;
+                                width: 100%;
+                            });
+                            label{
+                                .font-lineheight(14,20);
+                                color: @te-dark-grey;
+                                display: block;
+                            }
+                        } 
+                        .warning{
+                            color: @te-red;
+                            .text-70();
+                            .font-lineheight(14,24);
+                            margin-bottom: 8px;
+                        }
+                    }
+                }
+                .place-order-container{
+                    padding:20px;
+                    .checkout-continue-cta{
+                        width:100%;
+                    }
+                    .media-query(mobile, {
+                        display: none
+                    });
+                }
+                &.mobile{
+                    margin-top:0;
+                    .order-summary-header {
+                        border-bottom: 1px solid @te-cool-grey-10;                        
+                        padding: 20px 26px;
+                        i{
+                            display: block;
+                            float: right;
+                            color:@te-blue;
+                            font-size: 20px;
+                            margin-top: 2px;
+                        }
+                        span{
+                            color: @te-orange;
+                            .text-80();
+                            .font-lineheight(14,24);
+                            float: right;
+                            margin-right: 8px;
+                            small {
+                                .text-90();
+                                color: @te-cool-grey-9;
+                                display: inline-block;
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                    .order-summary-details{
+                        margin-top: 22px;
+                        .details-blocks {
+                            padding: 0 26px;
+                            &.order-summary-total{
+                                padding: 20px 26px;
+                            }
+                        }
+                    }                    
+                }
+            }
+            .checkout-vat-tax-section{
+                margin-top: 20px;
+                padding: 20px;
+                .text-80();
+                .font-lineheight(14,20);
+                color: @te-dark-grey;
+                background-color: @te-cool-grey-10;
+                .paid-tax{
+                    margin-top:20px;
+                }
+                .tesog-seller-msg{
+                    .text-90();
+                    .font-lineheight(12,22);
+                    color: @te-dark-grey;
+                    display: inline-block;
+                    margin-top: 20px;
+                    &.nomar-top{
+                        margin-top: 0px;
+                    }
+                }
+            }
+            //** Chekout Order Summary CSS - Ends
+            
+            
+        } 
+        //***Checkout Directive CSS Ends
+    }
+    
+    // Common CSS Section -- Starts
+    
+    //For Common Error and Success Messages.
+    .checkout-commom-message{
+        width: 100%;
+        display: inline-block;
+        padding: 8px 14px;
+        border-left: 4px solid;
+        margin-bottom: 20px;
+        .text-70();
+        .font-lineheight(14,24);
+
+        &.error {
+            background: rgba(205, 32, 44, 0.25);
+            color: @te-red;
+        }
+        &.success {
+            background: rgba(214, 227, 66, 0.25);
+            color: @te-dark-grey;
+            border-color: @te-green;
+        }&.message {
+            background: rgba(252, 212, 80, 0.25);
+            color: @te-dark-grey;
+            border-color: @te-yellow;
+        }
+
+    }
+    //For Common Error and Succes Message Css - Ends.
+    
+    //for Button continue CTA.
+    .checkout-continue-cta{
+        width: auto;
+        display: inline-block;
+        border: 1px solid @te-orange;
+        background-color: @te-orange;
+        text-align: center;
+        .text-80();
+        .font-lineheight(14,22);
+        color: @te-white;
+        height: 50px;
+        cursor: pointer;
+        position: relative;
+        &:hover{
+            background-color: @te-dark-orange;
+            border: 1px solid @te-dark-orange;
+        }
+        &.loading:before{
+            content:'';
+            border: 4px solid @te-cool-grey-10;
+            border-radius: 50%;
+            border-top: 4px solid @te-white;
+            border-left: 4px solid @te-white;
+            border-right: 4px solid @te-white;
+            position: absolute;
+            left: 46%;
+            top: 10px;
+            z-index: 99;
+            width: 30px;
+            height: 30px;
+            -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+        }
+        &.btn-disabled {
+            background-color: @te-dark-orange;
+            border: 1px solid @te-dark-orange;
+            pointer-events: none;
+            cursor: default;
+        }
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        } 
+        .media-query(mobile,{
+            width:100%;
+        });
+
+        &.disabled{
+            opacity: 0.5;
+            cursor: not-allowed;
+            &:hover{
+                border: 1px solid @te-orange;
+                background-color: @te-orange;
+            }
+        }
+    }
+    // Button continue CTA - ends
+    
+    // Common CSS Section -- Ends
+    
+}
+
+//checkout page body tag css
+.checkout-page{
+    background: @te-cool-grey-5;
+    .te-page{
+        margin-bottom: 0;
+        .media-query(mobile,{
+            margin-bottom: 0;
+        });
+    }
+    .tooltipster-fade{
+        &.tooltipster-show{
+            z-index: 5 !important;
+        }
+    }
+}
+
+//Checkout Page Simple Footer Css
+.checkout-simple-footer {
+    width: 100%;
+    padding-bottom: 92px;
+    .media-query(mobile, {
+        padding: 0 7vw;
+        padding-bottom: 24px;
+    });
+    .checkout-footer-wrapper{
+        width: 1088px;
+        margin: 0 auto;
+        .media-query(desktop-small, {
+            width: 940px;
+        });
+        .media-query(mobile, {
+            width: 100%;
+        });
+        .checkout-footer-left-floater{
+            width: 640px;
+            display: inline-block;
+            border-top: 1px solid @te-cool-grey-35;
+            padding-top: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            .media-query(desktop-small, {
+                width: 620px;
+            });
+            .media-query(mobile, {
+                width: 100%;
+            });
+
+            ul{
+                li {
+                    display: inline-block;
+                    padding-right: 7px;
+                    position: relative;
+                    a{
+                        color: @te-cool-grey-9;
+                        .text-70();
+                        .font-lineheight(14,18);
+                        &:hover{
+                            color: @te-dark-grey;
+                        }
+                    }
+                    .rt-border {
+                        display: inline-block;
+                        min-height: 55%;
+                        border-right: 2px solid @te-cool-grey-35;
+                        position: absolute;
+                        right: 0;
+                        top: 4px;
+                    }
+                    &:last-child {
+                        .rt-border {
+                            border: none;
+                        }
+                    }
+                }
+            }
+            .copyright-text{
+                color: @te-cool-grey-9;
+                .text-70();
+                .font-lineheight(14,18);
+                margin-top: 10px;
+            }
+        }
+    }
+    
+    .live-chat,&.ng-cloak{
+        display: none !important; // this link needs to be hidden in checkout in footer hence added important.
+    }
+}

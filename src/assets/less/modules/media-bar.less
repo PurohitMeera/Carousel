@@ -1,0 +1,214 @@
+.media-bar-section{
+    background-color: @te-dark-blue-87;
+    color: @te-white;
+    font-family: 'Avenir Medium', sans-serif;
+    h3{
+        font-size: 20px;
+        font-family: 'Avenir Heavy', sans-serif !important;
+        margin-bottom: 25px;
+    }
+    p{
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-family: 'Avenir Medium', sans-serif;
+    }
+    a{
+        font-size: 14px;
+        color: @te-orange !important;
+        text-decoration: underline;
+    }
+    a:hover{
+        cursor: pointer;
+    }
+    .media-bar-content{
+        &.display-flex{
+            display: flex;
+        }
+        &.display-form-flex {
+            .container-fluid div:nth-child(1){
+                display: block;
+            }
+        }
+        .eloqua-form-content{
+            padding-bottom: 10px;
+            p{
+                .text-90();
+            }
+        }
+        .eloqua-form-tands{
+            display: inline-block;
+            .text-70();
+            .eloqua-form-tands-wrapper{
+                padding: 10px 0px;
+                word-break: break-word;
+                .media-query(desktop-wide,{
+                    padding: 4px 0px;
+                });
+                .media-query(mobile,{
+                    padding: 21px 0px;
+                });
+                @-moz-document url-prefix() {
+                    padding: 10px 0px;
+                    p {
+                        margin-top: -10px;
+                    }
+                }
+            }
+            p{
+                .font-lineheight(14, 22);
+                width: 86%;
+                float: right;
+                margin-top: -10px;
+                .media-query(desktop-wide,{
+                    width: 90%;
+                });
+                .media-query(mobile, {
+                    width: 88%;
+                    margin-top: -10px;
+                });
+            }
+        }
+        .media-bar-image-frame{
+            margin-right: 20px;
+            color: @te-orange;
+            .playButton {
+                text-decoration: none;
+            }
+        }
+        .fa-play-circle, .fa-pause-circle{
+            font-size: 50px;
+            margin-bottom: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 5em;
+        }
+        .elq-item-input{
+            .font-lineheight(14, 22);
+            height: 36px;
+            margin-bottom: 15px;
+            margin-right: 0px;
+            font-family: 'Avenir Roman', sans-serif;
+            background: @te-white;
+            color: @te-dark-grey-65;
+            margin-right: 25px;
+            border:none;
+            box-shadow: none;
+            padding-left: 10px;
+        }
+        .eloqua-form-signup{
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        .checkbox-error {
+            p{
+                display: inline-block;
+                .text-70();
+                .font-lineheight(14, 22);
+                color: @te-dark-red;
+                margin-bottom: 5px;
+            }
+        }
+        .review-error{
+            p{
+                display: inline-block;
+                .text-70();
+                .font-lineheight(14, 22);
+                color: @te-red;
+            }
+        }
+        .custom-tick-checkbox();
+        [type="checkbox"]:not(:checked) + label.checkbox-border:before {
+            border: 1px solid @te-dark-red !important;
+        }
+        .submit-button-style{
+            .font-lineheight(14, 16);
+            .text-80();
+            height: 40px;
+            padding: 8px 10px;
+            width: 100%;
+            text-align: center;
+            color: @te-white;
+            background-color: @te-orange;
+            cursor: pointer;
+            border: none;
+            &:hover{
+                background-color: @te-dark-orange;
+                border: 1px solid @te-dark-orange;
+            }
+        }
+        .container-fluid{
+            padding: 0px;
+            .layout-col{
+                .elq-label{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.light-gray{
+        background-color: @te-cool-grey-3;
+        color: @te-dark-blue-87;
+    }
+    .media-query(desktop, {
+        min-height: 225px;
+        padding: 40px 40px;
+        display: flex;
+        justify-content: space-around;
+        .media-bar-item{
+            width: 25%;
+        }
+        .media-bar-middle-item{
+            padding: 0px 20px;
+        }
+        .media-bar-form-item {
+            width: 50% !important;
+            .editorial-parsys {
+                display: flex;
+                .media-bar-form {
+                    width: 50%;
+                }
+                .eloqua-form-terms-conditions {
+                    width: 50%;
+                    padding: 36px 0 0 20px;
+                    p {
+                        .text-90();
+                        .media-query(mobile, {
+                            .text-90();
+                        });
+                    }
+                }
+            }
+        }
+        .subscription-form .subscrption-btn{
+            height: 36px;
+            font-size: 16px;
+        }
+    });
+    .media-query(mobile, {
+         padding: 50px 20px 0px;
+        .media-bar-item{
+            padding: 0 0 60px;
+        }
+    });
+    #audioOnly {
+        display: none;
+    }
+    .LV_valid{
+        display: none;
+    }
+    .LV_invalid{
+        display: block;
+        color: @te-red;
+        padding-bottom: 5px;
+        .media-query(desktop-wide,{
+            padding-bottom: 10px;
+        });
+    }
+}

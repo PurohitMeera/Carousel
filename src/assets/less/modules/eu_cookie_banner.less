@@ -1,0 +1,31 @@
+.eu-cookie-banner{
+    background-color: @te-cool-grey-10;
+    z-index:@z-main-nav;
+    .transition(all @te-speed-2 ease-out);
+    display:none;
+    .banner-content{
+	.content-well();
+	min-height: 50px;
+	padding-top: 10px;	
+	padding-bottom: 10px;
+        text-align: center;
+
+        .media-query(mobile, {
+            padding: 40px @mobile-gutter 20px;
+            text-align: left;
+            line-height: 1.3;
+        });
+    }
+
+    .btn-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+    }
+
+}    
+
+.eu-cookie-banner.is-showed{
+    display: block;
+}

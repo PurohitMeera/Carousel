@@ -1,0 +1,174 @@
+
+#modal-content {
+    &.mto-modal-content{
+        overflow: hidden;
+        max-height: 533px !important;
+        .media-query(mobile, {            
+            max-height: ~"calc(100vh - 92px)" !important;
+        });
+        .mto-restriction-modal{
+            display: inline-block;
+            width: 100%;
+            max-height: 533px;
+            height: 80vh;   
+            min-height: 350px;
+            position: relative;
+            .media-query(mobile, {
+                background-color: @te-white;
+                min-height: ~"calc(100vh - 92px)"; //119 = 92px header.
+                height: ~"calc(100vh - 92px)";
+                max-height: ~"calc(100vh - 92px)";
+            });
+            h4{
+                display: inline-block;
+                width: 100%;
+                .text-32();
+                .font-lineheight(18,24);
+                margin-bottom: @v_space*2;
+                color: @te-dark-grey;
+                i{
+                    color: @te-red;
+                    margin-right: 8px;
+                }
+            }
+            .mto-restriction-msg{
+                display: inline-block;
+                width: 100%;
+                border-left:4px solid @te-red;
+                background-color: rgba(205, 32, 44, 0.25);
+                padding: (@v_space*0.8) (@h_space*0.8) (@v_space*0.8) (@h_space*1.3);
+                .text-70();
+                .font-lineheight(14,22);
+                color: @te-red;
+                margin-bottom: @v_space*3.5;
+                .media-query(mobile, {
+                    padding-left: (@h_space*1.2);
+                });
+            }
+            .mto-modal-list{
+                display: inline-block;
+                width: 100%;
+                li{
+                    clear: left;
+                    margin-bottom: @v_space*2.5;
+                    display: inline-block;
+                    width: 100%;
+                    .media-query(mobile, {
+                        margin-bottom: @v_space*2;
+                    });
+                    .mtoModalListItem{
+                        .imgSection{
+                            width: 60px;
+                            height: 60px;
+                            display: inline-block;
+                            float: left;
+                            margin-right: @v_space;
+                            border: 1px solid @te-cool-grey-10;
+                            img{
+                                width: 100%;
+                                height: auto;
+                                margin-top: @v_space*0.4;
+                            }
+                            &:before{
+                                 background-color: @te-blue;
+                                 border-left: 14px solid @te-orange;
+                                 content: "";
+                                 display: block;
+                                 height: 4px;
+                                 position: relative;
+                                 width: 100%;
+                             }
+                            .media-query(mobile, {
+                                background: @te-white;
+                            });
+                        }
+                        .descSection{
+                            .title, .tcpn{
+                                .text-70();
+                                .font-lineheight(14,22);
+                                color: @te-dark-grey;
+                            }
+                        }
+                    }
+                }
+            }
+            .scrollWrapper{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 80%;
+                display: inline-block;
+                width: 100%;
+                max-height: 80%;
+                overflow: auto;                
+                padding: @v_space*3;
+                &.iPhone-scroll-space{
+                    padding-bottom:125px;
+                }
+            }
+            .cta-container{
+                display: inline-block;
+                width: 100%;
+                position: absolute;
+                text-align: center;
+                left: 0;
+                bottom: 0;
+                background: @te-white;
+                padding: (@v_space*2.2) 0 (@v_space*2.2) (@h_space*1.5);
+                box-shadow: 0 -6px 10px 0 rgba(204, 204, 204, 0.5);
+                -webkit-box-shadow: 0 -6px 10px 0 rgba(204, 204, 204, 0.5);
+                .media-query(mobile, {
+                    padding: (@v_space*2) 7vw;
+                });
+                a{
+                    width: 310px;
+                    max-height: 50px;
+                    display: inline-block;
+                    cursor: pointer;
+                    padding: (@v_space*1.6) 0;
+                    margin-right: (@v_space*2.1);
+                    .text-80();
+                    .font-lineheight(14,22);
+                    .media-query(mobile, {
+                        width: 100%;
+                    });
+                    &.cta-secondary{
+                        background: @te-cool-grey-5;
+                        color:@te-blue;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: @te-light-blue;
+                        }
+                    }
+                    &.cta-primary{
+                        background: @te-blue;
+                        color:@te-white;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background: @te-light-blue;
+                        }
+                        &.mobile{
+                            display: none
+                        }
+                        .media-query(mobile, {
+                            &.mobile {
+                                display: inline-block;
+                                margin-bottom: @v_space;
+                            }
+                            &.desktop {
+                                display: none;
+                            }
+                        });
+                    }
+                }
+                &.bottom-space-for-iphone{
+                    .media-query(mobile, {
+                        padding-bottom: 125px;
+                    });
+                }
+            }
+        }
+    }
+}

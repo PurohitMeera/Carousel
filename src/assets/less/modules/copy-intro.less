@@ -1,0 +1,96 @@
+.copy-intro{
+/*    width: 940px;*/
+    margin: (@v_space*2.5)  0;
+    width: 100%;
+    display: inline-block;
+    .media-query(mobile,{
+        width: 100%;
+        margin: (@v_space*1.5)  auto;
+        
+    });
+    .copy-intro-module {
+        .column-layout(2, 20px, auto);
+        widows: 2;
+        //margin: (@v_space*2.5) 0;
+        .media-query(mobile,{
+            columns: 1;
+    		width: 100%;
+            //margin: (@v_space*1.5) 0;
+            padding: 0;
+        });
+        &.te-dark-theme{
+            background-color: @te-dark-blue-87;
+            p, strong{
+                color: @te-white;
+            }
+        }
+        &.te-light-theme{
+            background-color: @te-cool-grey-3;
+            p, strong{
+                color: @te-dark-grey-65;
+            }
+        }
+        p {
+            color:@te-cool-grey-9;
+            .text-44();
+            line-height: (22/14);
+            strong {
+                .text-42();
+                color:@te-dark-grey;
+            }
+            .media-query(mobile,{
+                margin: 0;
+            });
+        }
+
+        //temp patch to fix rich text editor bug:
+        //line break with list, the rest of the copy doesn't pick up p tag style
+        div {
+            .text-50();
+            line-height: (24/16);
+        }
+
+        ul {
+            .text-50();
+        }
+    }
+}
+.btn-group-7 {
+    &.chapter-heading{
+        .media-query(mobile,{
+            height: auto;
+            margin-top: 22px;
+            border: none;
+        });
+
+        ul{
+            .media-query(mobile,{
+                float: none;
+                margin-bottom: 0;
+            });
+            li{
+                .media-query(mobile,{
+                    float: none;
+                });
+                a{
+                    .media-query(mobile,{
+                        border: none;
+                        text-align: left;
+                        margin-left: 0;
+                    }); 
+                    &:focus, &.active{
+                        .media-query(mobile,{
+                            padding-top: 0;
+                        });   
+                    }
+                }
+            }
+        }
+    }
+}
+.email-alert{
+    .copy-intro-module{
+        .column-layout(1, 20px, auto);
+        margin:0;
+    }
+}

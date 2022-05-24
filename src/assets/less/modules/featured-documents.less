@@ -1,0 +1,195 @@
+.featured-documents{
+    overflow: hidden;
+     .media-query(mobile,{
+        float:left;
+         width:100%;
+    });
+}
+
+.te-featured-docs {
+    background-color: @te-cool-grey-5;
+    &.te-light-theme{
+        background-color: @te-cool-grey-3;
+        .featured-doc-item{
+            a::before{
+                background-color: @te-cool-grey-3;
+            }
+            .icon{
+                color: @te-dark-blue-87;
+            }
+            .featured-docs-doctype{
+                color: @te-dark-grey-65;
+            }
+            .featured-docs-filename{
+                color: @te-orange;
+                &:hover, &:focus{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .featured-doc-desc{
+            color: @te-dark-grey-65;
+        }    
+        .media-query(mobile,{
+            background-color: @te-cool-grey-3;
+        })
+    }
+    &.te-dark-theme{
+        background-color: @te-dark-blue-87;
+        .featured-doc-item{
+            a::before{
+                background-color: @te-dark-blue-87;
+            }
+            .icon{
+                color: @te-dark-blue-87;
+            }
+            .featured-docs-doctype{
+                color: @te-dark-grey-65;
+            }
+            .featured-docs-filename{
+                color: @te-orange;
+                &:hover, &:focus{
+                    text-decoration: underline;
+                }
+            }
+        } 
+        .featured-doc-desc{
+            color: @te-white;
+        } 
+        .media-query(mobile,{
+            background-color: @te-dark-blue-87;
+        }) 
+    }
+    .media-query(desktop-small, {
+        width:940px !important;
+    });
+    .media-query(desktop-wide, {
+        width:1308px !important;
+    });
+    margin: (@v_space*2.5) auto !important;
+    display: inline-block;
+
+    .media-query(mobile,{
+        background-color: @te-white;
+        margin: (@v_space*1.5) 0 !important;
+        width:100% !important;
+    });
+    > .container {
+        position:relative;
+        padding: (@v_space*2.5) !important;
+        .media-query(mobile,{
+            padding: 0 !important;
+            //margin: (@v_space*3) 0;
+            border: none !important;
+        });
+    }
+
+    .featured-doc-item {
+        vertical-align: top;
+        .media-query(mobile,{
+            width: 100%;
+            padding: 0 !important;
+            border-top: none !important;
+            &:not(:last-child){
+                margin-bottom: 20px;
+            }
+            &:last-child {
+              margin-bottom: 0;  
+            }
+        });
+        a {
+            .document-flap-white-mixin(@background-color: @te-cool-grey-5);
+            min-height:140px;
+            padding:14px;
+            border:1px solid @te-cool-grey-10;
+            margin-right: 10px;
+            text-align:left;
+            vertical-align:top;
+            display:block;
+            background:@te-white;
+            .media-query(mobile,{
+                padding: 20px;
+                margin-right: 0;
+                min-height: 70px;
+                width: 100%;
+                position: relative;
+            });
+        }
+
+        &:last-child {
+            a {
+                margin-right: 0;
+            }
+        }
+
+        .icon {
+            color: @te-blue;
+            .media-query(mobile,{
+                float: left;
+                position: absolute;
+                top: 50%;
+                margin-top: -10px;
+            });
+        }
+
+        .featured-docs-doctype {
+            margin-top: 2px;
+            .text-70();
+            color: @te-dark-grey;
+            .media-query(mobile,{
+                margin-left: 40px;
+                .text-96();
+                color: @te-cool-grey-9
+            });
+        }
+
+        .featured-docs-filename {
+            margin-top: 2px;
+            line-height: 1.25;
+            .media-query(mobile,{
+                margin-left: 40px;
+                .text-62();
+            });
+        }
+
+        &.no-description{
+            float:left;
+        }
+    }
+
+    .featured-doc-desc {
+        .text-70();
+        text-align: left;
+        color: @te-dark-grey;
+        p{
+            .text-62();
+            line-height: (22/14);
+        }
+        .media-query(mobile,{
+            padding-bottom: 0 !important;
+            //margin-bottom: 20px !important;
+        });
+    }
+
+    .see-all-button {
+        float: right;
+        margin: 20px 10px 0 0;
+        .media-query(mobile,{
+            margin: 10px 0 0 0 !important;
+            width:100%;
+            .btn-block-14{
+                width:100%;
+            }
+        });
+        .media-query(desktop,{
+            .mobile{
+                display: none !important;
+            }
+        });
+        &.no-description{
+            position:absolute;
+            right:10px;
+            bottom:30px;
+        }
+    }
+}

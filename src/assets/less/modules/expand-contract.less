@@ -1,0 +1,54 @@
+.te-expand-contract {
+    .te-expand-control {
+   	 	//padding-top: 20px;
+        li {
+            display: inline-block;
+
+            a {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        &.align-right {
+            text-align: right;
+            .media-query(mobile, {
+                text-align: center;
+            });
+        }
+    }
+
+    .expand-panel {
+        overflow: hidden;
+        height: 0;
+    }
+
+    &.expanded-view {
+        .expand-panel {
+            height: auto;
+        }
+    }
+
+    &.reduced-view {
+        .expand-panel {
+            height: 0;
+        }
+    }
+
+    //this is specifically for case study Details Container approach
+    &.detail-container-holder{
+        .expand-panel{
+            margin: 0 -42px;
+
+            .details-container{
+                margin: 0 auto;
+                padding: 0 42px;
+                display: block;
+                position: relative;
+            }
+        }
+    }
+}

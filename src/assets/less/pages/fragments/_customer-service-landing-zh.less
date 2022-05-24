@@ -1,0 +1,137 @@
+/*--CUstomer Service Landing CSS for China -- */
+#csl-page-main-wrapper{ 
+    #csl-header{
+    }
+    #csl-content{
+        //** Contact Us Section - Start **//
+        .csl-Contact-Main-Wrapper{
+            
+            .customer-service-landing-contactus{
+                height: auto;
+                margin-right: (@v_space*1.3);
+                .csl-contactUs-block{                    
+                    .cls-contactUs-inner-wrap{                        
+                        h3{
+                            margin-bottom: (@v_space*0.8);
+                        }
+                        p{
+                            .text-96();
+                            .font-lineheight(12,18);
+                            margin-bottom: (@v_space*0.6);
+                            color: @te-cool-grey-9;
+                            b{
+                                .text-91();
+                                .font-lineheight(12,22);
+                            }
+                        }
+                        a{
+                            .text-96();
+                            .font-lineheight(12,18);
+                            display: inline-block;
+                        }                        
+                    }
+                    .dynamic{
+                        p{
+                            &:first-child{
+                                .text-70();
+                                .font-lineheight(14,22);
+                                color: @te-cool-grey;
+                                 margin-bottom: (@v_space*0.8);
+                            }
+                            .text-96() !important;
+                            .font-lineheight(12,18) !important;
+                            margin-bottom: (@v_space*0.6);
+                            color: @te-cool-grey-9 !important;
+                        }
+                    }
+                }
+                .media-query(desktop-small, {
+                    max-width: 306px;
+                    margin-right: (@h_space*2);
+                    height: auto;
+                });
+                .media-query(mobile, {
+                    height: auto;
+                    min-height: auto;
+                    margin-bottom: @v_space;
+                    padding-bottom: @v_space;
+                });
+            }            
+        }   
+        //** Contact Us Section - Ends **// 
+        //~~~ Tools and Resources Css - Starts ~~~//      
+        .csl-tools-resources-grid{            
+            .media-query(mobile, {
+                margin-top: (@h_space*3);
+            });
+            .csl-tools-resources-tiles{                
+                h3{
+                    a{
+                        .text-70();
+                        .font-lineheight(14,22);                        
+                    }
+                }
+                p{
+                    .text-96();
+                    .font-lineheight(12,18);
+                }
+            }
+        }
+        //~~~ Tools and Resources Css - Ends ~~~//
+        
+        //** Help with TE.com - starts **//
+        .te-promo.small{
+            .container{
+                .promo-content{                    
+                    p:last-child{                        
+                        .text-96();
+                        .font-lineheight(12,18);
+                        .media-query(mobile, {
+                            .text-96()!important;
+                            .font-lineheight(12,18);
+                        });
+                    }
+                }
+            }  
+        }
+        .te-promo-grid{
+            .te-promo-content{
+                .promo-grid-content{
+                    .floating-wrapper.small{
+                        .media-query(mobile, {
+                            margin:(@v_space*0) (@h_space*0) (@v_space)!important;
+                        });                        
+                    }
+                }
+            }
+        }
+        .te-promo{
+            &.te-promo-crafted.small{
+                .container{
+                    .promo-content{                    
+                        .content-type{
+                            .media-query(mobile, {
+                                color:@te-dark-grey;
+                            });                            
+                        }
+                    }
+                }
+            }
+        }
+        //** Help with TE.com - ends **//        
+        
+        //** Product FAQ - starts **//
+        .customer-service-landing-faq{
+            .csl-faq-links-wrapper{
+                .csl-faq-links{
+                    .link{
+                        .text-62();
+                        .font-lineheight(14,22);
+                    }
+                }  
+            }
+        }
+        //** Product FAQ - ends **//
+        
+    }
+}

@@ -1,0 +1,105 @@
+.we-chat-wrapper{
+    display: inline-block;
+    position: fixed;
+    right: 0;
+    top: 36vh;
+    bottom: auto;
+    margin: auto 0;
+    z-index: 44;   // changed z-index : 99 to 44 for bug FE18-11075
+    .we-chat-container{                
+        .btnClose{
+            height:30px;
+            width:30px;
+            box-sizing:border-box;
+            padding:(@v_space) (@h_space);
+            box-shadow: 0 0 4px 0 rgba(204, 204, 204, 0.5);
+            position: absolute;
+            left: -31px;
+            background-color: @te-white; 
+            .media-query(mobile, {
+                display:none;
+            });
+            .close_icon{
+                color:@te-cool-grey-9;                
+                font-size:14px;
+                cursor:pointer;
+            }
+        }        
+        .expanded-wechat{
+            width: 104px;
+            height: 125px;
+            box-sizing:border-box;
+            padding:(@v_space) (@h_space);
+            box-shadow:0px 0px 4px 0px rgba(204, 204, 204, 0.5);
+            background:@te-white;
+            .qr-code-img{
+                //background: url('../../images/TE_we_chat_QR_code.png') no-repeat;
+                width:84px;
+                height:84px;
+                display:block;
+                cursor:default;
+                background-size: cover;
+            }
+            .qr-code-text{
+                .text-94();
+                .font-lineheight(12,18);
+                padding: (@v_space*0.4) (@h_space*0) (@v_space*0);
+                text-align:center;
+                color: @te-dark-grey-65;
+                text-align: center;
+                display: block;
+            }
+            &.desktop{
+                .media-query(mobile, {
+                    display:none;
+                });
+            }
+        }
+        .collapsed-wechat{
+            height:40px;
+            width:120px;
+            box-sizing:border-box;
+            padding:(@v_space) (@h_space);
+            box-shadow: 0 0 4px 0 rgba(204, 204, 204, 0.5); 
+            -ms-transform: rotate(90deg); /* IE 9 */
+            -webkit-transform: rotate(90deg); /* Safari 3-8 */
+            transform: rotate(90deg);
+            display:block;
+            background:@te-white;
+            position: absolute;
+            right: -41px;
+            cursor:pointer;
+            top:40px;
+            .media-query(mobile, {
+                top:0px;
+            });
+            .we-chat-text{
+                .text-80();
+                color:@te-dark-grey-65;
+            }
+            .we-chat-logo{
+                font-size:24px;
+                color:@te-dark-green;
+                display: inline-block;                                
+                margin: (@v_space*0) (@h_space) (@v_space*0) (@h_space*0);
+            }
+            &.desktop{
+                .media-query(desktop-small, {
+                    display:block;
+                });
+                .media-query(desktop-wide, {
+                    display:block;
+                });
+                .media-query(mobile, {
+                    display:none;
+                });
+            }
+            &.mobile{
+                display: none;
+                .media-query(mobile, {
+                    display:block;
+                });
+            }
+        }
+    }
+}
